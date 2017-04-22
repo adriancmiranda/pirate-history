@@ -8,6 +8,7 @@
 [![depsci][depsci]][depsci-url]
 [![travis][travis]][travis-url]
 [![appveyor][appveyor]][appveyor-url]
+[![greenkeeper][greenkeeper]][greenkeeper-url]
 
 ## ☠ There's nothing for you here yet. ☠
 
@@ -36,5 +37,8 @@
 
 [depsci]: https://dependencyci.com/github/adriancmiranda/pirate-history/badge
 [depsci-url]: https://dependencyci.com/github/adriancmiranda/pirate-history
+
+[greenkeeper]: https://badges.greenkeeper.io/adriancmiranda/pirate-history.svg
+[greenkeeper-url]: https://greenkeeper.io/
 
 [license-url]: https://github.com/adriancmiranda/pirate-history/blob/master/LICENSE
