@@ -1,0 +1,6 @@
+# https://nodejs.org/en/docs/es6/
+sudo: false
+language: node_js
+node_js:
+- "6"
+- "7"
