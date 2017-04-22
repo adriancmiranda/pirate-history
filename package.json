@@ -28,6 +28,11 @@
       "types": "conventional-commit-types"
     }
   },
+  "greenkeeper": {
+    "ignore": [
+      "material"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/adriancmiranda/pirate-history.git"
