@@ -1,4 +1,6 @@
 # pirate-history
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/adriancmiranda/pirate-history.svg)](https://greenkeeper.io/)
 > Handles cross-browser history management
 
 [![npm][npm]][npm-url]
