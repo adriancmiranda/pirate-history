@@ -1,0 +1,39 @@
+---
+root: true
+parser: esprima
+extends: airbnb-base/legacy
+plugins:
+  - import
+
+parserOptions:
+  sourceType: module
+
+env:
+  browser: true
+
+globals:
+  beforeEach: true
+  before: true
+  describe: true
+  request: true
+  expect: true
+  it: true
+
+rules:
+  no-debugger: 2
+  no-tabs: off
+
+  import/extensions:
+    - error
+    - always
+    - js: never
+
+  import/no-extraneous-dependencies:
+    - error
+    - optionalDependencies:
+      - test/index.js
+
+  indent:
+    - 2
+    - tab
+    - SwitchCase: 1
