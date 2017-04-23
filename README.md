@@ -24,17 +24,17 @@
 [npm]: https://img.shields.io/npm/v/pirate-history.svg
 [npm-url]: https://npmjs.com/package/pirate-history
 
-[travis]: https://travis-ci.org/adriancmiranda/pirate-history.svg?branch=master
-[travis-url]: https://travis-ci.org/adriancmiranda/pirate-history
-
-[appveyor]: https://ci.appveyor.com/api/projects/status/hucvow1n0t3q3le3/branch/master?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/adriancmiranda/pirate-history/branch/master
-
 [deps]: https://david-dm.org/adriancmiranda/pirate-history.svg
 [deps-url]: https://david-dm.org/adriancmiranda/pirate-history
 
 [depsci]: https://dependencyci.com/github/adriancmiranda/pirate-history/badge
 [depsci-url]: https://dependencyci.com/github/adriancmiranda/pirate-history
+
+[travis]: https://travis-ci.org/adriancmiranda/pirate-history.svg?branch=master
+[travis-url]: https://travis-ci.org/adriancmiranda/pirate-history
+
+[appveyor]: https://ci.appveyor.com/api/projects/status/hucvow1n0t3q3le3/branch/master?svg=true
+[appveyor-url]: https://ci.appveyor.com/project/adriancmiranda/pirate-history/branch/master
 
 [greenkeeper]: https://badges.greenkeeper.io/adriancmiranda/pirate-history.svg
 [greenkeeper-url]: https://greenkeeper.io/
