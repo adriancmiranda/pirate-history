@@ -52,6 +52,6 @@ module.exports = webpackCfg('settings/*.js', lib => {
   lib.set('build.gzip.extensions', ['js']);
   lib.set('build.bundleAnalyzer.report', process.env.npm_config_report);
 
-  // ~ entry ~
+  // ~ entry point ~
   lib.set(`script.entry.${pkg.name}`, './index.js');
 });

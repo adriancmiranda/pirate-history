@@ -1,3 +1,5 @@
+# http://eslint.org/docs/user-guide/configuring
+
 ---
 root: true
 parser: esprima
@@ -11,13 +13,10 @@ parserOptions:
 env:
   browser: true
 
-globals:
-  beforeEach: true
-  before: true
-  describe: true
-  request: true
-  expect: true
-  it: true
+settings:
+  import/resolver:
+    webpack:
+      config: bin/index.js
 
 rules:
   no-debugger: 2
