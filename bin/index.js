@@ -32,11 +32,14 @@ module.exports = webpackCfg('settings/*.js', lib => {
 
   // ~ dev lifecycle ~
   lib.set('dev.env.NODE_ENV', '"development"');
-  lib.set('dev.assetsPublicPath', '/');
-  lib.set('dev.host', 'localhost');
-  lib.set('dev.port', 3000);
-  lib.set('dev.autoOpenBrowser', true);
   lib.set('dev.sourceMap', '#cheap-module-eval-source-map');
+  lib.set('dev.assetsPublicPath', '/');
+  lib.set('dev.server.contentBase', '/');
+  lib.set('dev.server.compress', true);
+  lib.set('dev.server.stats', 'errors-only');
+  lib.set('dev.server.host', 'localhost');
+  lib.set('dev.server.port', 3000);
+  lib.set('dev.server.open', true);
 
   // ~ test lifecycle ~
   lib.set('test.env.NODE_ENV', '"testing"');
@@ -44,12 +47,12 @@ module.exports = webpackCfg('settings/*.js', lib => {
 
   // ~ build lifecycle ~
   lib.set('build.env.NODE_ENV', '"production"');
-  lib.set('build.assetsPublicPath', '/');
   lib.set('build.sourceMap', '#source-map');
+  lib.set('build.assetsPublicPath', '/');
   lib.set('build.gzip', false);
   lib.set('build.gzip.extensions', ['js']);
   lib.set('build.bundleAnalyzer.report', process.env.npm_config_report);
 
   // ~ entry ~
-  lib.set('script.entry', './index.js');
+  lib.set(`script.entry.${pkg.name}`, './index.js');
 });

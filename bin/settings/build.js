@@ -5,6 +5,7 @@ const base = require('../base');
 
 module.exports = $ => base($).cfg({
   name: '[build]',
+  target: 'web',
   bail: true,
   devtool: $('build.sourceMap'),
   output: {

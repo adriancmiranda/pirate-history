@@ -4,6 +4,7 @@ const base = require('../base');
 
 module.exports = $ => base($).cfg({
   name: '[dev]',
+  target: 'web',
   devtool: $('dev.sourceMap'),
   devServer: $('dev.server'),
   output: {

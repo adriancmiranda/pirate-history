@@ -12,7 +12,7 @@
   "license": "Unlicense",
   "scripts": {
     "upgrade": "ncu -a --loglevel verbose --packageFile package.json && npm i",
-    "dev": "webpack --config bin --env.run=dev --env.dev",
+    "dev": "webpack-dev-server --config bin --env.run=dev --env.dev",
     "build": "webpack --config bin --env.run=build",
     "build:examples": "cd examples && node build-all",
     "stats": "webpack --config bin --profile --json > stats.json",
@@ -46,7 +46,9 @@
     "standard-version": "^4.0.0",
     "validate-commit-msg": "^2.12.1",
     "webpack": "^2.4.1",
-    "webpack-cfg": "^1.2.4"
+    "webpack-cfg": "^1.2.4",
+    "webpack-dev-server": "2.4.3",
+    "webpack-node-externals": "1.5.4"
   },
   "config": {
     "validate-commit-msg": {
