@@ -10,7 +10,6 @@ init:
 
 clone_depth: 50
 
-# what combinations to test
 environment:
   matrix:
     - nodejs_version: 7

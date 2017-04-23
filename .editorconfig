@@ -19,5 +19,5 @@ trim_trailing_whitespace = false
 [*.diff]
 trim_trailing_whitespace = false
 
-[{index.js,lib/**.js,test/**.js,*.svg}]
+[{index.js,source/**.js,test/**.js,*.svg}]
 indent_style = tab
