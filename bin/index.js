@@ -1,0 +1,55 @@
+const GitRevisionPlugin = require('git-revision-webpack-plugin');
+const { alias } = require('webpack-cfg/tools');
+const webpackCfg = require('webpack-cfg');
+const moment = require('moment');
+const pkg = require('../package.json');
+
+moment.locale();
+
+const git = new GitRevisionPlugin({ lightweightTags: true });
+
+module.exports = webpackCfg('settings/*.js', lib => {
+  // ~ metadata ~
+  lib.set('package', pkg);
+  lib.set('context', process.cwd());
+  lib.set('cwd', process.cwd());
+  lib.set('pwd', alias(__dirname));
+  lib.set('now', moment().format('LLLL'));
+  lib.set('git.commithash', git.commithash());
+  lib.set('git.version', git.version());
+  lib.set('lifecycle', process.env.npm_lifecycle_event);
+
+  // ~ structure folders ~
+  lib.set('path.test', 'test');
+  lib.set('path.source', 'source');
+
+  // ~ entry ~
+  lib.set('path.entry.script', '');
+
+  // ~ output ~
+  lib.set('path.output.bundle', 'dist');
+  lib.set('path.output.script', '');
+
+  // ~ dev lifecycle ~
+  lib.set('dev.env.NODE_ENV', '"development"');
+  lib.set('dev.assetsPublicPath', '/');
+  lib.set('dev.host', 'localhost');
+  lib.set('dev.port', 3000);
+  lib.set('dev.autoOpenBrowser', true);
+  lib.set('dev.sourceMap', '#cheap-module-eval-source-map');
+
+  // ~ test lifecycle ~
+  lib.set('test.env.NODE_ENV', '"testing"');
+  lib.set('test.sourceMap', '#inline-source-map');
+
+  // ~ build lifecycle ~
+  lib.set('build.env.NODE_ENV', '"production"');
+  lib.set('build.assetsPublicPath', '/');
+  lib.set('build.sourceMap', '#source-map');
+  lib.set('build.gzip', false);
+  lib.set('build.gzip.extensions', ['js']);
+  lib.set('build.bundleAnalyzer.report', process.env.npm_config_report);
+
+  // ~ entry ~
+  lib.set('script.entry', './index.js');
+});

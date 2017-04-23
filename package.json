@@ -4,28 +4,44 @@
   "description": "Handles cross-browser history management",
   "version": "0.0.1",
   "main": "index.js",
+  "browser": "index.js",
+  "module": "index",
   "homepage": "https://github.com/adriancmiranda/pirate-history",
   "readmeFilename": "README.md",
   "license": "Unlicense",
   "scripts": {
     "upgrade": "ncu -a --loglevel verbose --packageFile package.json && npm i",
-    "build": "webpack --config bin",
+    "dev": "webpack --config bin --env.run=dev --env.dev",
+    "build": "webpack --config bin --env.run=build",
     "build:examples": "cd examples && node build-all",
+    "stats": "webpack --config bin --profile --json > stats.json",
     "test": "mocha -R spec",
     "test:travis": "npm test",
     "test:appveyor": "npm test",
     "precommit": "run-s test",
-    "commitmsg": "validate-commit-msg"
+    "commitmsg": "validate-commit-msg",
+    "release": "standard-version"
   },
   "devDependencies": {
-    "chai": "3.5.0",
+    "chai": "^3.5.0",
+    "child-process-promise": "2.2.1",
+    "clean-webpack-plugin": "0.1.16",
+    "compression-webpack-plugin": "^0.4.0",
     "conventional-commit-types": "^2.1.0",
+    "eslint-friendly-formatter": "^2.0.7",
+    "eslint-loader": "^1.7.1",
+    "friendly-errors-webpack-plugin": "1.6.1",
+    "git-revision-webpack-plugin": "^2.4.1",
     "husky": "^0.13.3",
-    "mocha": "3.2.0",
+    "mocha": "^3.2.0",
+    "moment": "^2.18.1",
     "npm-check-updates": "^2.11.0",
-    "npm-run-all": "4.0.2",
+    "npm-run-all": "^4.0.2",
+    "pirate-flag": "^0.0.1",
+    "standard-version": "4.0.0",
     "validate-commit-msg": "^2.12.1",
-    "webpack": "2.4.1"
+    "webpack": "^2.4.1",
+    "webpack-cfg": "^1.2.4"
   },
   "config": {
     "validate-commit-msg": {
@@ -49,5 +65,9 @@
   },
   "keywords": [
     "pirate-history"
-  ]
+  ],
+  "optionalDependencies": {
+    "compression-webpack-plugin": "0.4.0",
+    "webpack-bundle-analyzer": "2.4.0"
+  }
 }
