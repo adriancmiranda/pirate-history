@@ -1,0 +1,12 @@
+{
+  "name": "pirate-history",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "Handles cross-browser history management",
+  "repo": "adriancmiranda/pirate-history",
+  "license": "Unlicense",
+  "scripts": "index.js",
+  "keywords": [
+    "pirate-history"
+  ]
+}

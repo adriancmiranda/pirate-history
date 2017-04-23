@@ -3,12 +3,11 @@ const { alias } = require('webpack-cfg/tools');
 const webpackCfg = require('webpack-cfg');
 const moment = require('moment');
 const pkg = require('../package.json');
-
-moment.locale();
-
 const git = new GitRevisionPlugin({ lightweightTags: true });
 
 module.exports = webpackCfg('settings/*.js', lib => {
+  moment.locale();
+
   // ~ metadata ~
   lib.set('package', pkg);
   lib.set('context', process.cwd());
