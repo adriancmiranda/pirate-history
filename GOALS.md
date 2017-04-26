@@ -54,6 +54,8 @@ pirate.history.dispatchEvent('changed', onChanged);
 
 ## :large_blue_circle: [Polyfill/Wrapper] The `state` property
 
+To retrieve the `state` object for the current history entry you can examine the state property on the `pirate.history` object. This is useful if you need to read the state object when a popstate event has not been fired.
+
 ```javascript
 pirate.history.state;
 ```
