@@ -7,8 +7,8 @@ const assert = chai.assert;
 describe('correct-history', function () {
 	var lib;
 	before(function () {
-		lib = pirateHistory();
 		fixture.setBase('fixtures');
+		lib = pirateHistory();
 	});
 
 	beforeEach(function () {
