@@ -49,5 +49,6 @@ Session.vim
 !.eslintrc
 !.travis.yml
 !.vcmrc
+~*
 *~
 *#*
