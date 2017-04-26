@@ -7,7 +7,6 @@ const pkg = require('../package.json');
 const git = new GitRevisionPlugin({ lightweightTags: true });
 const cfg = webpackCfg('settings/*.js');
 
-// cfg.on('config', console.log);
 module.exports = cfg.setConfig(lib => {
   moment.locale();
 
