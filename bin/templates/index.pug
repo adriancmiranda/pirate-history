@@ -1,0 +1,26 @@
+doctype html
+html(lang="pt-br")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    if htmlWebpackPlugin.options.mobile
+      meta(name="viewport", content="width=device-width, initial-scale=1")
+    title #{htmlWebpackPlugin.options.title || 'adriancmiranda/pirate-history'}
+    link(rel="shortcut icon", href=`${htmlWebpackPlugin.options.favicon || 'favicon.ico'}`, type="image/x-icon")
+    each file in (htmlWebpackPlugin.files.styles || [])
+      link(rel="stylesheet", href=`${file}`)
+    each file in htmlWebpackPlugin.files.css
+      link(rel="stylesheet", href=`${file}`)
+    each file in (htmlWebpackPlugin.options.scripts || [])
+      script(href="#{file}")
+
+  body.App(class=`${htmlWebpackPlugin.options.env || ''}`)
+    h1 #{htmlWebpackPlugin.options.title}
+
+    //- Templates
+    section#App
+      p Content goes here. And some other content yet.
+
+    //- behaviors
+    each chunk in htmlWebpackPlugin.files.chunks
+      script(src=`${chunk.entry}`)

@@ -5,10 +5,9 @@ const pirateHistory = require('../../');
 const expect = chai.expect;
 const assert = chai.assert;
 describe('correct-history', function () {
-	var lib;
 	before(function () {
 		fixture.setBase('fixtures');
-		lib = pirateHistory();
+		this.lib = pirateHistory();
 	});
 
 	beforeEach(function () {
@@ -22,7 +21,7 @@ describe('correct-history', function () {
 
 	it('should pass', function () {
 		expect(pirateHistory).to.be.instanceOf(Function);
-		expect(lib).to.be.a('string');
-		assert.equal(lib, '☠  There\'s nothing for you here yet ☠');
+		expect(this.lib).to.be.a('string');
+		assert.equal(this.lib, '☠  There\'s nothing for you here yet ☠');
 	});
 });
