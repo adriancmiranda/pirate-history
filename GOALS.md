@@ -52,14 +52,14 @@ pirate.history.dispatchEvent('changed', onChanged);
 ```
 
 
-## :blue_circle: [Polyfill/Wrapper] The `state` property
+## :large_blue_circle: [Polyfill/Wrapper] The `state` property
 
 ```javascript
 pirate.history.state;
 ```
 
 
-## :blue_circle: [Polyfill/Wrapper] The `pushState()` method
+## :large_blue_circle: [Polyfill/Wrapper] The `pushState()` method
 
 The `pushState()` method is used to create a new history entry. This method has three parameters:
 
@@ -75,7 +75,7 @@ pirate.history.pushState(state, title, URL);
 ```
 
 
-## :blue_circle: [Polyfill/Wrapper] The `replaceState()` method
+## :large_blue_circle: [Polyfill/Wrapper] The `replaceState()` method
 
 The `replaceState()` method is similar to `pushState()` in that it takes the same three parameters. However, rather than creating a new history entry,  `replaceState()` updates the current history entry. This can be useful if you want to add some data to your state object after `pushState()` has been called.
 
@@ -84,7 +84,7 @@ The `replaceState()` method is similar to `pushState()` in that it takes the sam
 ```
 
 
-## :blue_circle: [Polyfill/Wrapper] The `popstate` event
+## :large_blue_circle: [Polyfill/Wrapper] The `popstate` event
 
 The `popstate` event is fired on `pirate` when the active history entry changes. Most commonly when the browsers back or forward buttons are clicked (or a call to `back()`, `forward()` or `go()` is executed).
 
@@ -100,7 +100,7 @@ pirate.history.dispatchEvent('popstate', onPopState);
 ```
 
 
-## :blue_circle: [Polyfill/Wrapper] The `back()` method
+## :large_blue_circle: [Polyfill/Wrapper] The `back()` method
 
 Calling the `back()` method will cause the browser to navigate back to the previous entry in the session history. This mimics the behaviour of the browsers native back button.
 
@@ -109,7 +109,7 @@ pirate.history.back();
 ```
 
 
-## :blue_circle: [Polyfill/Wrapper] The `forward()` method
+## :large_blue_circle: [Polyfill/Wrapper] The `forward()` method
 
 The `forward()` method will cause the browser to navigate one place forward in the browser history.
 
@@ -118,7 +118,7 @@ pirate.history.forward();
 ```
 
 
-## :blue_circle: [Polyfill/Wrapper] The `go(n)` method
+## :large_blue_circle: [Polyfill/Wrapper] The `go(n)` method
 
 The `go(n)` method allows you to navigate back or forward n number of places in the session history. To navigate backwards n should be a negative number.
 
@@ -131,7 +131,7 @@ pirate.history.go(3);
 ```
 
 
-## :blue_circle: [Polyfill/Wrapper] The `length` property
+## :large_blue_circle: [Polyfill/Wrapper] The `length` property
 
 The history objects `length` property tells you how many entries are in the session history. This can be useful when used in conjunction with the `go()` method.
 
