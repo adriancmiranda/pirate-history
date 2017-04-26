@@ -3,5 +3,6 @@ env:
   mocha: true
 
 globals:
+  fixture: true
   expect: true
   sinon: true
