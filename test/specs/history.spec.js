@@ -13,6 +13,7 @@ describe('correct-history', function () {
 
 	beforeEach(function () {
 		this.ui = fixture.load('history.fixture.html');
+		document.body.insertAdjacentHTML('afterbegin', fixture.el.innerHTML);
 	});
 
 	afterEach(function () {
