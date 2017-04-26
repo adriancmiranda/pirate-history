@@ -7,10 +7,16 @@ const assert = chai.assert;
 describe('correct-history', function () {
 	var lib;
 	before(function () {
+		fixture.setBase('fixtures');
 		lib = pirateHistory();
 	});
 
 	beforeEach(function () {
+		// this.ui = fixture.load('history.fixture.html');
+	});
+
+	afterEach(function () {
+		fixture.cleanup();
 	});
 
 	it('should pass', function () {

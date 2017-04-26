@@ -13,8 +13,12 @@ module.exports = (config) => {
 		reporters: ['spec', 'coverage'],
 		files: ['./index.js'],
 		preprocessors: {
-			'./index.js': ['webpack', 'sourcemap'],
-			'./**/*.html': ['html2js'],
+			'index.js': ['webpack', 'sourcemap'],
+			'**/*.html': ['html2js'],
+			'**/*.json': ['json_fixtures'],
+		},
+		jsonFixturesPreprocessor: {
+			variableName: '__json__',
 		},
 		webpack: webpackConfig({ run: 'test' }),
 		webpackMiddleware: {
@@ -25,7 +29,7 @@ module.exports = (config) => {
 			reporters: [
 				{ type: 'lcov', subdir: '.' },
 				{ type: 'text-summary' },
-			]
+			],
 		},
 	});
 };
