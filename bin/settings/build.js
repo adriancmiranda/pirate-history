@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const Clean = require('clean-webpack-plugin');
 const pirateFlag = require('pirate-flag');
-const base = require('../base');
+const commonTemplate = require('../templates');
 
-module.exports = $ => base($).cfg({
+module.exports = $ => commonTemplate($).cfg({
   name: '[build]',
   target: 'web',
   bail: true,

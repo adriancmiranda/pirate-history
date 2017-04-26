@@ -1,7 +1,7 @@
 const webpack = require('webpack');
-const base = require('../base');
+const commonTemplate = require('../templates');
 
-module.exports = $ => base($).cfg({
+module.exports = $ => commonTemplate($).cfg({
   name: '[test]',
   target: 'web',
   entry: undefined,

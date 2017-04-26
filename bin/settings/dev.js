@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-const base = require('../base');
+const commonTemplate = require('../templates');
 
-module.exports = $ => base($).cfg({
+module.exports = $ => commonTemplate($).cfg({
   name: '[dev]',
   target: 'web',
   devtool: $('dev.sourceMap'),

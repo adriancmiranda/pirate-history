@@ -9,6 +9,10 @@ describe('correct-history', function () {
 	before(function () {
 		lib = pirateHistory();
 	});
+
+	beforeEach(function () {
+	});
+
 	it('should pass', function () {
 		expect(pirateHistory).to.be.instanceOf(Function);
 		expect(lib).to.be.a('string');

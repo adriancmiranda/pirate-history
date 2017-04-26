@@ -1,6 +1,6 @@
 // Require all fixtures (files that ends with .fixture.html)
-const fixturesContext = require.context('./fixtures', true, /\.fixture\.html$/);
-fixturesContext.keys().forEach(fixturesContext);
+// const fixturesContext = require.context('./fixtures', true, /\.fixture\.html$/);
+// fixturesContext.keys().forEach(fixturesContext);
 
 // Require all test files (files that ends with .spec.js)
 const testsContext = require.context('./specs', true, /\.spec$/);
