@@ -8,7 +8,17 @@ describe('correct-history', function () {
 	var lib;
 	before(function () {
 		lib = pirateHistory();
+		fixture.setBase('fixtures');
 	});
+
+	beforeEach(function () {
+		// this.ui = fixture.load('history.fixture.html');
+	});
+
+	afterEach(function () {
+		fixture.cleanup();
+	});
+
 	it('should pass', function () {
 		expect(pirateHistory).to.be.instanceOf(Function);
 		expect(lib).to.be.a('string');
