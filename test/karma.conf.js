@@ -9,11 +9,16 @@ const webpackConfig = require('../bin');
 module.exports = (config) => {
 	config.set({
 		browsers: ['PhantomJS'],
-		frameworks: ['mocha', 'sinon-chai', 'phantomjs-shim'],
+		frameworks: ['mocha', 'sinon-chai', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
 		files: ['./index.js'],
 		preprocessors: {
-			'./index.js': ['webpack', 'sourcemap']
+			'index.js': ['webpack', 'sourcemap'],
+			'**/*.html': ['html2js'],
+			'**/*.json': ['json_fixtures'],
+		},
+		jsonFixturesPreprocessor: {
+			variableName: '__json__',
 		},
 		webpack: webpackConfig({ run: 'test' }),
 		webpackMiddleware: {
