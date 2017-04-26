@@ -12,7 +12,7 @@ describe('correct-history', function () {
 	});
 
 	beforeEach(function () {
-		// this.ui = fixture.load('history.fixture.html');
+		this.ui = fixture.load('history.fixture.html');
 	});
 
 	afterEach(function () {

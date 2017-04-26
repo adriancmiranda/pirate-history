@@ -11,11 +11,21 @@ module.exports = (config) => {
 		browsers: ['PhantomJS'],
 		frameworks: ['mocha', 'sinon-chai', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
-		files: ['./index.js'],
+		files: [{
+			pattern: './fixtures/**/*.fixture.*',
+			watched: true,
+		}, {
+			pattern: './specs/**/*.spec.js',
+			watched: true,
+		}, {
+			pattern: '../source/**/*.js',
+			watched: true,
+		}],
 		preprocessors: {
-			'index.js': ['webpack', 'sourcemap'],
-			'**/*.html': ['html2js'],
-			'**/*.json': ['json_fixtures'],
+			'../source/**/*.js': ['webpack', 'sourcemap'],
+			'./specs/**/*.js': ['webpack', 'sourcemap'],
+			'./fixtures/**/*.html': ['html2js'],
+			'./fixtures/**/*.json': ['json_fixtures'],
 		},
 		jsonFixturesPreprocessor: {
 			variableName: '__json__',
