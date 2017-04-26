@@ -5,7 +5,7 @@ html(lang="pt-br")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     if htmlWebpackPlugin.options.mobile
       meta(name="viewport", content="width=device-width, initial-scale=1")
-    title #{htmlWebpackPlugin.options.title || 'adriancmiranda/pirate-history'}
+    title #{htmlWebpackPlugin.options.title || 'pirate-history'}
     link(rel="shortcut icon", href=`${htmlWebpackPlugin.options.favicon || 'favicon.ico'}`, type="image/x-icon")
     each file in (htmlWebpackPlugin.files.styles || [])
       link(rel="stylesheet", href=`${file}`)

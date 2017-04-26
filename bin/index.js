@@ -49,7 +49,7 @@ module.exports = webpackCfg('settings/*.js', lib => {
   lib.set('build.env.NODE_ENV', '"production"');
   lib.set('build.sourceMap', '#source-map');
   lib.set('build.assetsPublicPath', '/');
-  lib.set('build.gzip', false);
+  lib.set('build.gzip', true);
   lib.set('build.gzip.extensions', ['js']);
   lib.set('build.bundleAnalyzer.report', process.env.npm_config_report);
 

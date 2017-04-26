@@ -1,3 +1,4 @@
+const formatter = require('eslint-friendly-formatter');
 const { baseTemplate } = require('webpack-cfg/templates');
 
 module.exports = $ => baseTemplate($).cfg({
@@ -15,7 +16,7 @@ module.exports = $ => baseTemplate($).cfg({
       enforce: 'pre',
       loader: 'eslint-loader',
       test: /\.js$/,
-      options: Object.assign({}, $('script.eslint')),
+      options: Object.assign({ formatter }, $('script.eslint')),
       include: [
         $('cwd', $('path.source')),
         $('cwd', $('path.test')),
