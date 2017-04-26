@@ -3,9 +3,12 @@ const { alias } = require('webpack-cfg/tools');
 const webpackCfg = require('webpack-cfg');
 const moment = require('moment');
 const pkg = require('../package.json');
-const git = new GitRevisionPlugin({ lightweightTags: true });
 
-module.exports = webpackCfg('settings/*.js', lib => {
+const git = new GitRevisionPlugin({ lightweightTags: true });
+const cfg = webpackCfg('settings/*.js');
+
+// cfg.on('config', console.log);
+module.exports = cfg.setConfig(lib => {
   moment.locale();
 
   // ~ metadata ~
@@ -34,6 +37,7 @@ module.exports = webpackCfg('settings/*.js', lib => {
   lib.set('dev.sourceMap', '#cheap-module-eval-source-map');
   lib.set('dev.assetsPublicPath', '/');
   lib.set('dev.view.entry', 'bin/templates/index.pug');
+  lib.set('dev.entry.test', './dev.test.js');
   lib.set('dev.server.contentBase', '/');
   lib.set('dev.server.compress', true);
   lib.set('dev.server.stats', 'errors-only');

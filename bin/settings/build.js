@@ -38,6 +38,7 @@ module.exports = $ => commonTemplate($).cfg({
         commit: $('git.commithash'),
         homepage: $('package.homepage'),
         author: $('package.author'),
+        license: $('package.license'),
       }),
     }),
   ],

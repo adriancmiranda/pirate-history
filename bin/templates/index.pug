@@ -17,9 +17,8 @@ html(lang="pt-br")
   body.App(class=`${htmlWebpackPlugin.options.env || ''}`)
     h1 #{htmlWebpackPlugin.options.title}
 
-    //- Templates
-    section#App
-      p Content goes here. And some other content yet.
+    //- fixture
+    section#Fixture
 
     //- behaviors
     each chunk in htmlWebpackPlugin.files.chunks

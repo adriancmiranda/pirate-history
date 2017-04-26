@@ -40,15 +40,15 @@ pirate.history.dispatchEvent('init', onInit);
 ```
 
 
-## :black_circle: [Extension] The `changed` event
+## :black_circle: [Extension] The `change` event
 
 ```javascript
 function onChanged(event) {
   var state = event.state;
 }
-pirate.history.addEventListener('changed', onChanged);
-pirate.history.removeEventListener('changed', onChanged);
-pirate.history.dispatchEvent('changed', onChanged);
+pirate.history.addEventListener('change', onChanged);
+pirate.history.removeEventListener('change', onChanged);
+pirate.history.dispatchEvent('change', onChanged);
 ```
 
 
