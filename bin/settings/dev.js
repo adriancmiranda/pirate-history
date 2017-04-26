@@ -9,7 +9,7 @@ module.exports = $ => commonTemplate($).cfg('entry', [
   `webpack-dev-server/client?http://${$('dev.server.host')}:${$('dev.server.port')}`,
   'webpack/hot/only-dev-server',
 ], prependEntries).cfg('entry', [
-  $('cwd', $('path.source', $('dev.entry.test'))),
+  $('cwd', $('path.test', $('dev.entry.test'))),
 ], appendEntries).cfg({
   name: '[dev]',
   target: 'web',
@@ -26,7 +26,7 @@ module.exports = $ => commonTemplate($).cfg('entry', [
     new Html(Object.assign({}, $('view.data'), {
       env: JSON.parse($('dev.env.NODE_ENV')),
       title: `${$('package.name')} // ${$('package.description')}`,
-      template: `!!pug-loader!${$('dev.view.entry')}`,
+      template: `!!pug-loader!${$('path.test', $('dev.view.entry'))}`,
       minify: false,
       inject: false,
     })),

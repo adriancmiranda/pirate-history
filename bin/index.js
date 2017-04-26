@@ -35,8 +35,8 @@ module.exports = cfg.setConfig(lib => {
   lib.set('dev.env.NODE_ENV', '"development"');
   lib.set('dev.sourceMap', '#cheap-module-eval-source-map');
   lib.set('dev.assetsPublicPath', '/');
-  lib.set('dev.view.entry', 'bin/templates/index.pug');
-  lib.set('dev.entry.test', './dev.test.js');
+  lib.set('dev.view.entry', './dev-mode.pug');
+  lib.set('dev.entry.test', './dev-mode.js');
   lib.set('dev.server.contentBase', '/');
   lib.set('dev.server.compress', true);
   lib.set('dev.server.stats', 'errors-only');

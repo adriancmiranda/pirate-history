@@ -4,6 +4,7 @@ const pirateHistory = require('../../');
 
 const expect = chai.expect;
 const assert = chai.assert;
+
 describe('correct-history', function () {
 	const UI = {
 		render: function (html) {
