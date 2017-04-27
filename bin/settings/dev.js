@@ -5,11 +5,15 @@ const Html = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const commonTemplate = require('../templates');
 
-module.exports = $ => commonTemplate($).cfg('entry.devServerClient', [
+module.exports = $ => commonTemplate($)
+.cfg('entry[dev-cycle]', $('cwd', $('path.test'), $('dev.entry.test')))
+
+.cfg('entry', [
   `webpack-dev-server/client?http://${$('dev.server.host')}:${$('dev.server.port')}`,
   'webpack/hot/only-dev-server',
-  $('cwd', $('path.test', $('dev.entry.test'))),
-]).cfg({
+], prependEntries)
+
+.cfg({
   name: '[dev]',
   target: 'web',
   devtool: $('dev.sourceMap'),
@@ -29,8 +33,8 @@ module.exports = $ => commonTemplate($).cfg('entry.devServerClient', [
       minify: false,
       inject: false,
       chunksSortMode: (a, b) => {
-        const names = Object.keys($('script.entry'));
-        return names.indexOf(b.names[0]) - names.indexOf(a.names[0]);
+        const names = Object.keys($('script.entry')).concat('dev-cycle');
+        return names.indexOf(a.names[0]) - names.indexOf(b.names[0]);
       },
     })),
     new webpack.HotModuleReplacementPlugin({ quiet: true }),

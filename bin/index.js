@@ -7,6 +7,7 @@ const pkg = require('../package.json');
 const git = new GitRevisionPlugin({ lightweightTags: true });
 const cfg = webpackCfg('settings/*.js');
 
+cfg.on('config', console.log);
 module.exports = cfg.setConfig(lib => {
   moment.locale();
 
@@ -57,9 +58,9 @@ module.exports = cfg.setConfig(lib => {
   lib.set('build.bundleAnalyzer.report', process.env.npm_config_report);
 
   // ~ entry point ~
-  lib.set(`script.entry.${pkg.name}`, './index.js');
-  lib.set(`script.entry[${pkg.name}.hash]`, './hash.js');
-  lib.set(`script.entry[${pkg.name}.query]`, './query.js');
-  lib.set(`script.entry[${pkg.name}.state]`, './state.js');
   lib.set(`script.entry[${pkg.name}.memory]`, './memory.js');
+  lib.set(`script.entry[${pkg.name}.query]`, './query.js');
+  lib.set(`script.entry[${pkg.name}.hash]`, './hash.js');
+  lib.set(`script.entry[${pkg.name}.state]`, './state.js');
+  lib.set(`script.entry.${pkg.name}`, './index.js');
 });
