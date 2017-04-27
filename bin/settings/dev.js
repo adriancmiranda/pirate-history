@@ -28,6 +28,10 @@ module.exports = $ => commonTemplate($).cfg('entry.devServerClient', [
       template: `!!pug-loader!${$('path.test', $('dev.view.entry'))}`,
       minify: false,
       inject: false,
+      chunksSortMode: (a, b) => {
+        const names = Object.keys($('script.entry'));
+        return names.indexOf(b.names[0]) - names.indexOf(a.names[0]);
+      },
     })),
     new webpack.HotModuleReplacementPlugin({ quiet: true }),
     new webpack.NoEmitOnErrorsPlugin(),
