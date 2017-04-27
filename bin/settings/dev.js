@@ -33,7 +33,8 @@ module.exports = $ => commonTemplate($)
       minify: false,
       inject: false,
       chunksSortMode: (a, b) => {
-        const names = Object.keys($('script.entry')).concat('dev-cycle');
+        const devCycle = ['dev-cycle', 'main'];
+        const names = Object.keys($('script.entry')).concat(devCycle);
         return names.indexOf(a.names[0]) - names.indexOf(b.names[0]);
       },
     })),
