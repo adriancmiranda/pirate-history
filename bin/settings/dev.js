@@ -5,12 +5,11 @@ const Html = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const commonTemplate = require('../templates');
 
-module.exports = $ => commonTemplate($).cfg('entry', [
+module.exports = $ => commonTemplate($).cfg('entry.devServerClient', [
   `webpack-dev-server/client?http://${$('dev.server.host')}:${$('dev.server.port')}`,
   'webpack/hot/only-dev-server',
-], prependEntries).cfg('entry', [
   $('cwd', $('path.test', $('dev.entry.test'))),
-], appendEntries).cfg({
+]).cfg({
   name: '[dev]',
   target: 'web',
   devtool: $('dev.sourceMap'),

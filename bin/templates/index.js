@@ -1,9 +1,10 @@
 const formatter = require('eslint-friendly-formatter');
+const { contextEntries } = require('webpack-cfg/tools');
 const { baseTemplate } = require('webpack-cfg/templates');
 
 module.exports = $ => baseTemplate($).cfg({
   context: $('context'),
-  entry: $('script.entry'),
+  entry: contextEntries($('path.source'), $('script.entry')),
   output: {
     path: $('cwd', $('path.output.bundle')),
   },
