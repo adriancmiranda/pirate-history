@@ -22,7 +22,7 @@ module.exports = $ => commonTemplate($).cfg('entry.devServerClient', [
       'process.env': $('dev.env'),
       'process.type': '"renderer"',
     }),
-    new Html(Object.assign({}, $('view.data'), {
+    new Html(Object.assign({}, $('dev.view.data'), {
       env: JSON.parse($('dev.env.NODE_ENV')),
       title: `${$('package.name')} // ${$('package.description')}`,
       template: `!!pug-loader!${$('path.test', $('dev.view.entry'))}`,
