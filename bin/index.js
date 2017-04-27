@@ -5,9 +5,9 @@ const moment = require('moment');
 const pkg = require('../package.json');
 
 const git = new GitRevisionPlugin({ lightweightTags: true });
-const cfg = webpackCfg('settings/*.js');
+const app = webpackCfg('settings/*.js');
 
-module.exports = cfg.setConfig(lib => {
+module.exports = app.setConfig(lib => {
   moment.locale();
 
   // ~ metadata ~
@@ -26,17 +26,22 @@ module.exports = cfg.setConfig(lib => {
 
   // ~ entry ~
   lib.set('path.entry.script', '');
+  lib.set('path.entry[dev-cycle]', 'test/dev-cycle');
 
   // ~ output ~
   lib.set('path.output.bundle', 'dist');
   lib.set('path.output.script', '');
 
+  // ~ aliases ~
+  lib.set('alias.source', lib.res('path.source'));
+  lib.set('alias.index$', lib.res('cwd', 'index.js'));
+
   // ~ dev lifecycle ~
   lib.set('dev.env.NODE_ENV', '"development"');
   lib.set('dev.sourceMap', '#cheap-module-eval-source-map');
   lib.set('dev.assetsPublicPath', '/');
-  lib.set('dev.view.entry', './dev-cycle.pug');
-  lib.set('dev.script.entry', './dev-cycle.js');
+  lib.set('dev.cycle.view', './index.pug');
+  lib.set('dev.cycle.entry', './index.js');
   lib.set('dev.server.contentBase', '/');
   lib.set('dev.server.compress', true);
   lib.set('dev.server.stats', 'errors-only');

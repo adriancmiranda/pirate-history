@@ -23,7 +23,7 @@ module.exports = (config) => {
 		}],
 		preprocessors: {
 			'../source/**/*.js': ['webpack', 'sourcemap'],
-			'./specs/**/*.js': ['webpack', 'sourcemap'],
+			'./specs/**/*.spec.js': ['webpack', 'sourcemap'],
 			'./fixtures/**/*.html': ['html2js'],
 			'./fixtures/**/*.json': ['json_fixtures'],
 		},

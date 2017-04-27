@@ -13,13 +13,9 @@ html(lang="pt-br")
       link(rel="stylesheet", href=`${file}`)
     each file in (htmlWebpackPlugin.options.scripts || [])
       script(href="#{file}")
-
   body.App(class=`${htmlWebpackPlugin.options.env || ''}`)
-    h1 #{htmlWebpackPlugin.options.title}
-
-    //- fixture
+    header
+      h1 #{htmlWebpackPlugin.options.title}
     section#Fixture
-
-    //- behaviors
     each chunk in htmlWebpackPlugin.files.chunks
       script(src=`${chunk.entry}`)

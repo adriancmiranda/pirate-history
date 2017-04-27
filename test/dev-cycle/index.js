@@ -1,4 +1,4 @@
 /* eslint-disable */
-var pirateHistory = require('../source');
+var pirateHistory = require('index');
 
 console.log(pirateHistory());

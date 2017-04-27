@@ -8,7 +8,7 @@ module.exports = $ => commonTemplate($).cfg('entry', {
   'dev-cycle': [
     `webpack-dev-server/client?http://${$('dev.server.host')}:${$('dev.server.port')}`,
     'webpack/hot/only-dev-server',
-    $('cwd', $('path.test'), $('dev.script.entry')),
+    $('cwd', $('path.entry[dev-cycle]'), $('dev.cycle.entry')),
   ],
 }, v => v).cfg({
   name: '[dev]',
@@ -26,7 +26,7 @@ module.exports = $ => commonTemplate($).cfg('entry', {
     new Html(Object.assign({}, $('dev.view.data'), {
       env: JSON.parse($('dev.env.NODE_ENV')),
       title: `${$('package.name')} // ${$('package.description')}`,
-      template: `!!pug-loader!${$('path.test', $('dev.view.entry'))}`,
+      template: `!!pug-loader!${$('path.entry[dev-cycle]', $('dev.cycle.view'))}`,
       minify: false,
       inject: false,
       chunksSortMode: (a, b) => {
