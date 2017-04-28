@@ -65,10 +65,11 @@ module.exports = (config) => {
 			os_version: '10',
 			browser: 'chrome',
 			browser_version: '47.0',
+			flags: ['--no-sandbox'],
 		},
 	};
 
-	config.set({
+	const settings = {
 		customLaunchers,
 		basePath: '',
 		port: 9876,
@@ -76,6 +77,8 @@ module.exports = (config) => {
 		autoWatch: false,
 		singleRun: false,
 		concurrency: 2,
+		captureTimeout: 240000,
+		browserNoActivityTimeout: 240000,
 		browserDisconnectTimeout: 10000,
 		browserDisconnectTolerance: 3,
 		browsers: ['PhantomJS'],
@@ -116,15 +119,17 @@ module.exports = (config) => {
 				{ type: 'text-summary' },
 			],
 		},
-	});
+	};
 
 	if (process.env.TRAVIS) {
-		config.browserStack.browsers = Object.keys(customLaunchers);
-		config.browserStack.build = process.env.TRAVIS_BUILD_NUMBER;
-		config.browserStack.name = process.env.TRAVIS_JOB_NUMBER;
+		settings.browserStack.browsers = Object.keys(customLaunchers);
+		settings.browserStack.build = process.env.TRAVIS_BUILD_NUMBER;
+		settings.browserStack.name = process.env.TRAVIS_JOB_NUMBER;
 	} else if (process.env.APPVEYOR) {
-		config.browserStack.browsers = Object.keys(customLaunchers);
-		config.browserStack.build = process.env.APPVEYOR_BUILD_NUMBER;
-		config.browserStack.name = process.env.APPVEYOR_JOB_NUMBER;
+		settings.browserStack.browsers = Object.keys(customLaunchers);
+		settings.browserStack.build = process.env.APPVEYOR_BUILD_NUMBER;
+		settings.browserStack.name = process.env.APPVEYOR_JOB_NUMBER;
 	}
+
+	config.set(settings);
 };
