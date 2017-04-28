@@ -118,7 +118,7 @@ module.exports = (config) => {
 		},
 	});
 
-	if (process.env.TRAVIS) {
+	if (process.env.TRAVIS || process.env.APPVEYOR) {
 		config.browserStack.browsers = Object.keys(customLaunchers);
 		config.browserStack.build = process.env.TRAVIS_BUILD_NUMBER;
 		config.browserStack.name = process.env.TRAVIS_JOB_NUMBER;
