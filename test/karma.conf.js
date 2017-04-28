@@ -118,9 +118,13 @@ module.exports = (config) => {
 		},
 	});
 
-	if (process.env.TRAVIS || process.env.APPVEYOR) {
+	if (process.env.TRAVIS) {
 		config.browserStack.browsers = Object.keys(customLaunchers);
 		config.browserStack.build = process.env.TRAVIS_BUILD_NUMBER;
 		config.browserStack.name = process.env.TRAVIS_JOB_NUMBER;
+	} else if (process.env.APPVEYOR) {
+		config.browserStack.browsers = Object.keys(customLaunchers);
+		config.browserStack.build = process.env.APPVEYOR_BUILD_NUMBER;
+		config.browserStack.name = process.env.APPVEYOR_JOB_NUMBER;
 	}
 };
