@@ -112,6 +112,11 @@ module.exports = (config) => {
 			username: process.env.BROWSERSTACK_USERNAME,
 			accessKey: process.env.BROWSERSTACK_KEY,
 		},
+		client: {
+			mocha: {
+				reporter: 'html',
+			},
+		},
 		coverageReporter: {
 			dir: 'test/coverage',
 			reporters: [
