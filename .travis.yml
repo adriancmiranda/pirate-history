@@ -8,8 +8,8 @@ node_js:
 
 branches:
   only:
-    - /^greenkeeper-/
     - master
+    - /^greenkeeper-/
 
 matrix:
   fast_finish: true
