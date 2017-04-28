@@ -65,6 +65,7 @@ module.exports = (config) => {
 			os_version: '10',
 			browser: 'chrome',
 			browser_version: '47.0',
+			flags: ['--no-sandbox'],
 		},
 	};
 
