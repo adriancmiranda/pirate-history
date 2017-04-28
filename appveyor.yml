@@ -4,6 +4,7 @@
 branches:
   only:
     - master
+    - /^greenkeeper-/
 
 init:
   - git config --global core.autocrlf input
