@@ -19,7 +19,7 @@ describe('correct-history', function () {
 	};
 
 	before(function () {
-		fixture.setBase('fixtures');
+		fixture.setBase('test/fixtures');
 		this.lib = pirateHistory();
 	});
 

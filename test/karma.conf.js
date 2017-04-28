@@ -71,7 +71,7 @@ module.exports = (config) => {
 
 	const settings = {
 		customLaunchers,
-		basePath: '',
+		basePath: '../',
 		port: 9876,
 		colors: true,
 		autoWatch: false,
@@ -85,20 +85,20 @@ module.exports = (config) => {
 		frameworks: ['mocha', 'sinon-chai', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
 		files: [{
-			pattern: './fixtures/**/*.fixture.*',
+			pattern: 'test/fixtures/**/*.fixture.*',
 			watched: true,
 		}, {
-			pattern: './specs/**/*.spec.js',
+			pattern: 'test/specs/**/*.spec.js',
 			watched: true,
 		}, {
-			pattern: '../source/**/*.js',
+			pattern: 'source/**/*.js',
 			watched: true,
 		}],
 		preprocessors: {
-			'../source/**/*.js': ['webpack', 'sourcemap'],
-			'./specs/**/*.spec.js': ['webpack', 'sourcemap'],
-			'./fixtures/**/*.html': ['html2js'],
-			'./fixtures/**/*.json': ['json_fixtures'],
+			'source/**/*.js': ['webpack', 'sourcemap'],
+			'test/specs/**/*.spec.js': ['webpack', 'sourcemap'],
+			'test/fixtures/**/*.html': ['html2js'],
+			'test/fixtures/**/*.json': ['json_fixtures'],
 		},
 		jsonFixturesPreprocessor: {
 			variableName: '__json__',
@@ -113,7 +113,7 @@ module.exports = (config) => {
 			accessKey: process.env.BROWSERSTACK_KEY,
 		},
 		coverageReporter: {
-			dir: './coverage',
+			dir: 'test/coverage',
 			reporters: [
 				{ type: 'lcov', subdir: '.' },
 				{ type: 'text-summary' },
