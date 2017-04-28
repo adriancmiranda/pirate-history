@@ -15,6 +15,9 @@ matrix:
   fast_finish: true
   include:
     - os: linux
+      node_js: "stable"
+      env: JOB_PART=test
+    - os: linux
       node_js: "7"
       env: JOB_PART=test
     - os: linux
