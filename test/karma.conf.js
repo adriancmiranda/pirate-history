@@ -4,6 +4,7 @@ const webpackConfig = bin({ run: 'test' });
 
 /*!
 |* This is a karma config file. For more details
+|* @see https://github.com/karma-runner/karma-coverage/blob/master/docs/configuration.md
 |* @see http://karma-runner.github.io/0.13/config/configuration-file.html
 |* @see http://karma-runner.github.io/0.13/config/browsers.html
 |* @see https://github.com/webpack/karma-webpack

@@ -8,6 +8,13 @@ branches:
     - master
     - /^greenkeeper-/
 
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email: false
+
 matrix:
   fast_finish: true
   include:
@@ -21,13 +28,18 @@ matrix:
       node_js: "6"
       env: JOB_PART=test
 
-before_script:
-  - npm install yarn -g
-  - yarn install
-
 before_install:
+  - npm i -g npm@latest
   - nvm --version
   - node --version
 
+before_script:
+  - npm prune
+  - npm install yarn -g
+  - yarn install
+
 script:
   - npm run $JOB_PART:travis
+
+after_sucess:
+  - npm run report-coverage

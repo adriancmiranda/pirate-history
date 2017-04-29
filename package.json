@@ -11,7 +11,7 @@
   "readmeFilename": "README.md",
   "license": "Unlicense",
   "scripts": {
-    "report-coverage": "codecov",
+    "report-coverage": "codecov -f test/coverage/coverage-final.json",
     "upgrade": "ncu -a --loglevel verbose --packageFile package.json && npm i",
     "dev": "webpack-dev-server --config bin --env.run=dev --env.dev",
     "build": "webpack --config bin --env.run=build",
