@@ -11,6 +11,7 @@
   "readmeFilename": "README.md",
   "license": "Unlicense",
   "scripts": {
+    "report-coverage": "codecov",
     "upgrade": "ncu -a --loglevel verbose --packageFile package.json && npm i",
     "dev": "webpack-dev-server --config bin --env.run=dev --env.dev",
     "build": "webpack --config bin --env.run=build",
@@ -33,8 +34,10 @@
     "chai": "~3.5.0",
     "child-process-promise": "~2.2.1",
     "clean-webpack-plugin": "~0.1.16",
+    "codecov": "~2.1.0",
     "compression-webpack-plugin": "~0.4.0",
     "conventional-commit-types": "~2.1.0",
+    "cross-env": "4.0.0",
     "eslint": "~3.19.0",
     "eslint-config-airbnb-base": "~11.1.3",
     "eslint-friendly-formatter": "~2.0.7",
