@@ -45,21 +45,36 @@ module.exports = (config) => {
 			browser: 'iphone',
 			real_mobile: false,
 		},
-		bs_safari: {
+		bs_safari_mac: {
 			base: 'BrowserStack',
 			os: 'OS X',
-			os_version: 'El Capitan',
+			os_version: 'Sierra',
 			browser: 'safari',
 			browser_version: '9.0',
 		},
-		bs_firefox: {
+		bs_firefox_mac: {
+			base: 'BrowserStack',
+			os: 'OS X',
+			os_version: 'Sierra',
+			browser: 'firefox',
+			browser_version: '21.0',
+		},
+		bs_firefox_win: {
 			base: 'BrowserStack',
 			os: 'Windows',
 			os_version: '10',
 			browser: 'firefox',
 			browser_version: '43.0',
 		},
-		bs_chrome: {
+		bs_chrome_mac: {
+			base: 'BrowserStack',
+			os: 'Windows',
+			os_version: 'Sierra',
+			browser: 'chrome',
+			browser_version: '47.0',
+			flags: ['--no-sandbox'],
+		},
+		bs_chrome_win: {
 			base: 'BrowserStack',
 			os: 'Windows',
 			os_version: '10',
@@ -71,6 +86,7 @@ module.exports = (config) => {
 
 	const settings = {
 		customLaunchers,
+		logLevel: config.LOG_INFO,
 		basePath: '../',
 		port: 9876,
 		colors: true,
