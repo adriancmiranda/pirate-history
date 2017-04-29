@@ -127,6 +127,9 @@ module.exports = (config) => {
 			project: pkg.name,
 			username: process.env.BROWSERSTACK_USERNAME,
 			accessKey: process.env.BROWSERSTACK_KEY,
+			captureTimeout: 120,
+			retryLimit: 3,
+			timeout: 300,
 		},
 		client: {
 			mocha: {
