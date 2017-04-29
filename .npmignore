@@ -4,3 +4,4 @@ test/
 **/.*
 package.json
 appveyor.yml
+codecov.yml
