@@ -6,6 +6,7 @@
 [![depsci][depsci]][depsci-url]
 [![travis][travis]][travis-url]
 [![appveyor][appveyor]][appveyor-url]
+[![codecov][codecov]][codecov-url]
 [![greenkeeper][greenkeeper]][greenkeeper-url]
 
 ## ☠ There's nothing for you here yet. ☠
@@ -35,6 +36,9 @@
 
 [appveyor]: https://ci.appveyor.com/api/projects/status/hucvow1n0t3q3le3/branch/master?svg=true
 [appveyor-url]: https://ci.appveyor.com/project/adriancmiranda/pirate-history/branch/master
+
+[codecov]: https://codecov.io/gh/adriancmiranda/pirate-history/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/adriancmiranda/pirate-history
 
 [greenkeeper]: https://badges.greenkeeper.io/adriancmiranda/pirate-history.svg
 [greenkeeper-url]: https://greenkeeper.io/
