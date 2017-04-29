@@ -95,7 +95,7 @@ module.exports = (config) => {
 			watched: true,
 		}],
 		preprocessors: {
-			'source/**/*.js': ['webpack', 'sourcemap'],
+			'source/**/*.js': ['webpack', 'sourcemap', 'coverage'],
 			'test/specs/**/*.spec.js': ['webpack', 'sourcemap'],
 			'test/fixtures/**/*.html': ['html2js'],
 			'test/fixtures/**/*.json': ['json_fixtures'],
