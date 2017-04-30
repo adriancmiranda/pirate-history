@@ -7,7 +7,6 @@
 [![travis][travis]][travis-url]
 [![appveyor][appveyor]][appveyor-url]
 [![codecov][codecov]][codecov-url]
-[![greenkeeper][greenkeeper]][greenkeeper-url]
 [![license][license]][license-url]
 
 ## ☠ There's nothing for you here yet. ☠
