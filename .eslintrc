@@ -21,6 +21,7 @@ settings:
 rules:
   no-debugger: 2
   no-tabs: off
+  vars-on-top: off
 
   import/extensions:
     - error

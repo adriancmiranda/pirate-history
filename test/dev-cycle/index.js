@@ -12,7 +12,16 @@ var log = ui.createInput({
 		marginTop: '10px',
 		display: 'block',
 		width: '100%',
-	}
+	},
+});
+var removeAllEvents = ui.createButton({
+	value: 'remove all events',
+	style: {
+		marginTop: '10px',
+	},
+	onclick: function () {
+		history.removeEventListener();
+	},
 });
 var section = ui.prepend(ui.createElement('pre', {
 	style: {
@@ -53,7 +62,7 @@ function register(state, index, states) {
 	}));
 }
 
-history.on(history.PopStateEvent, function (event) {
+history.addEventListener(history.PopStateEvent, function (event) {
 	updateContent(event.state);
 });
 
@@ -67,6 +76,7 @@ history.onpopstate = function (event) {
 
 states.forEach(route, this);
 ui.append(log);
+ui.append(removeAllEvents);
 
 history.replaceState(states[0], states[0].title, states[0].url);
 updateContent(states[0]);
