@@ -3,32 +3,32 @@ module.exports = [{
 	name: 'home',
 	title: 'Home',
 	url: ['', '/', '/index', '/main', '/home'],
-	content: 'Home content',
-	state: {
+	template: 'Home content',
+	data: {
 		roles: [],
 	},
 }, {
 	name: 'news',
 	title: 'News',
 	url: '/news',
-	content: 'News content',
-	state: {
+	template: 'News content',
+	data: {
 		roles: [],
 	},
 }, {
 	name: 'about',
 	title: 'About',
 	url: '/about',
-	content: 'About content',
-	state: {
+	template: 'About content',
+	data: {
 		roles: [],
 	},
 }, {
 	name: 'contact',
 	title: 'Contact',
 	url: '/contact',
-	content: 'Contact content',
-	state: {
+	template: 'Contact content',
+	data: {
 		roles: [],
 	},
 }];

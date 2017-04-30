@@ -1,49 +1,58 @@
 /* eslint-disable */
 var history = require('index');
-var routes = require('./routes');
+var states = require('./states');
 var UI = require('./ui');
 
 var ui = new UI('#fixture');
-var info = ui.prepend(ui.createElement('pre', {
-	innerHTML: 'Content',
+var content = ui.prepend(ui.createElement('pre', {
 	style: {
 		color: '#333',
 		marginBottom: '10px',
 	},
 }));
 
-function state(route, index, routes) {
-	if (Array.isArray(route.url)) {
-		return route.url.forEach(function (url) {
-			route.title = url || route.name;
-			route.url = url;
-			state(route, index, routes);
-		}, this);
-	}
-	register(route, index, routes);
+function updateContent(state) {
+	document.title = state.title;
+	content.innerHTML = [state.template, 'url: ' + state.url].join('<br>');
 }
 
-function register(route, index, routes) {
+function route(state, index, states) {
+	if (Array.isArray(state.url)) {
+		return state.url.forEach(function (url) {
+			state.title = url || state.name;
+			state.url = url;
+			route(state, index, states);
+		}, this);
+	}
+	register(state, index, states);
+}
+
+function register(state, index, states) {
 	ui.append(ui.createButton({
-		dataset: route,
-		value: route.title,
+		dataset: state,
+		value: state.title,
 		style: {
-			marginRight: index === routes.length - 1 ? '0': '10px',
+			marginRight: index === states.length - 1 ? '0': '10px',
 		},
 		onclick: function (event) {
-			var route = JSON.parse(JSON.stringify(this.dataset));
-			history.pushState(route.state, route.title, route.url);
-			info.innerHTML = [route.content, 'url: ' + route.url].join(' ');
+			var evt = event || window.event;
+			var state = JSON.parse(JSON.stringify(evt.currentTarget.dataset));
+			history.pushState(state, state.title, state.url);
+			updateContent(state);
 		},
 	}));
 }
 
+history.addEventListener('popstate', function (event) {
+	updateContent(event.state);
+});
+
 history.onpopstate = function (event) {
-	console.log('history.onpopstate:', event);
+	console.log('event.target === window', event.target === window);
+	console.log('event.currentTarget === history', event.currentTarget === history);
+	console.log('length:', event.currentTarget.length, history.length, window.history.length);
 };
 
-history.onhashchange = function (event) {
-	console.log('history.onhashchange:', event);
-};
-
-routes.forEach(state, this);
+states.forEach(route, this);
+history.replaceState(states[0], states[0].title, states[0].url);
+updateContent(states[0]);

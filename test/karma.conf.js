@@ -98,7 +98,7 @@ module.exports = (config) => {
 		browserNoActivityTimeout: 240000,
 		browserDisconnectTimeout: 10000,
 		browserDisconnectTolerance: 3,
-		browsers: ['PhantomJS'],
+		browsers: ['Chrome'],
 		frameworks: ['mocha', 'sinon-chai', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
 		files: [{

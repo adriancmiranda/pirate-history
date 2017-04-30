@@ -20,7 +20,6 @@ describe('correct-history', function () {
 
 	before(function () {
 		fixture.setBase('test/fixtures');
-		this.lib = pirateHistory();
 	});
 
 	beforeEach(function () {
@@ -34,7 +33,7 @@ describe('correct-history', function () {
 
 	it('should pass', function () {
 		expect(pirateHistory).to.be.instanceOf(Function);
-		expect(this.lib).to.be.a('string');
-		assert.equal(this.lib, '☠  There\'s nothing for you here yet ☠');
+		expect(pirateHistory()).to.be.a('string');
+		assert.equal(pirateHistory(), '☠  There\'s nothing for you here yet ☠');
 	});
 });
