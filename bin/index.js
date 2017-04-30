@@ -40,7 +40,7 @@ module.exports = app.setConfig(lib => {
   lib.set('dev.env.NODE_ENV', '"development"');
   lib.set('dev.sourceMap', '#cheap-module-eval-source-map');
   lib.set('dev.assetsPublicPath', '/');
-  lib.set('dev.cycle.view', './index.pug');
+  lib.set('dev.cycle.view', './ui/index.pug');
   lib.set('dev.cycle.entry', './index.js');
   lib.set('dev.server.historyApiFallback', true);
   lib.set('dev.server.contentBase', '/');
