@@ -4,8 +4,7 @@ var states = require('./states');
 var UI = require('./ui');
 
 var ui = new UI('#fixture');
-var log = ui.createInput({
-	type: 'textarea',
+var log = ui.createTextArea({
 	value: 'hasStateList: ' + history.hasStateList,
 	readOnly: true,
 	style: {
@@ -51,7 +50,7 @@ function register(state, index, states) {
 		dataset: state,
 		value: state.title,
 		style: {
-			marginRight: index === states.length - 1 ? '0': '10px',
+			marginRight: index === states.length - 1 ? '0' : '10px',
 		},
 		onclick: function (event) {
 			var evt = event || window.event;
