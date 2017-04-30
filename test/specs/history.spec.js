@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import pirate from '../../';
+import pirate from 'index';
 
 describe('correct-history', () => {
 	const UI = {
@@ -29,5 +29,6 @@ describe('correct-history', () => {
 
 	it('should pass', () => {
 		expect(pirate).to.be.instanceOf(Object);
+		expect(pirate.pushState).to.be.instanceOf(Function);
 	});
 });
