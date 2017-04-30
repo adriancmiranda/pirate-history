@@ -4,6 +4,7 @@ const webpackConfig = bin({ run: 'test' });
 
 /*!
 |* This is a karma config file. For more details
+|* @see https://www.browserstack.com/list-of-browsers-and-platforms?product=automate
 |* @see https://github.com/karma-runner/karma-coverage/blob/master/docs/configuration.md
 |* @see http://karma-runner.github.io/0.13/config/configuration-file.html
 |* @see http://karma-runner.github.io/0.13/config/browsers.html
@@ -11,26 +12,13 @@ const webpackConfig = bin({ run: 'test' });
 `*/
 module.exports = (config) => {
 	const customLaunchers = {
-		bs_ie9: {
+		bs_mobile_chrome: {
 			base: 'BrowserStack',
-			os: 'Windows',
-			os_version: 'XP',
-			browser: 'ie',
-			browser_version: '9.0',
-		},
-		bs_ie10: {
-			base: 'BrowserStack',
-			os: 'Windows',
-			os_version: '8',
-			browser: 'ie',
-			browser_version: '10.0',
-		},
-		bs_ie11: {
-			base: 'BrowserStack',
-			os: 'Windows',
-			os_version: '10',
-			browser: 'ie',
-			browser_version: '11.0',
+			os: 'ios',
+			os_version: '9.3',
+			browser: 'chrome',
+			browser_version: '5.5.372',
+			real_mobile: false,
 		},
 		bs_mobile_safari_8: {
 			base: 'BrowserStack',
@@ -46,42 +34,63 @@ module.exports = (config) => {
 			browser: 'iphone',
 			real_mobile: false,
 		},
-		bs_safari_mac: {
+		bs_win_chrome: {
 			base: 'BrowserStack',
-			os: 'OS X',
-			os_version: 'Sierra',
-			browser: 'safari',
-			browser_version: '9.0',
+			os: 'Windows',
+			os_version: '10',
+			browser: 'chrome',
+			browser_version: '47.0',
+			flags: ['--no-sandbox'],
 		},
-		bs_firefox_mac: {
-			base: 'BrowserStack',
-			os: 'OS X',
-			os_version: 'Sierra',
-			browser: 'firefox',
-			browser_version: '21.0',
-		},
-		bs_firefox_win: {
+		bs_win_firefox: {
 			base: 'BrowserStack',
 			os: 'Windows',
 			os_version: '10',
 			browser: 'firefox',
 			browser_version: '43.0',
 		},
-		bs_chrome_mac: {
+		bs_win_ie9: {
 			base: 'BrowserStack',
 			os: 'Windows',
+			os_version: 'XP',
+			browser: 'ie',
+			browser_version: '9.0',
+		},
+		bs_win_ie10: {
+			base: 'BrowserStack',
+			os: 'Windows',
+			os_version: '8',
+			browser: 'ie',
+			browser_version: '10.0',
+		},
+		bs_win_ie11: {
+			base: 'BrowserStack',
+			os: 'Windows',
+			os_version: '10',
+			browser: 'ie',
+			browser_version: '11.0',
+		},
+		bs_mac_chrome: {
+			base: 'BrowserStack',
+			os: 'OS X',
 			os_version: 'Sierra',
 			browser: 'chrome',
 			browser_version: '47.0',
 			flags: ['--no-sandbox'],
 		},
-		bs_chrome_win: {
+		bs_mac_firefox: {
 			base: 'BrowserStack',
-			os: 'Windows',
-			os_version: '10',
-			browser: 'chrome',
-			browser_version: '47.0',
-			flags: ['--no-sandbox'],
+			os: 'OS X',
+			os_version: 'Sierra',
+			browser: 'firefox',
+			browser_version: '21.0',
+		},
+		bs_mac_safari: {
+			base: 'BrowserStack',
+			os: 'OS X',
+			os_version: 'Sierra',
+			browser: 'safari',
+			browser_version: '9.0',
 		},
 	};
 
@@ -98,7 +107,7 @@ module.exports = (config) => {
 		browserNoActivityTimeout: 240000,
 		browserDisconnectTimeout: 10000,
 		browserDisconnectTolerance: 3,
-		browsers: ['Chrome'],
+		browsers: ['PhantomJS'],
 		frameworks: ['mocha', 'sinon-chai', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
 		files: [{
