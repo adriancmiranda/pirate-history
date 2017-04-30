@@ -1,9 +1,10 @@
 'use strict';
 
 var pirate = {};
+var ua = navigator.userAgent;
 
-function isValidPopStateEvent(event) {
-	var isChromeIOS = navigator.userAgent.indexOf('CriOS') > -1;
+function shouldEmitPopStateEvent(event) {
+	var isChromeIOS = ua.indexOf('CriOS') > -1;
 	return event.state || isChromeIOS;
 }
 
@@ -18,14 +19,18 @@ function emitCallbackEvent(callback, event) {
 	}
 }
 
+function emitPopStateEvent(callback, state) {
+	emitCallbackEvent(callback, state);
+}
+
 function onPopState(callback, event) {
-	if (isValidPopStateEvent(event)) {
-		emitCallbackEvent(callback, event.state);
+	if (shouldEmitPopStateEvent(event)) {
+		emitPopStateEvent(callback, event);
 	}
 }
 
 function onHashChange(callback) {
-	emitCallbackEvent(callback, pirate.state);
+	emitPopStateEvent(callback, pirate);
 }
 
 Object.defineProperty(pirate, 'onhashchange', {
@@ -64,12 +69,20 @@ Object.defineProperty(pirate, 'state', {
 	}
 });
 
-pirate.addEventListener = function addEventListener(event, listener) {
-	return window.addEventListener(event, listener, false);
+Object.defineProperty(pirate, 'hasStateList', {
+	get: function hasStateList() {
+		return /Chrome|Windows\sPhone/.test(ua) &&
+		!/Mobile\sSafari|Android\s(2\..+|4\.0)/g.test(ua) &&
+		window.history && 'pushState' in window.history;
+	}
+});
+
+pirate.addEventListener = function addEventListener(event, listener, options) {
+	return window.addEventListener(event, listener, options);
 };
 
-pirate.removeEventListener = function removeEventListener(event, listener) {
-	return window.removeEventListener(event, listener, false);
+pirate.removeEventListener = function removeEventListener(event, listener, options) {
+	return window.removeEventListener(event, listener, options);
 };
 
 pirate.dispatchEvent = function dispatchEvent(event) {

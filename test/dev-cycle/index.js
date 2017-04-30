@@ -4,6 +4,16 @@ var states = require('./states');
 var UI = require('./ui');
 
 var ui = new UI('#fixture');
+var log = ui.createInput({
+	type: 'textarea',
+	value: 'hasStateList: ' + history.hasStateList,
+	readOnly: true,
+	style: {
+		marginTop: '10px',
+		display: 'block',
+		width: '100%',
+	}
+});
 var section = ui.prepend(ui.createElement('pre', {
 	style: {
 		color: '#333',
@@ -54,6 +64,7 @@ history.onpopstate = function (event) {
 };
 
 states.forEach(route, this);
+ui.append(log);
 
 history.replaceState(states[0], states[0].title, states[0].url);
 updateContent(states[0]);
