@@ -6,3 +6,6 @@ globals:
   fixture: true
   expect: true
   sinon: true
+
+rules:
+  func-names: off

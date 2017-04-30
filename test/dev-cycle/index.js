@@ -53,14 +53,16 @@ function register(state, index, states) {
 	}));
 }
 
-history.addEventListener('popstate', function (event) {
+history.on(history.PopStateEvent, function (event) {
 	updateContent(event.state);
 });
 
 history.onpopstate = function (event) {
 	console.log('event.target === window', event.target === window);
 	console.log('event.currentTarget === history', event.currentTarget === history);
-	console.log('length:', event.currentTarget.length, history.length, window.history.length);
+	console.log('event.currentTarget.length:', event.currentTarget.length);
+	console.log('window.history.length:', window.history.length);
+	console.log('history.length:', history.length);
 };
 
 states.forEach(route, this);

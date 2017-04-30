@@ -2,10 +2,15 @@
 
 var pirate = {};
 var ua = navigator.userAgent;
+var HashChangeEvent = 'hashchange';
+var HashChangeHook = 'on' + HashChangeEvent;
+var PopStateEvent = 'popstate';
+var PopStateHook = 'on' + PopStateEvent;
 
 function shouldEmitPopStateEvent(event) {
-	var isChromeIOS = ua.indexOf('CriOS') > -1;
-	return event.state || isChromeIOS;
+	var isChromeFromIOS = ua.indexOf('CriOS') > -1;
+	var hasState = typeof event.state === 'undefined';
+	return hasState || isChromeFromIOS;
 }
 
 function emitCallbackEvent(callback, event) {
@@ -33,21 +38,21 @@ function onHashChange(callback) {
 	emitPopStateEvent(callback, pirate);
 }
 
-Object.defineProperty(pirate, 'onhashchange', {
+Object.defineProperty(pirate, HashChangeHook, {
 	set: function setOnHashChange(run) {
-		window.onhashchange = onHashChange.bind(pirate, run);
+		window[HashChangeHook] = onHashChange.bind(pirate, run);
 	},
 	get: function getOnHashChange() {
-		return window.onhashchange;
+		return window[HashChangeHook];
 	}
 });
 
-Object.defineProperty(pirate, 'onpopstate', {
+Object.defineProperty(pirate, PopStateHook, {
 	set: function setOnPopState(run) {
-		window.onpopstate = onPopState.bind(pirate, run);
+		window[PopStateHook] = onPopState.bind(pirate, run);
 	},
 	get: function getOnPopState() {
-		return window.onpopstate;
+		return window[PopStateHook];
 	}
 });
 
@@ -77,17 +82,44 @@ Object.defineProperty(pirate, 'hasStateList', {
 	}
 });
 
+Object.defineProperty(pirate, 'HashChangeEvent', {
+	get: function getHashChangeEvent() {
+		return HashChangeEvent;
+	}
+});
+
+Object.defineProperty(pirate, 'HashChangeHook', {
+	get: function getHashChangeHook() {
+		return HashChangeHook;
+	}
+});
+
+Object.defineProperty(pirate, 'PopStateEvent', {
+	get: function getPopStateEvent() {
+		return PopStateEvent;
+	}
+});
+
+Object.defineProperty(pirate, 'PopStateHook', {
+	get: function getPopStateHook() {
+		return PopStateHook;
+	}
+});
+
 pirate.addEventListener = function addEventListener(event, listener, options) {
 	return window.addEventListener(event, listener, options);
 };
+pirate.on = pirate.addEventListener;
 
 pirate.removeEventListener = function removeEventListener(event, listener, options) {
 	return window.removeEventListener(event, listener, options);
 };
+pirate.off = pirate.removeEventListener;
 
 pirate.dispatchEvent = function dispatchEvent(event) {
 	return window.dispatchEvent(event);
 };
+pirate.trigger = pirate.dispatchEvent;
 
 pirate.pushState = function pushState(state, title, url) {
 	return window.history.pushState(state, title, url);

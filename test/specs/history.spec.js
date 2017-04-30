@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 const chai = require('chai');
 const pirate = require('../../');
 
