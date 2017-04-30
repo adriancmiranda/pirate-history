@@ -1,5 +1,5 @@
 /* eslint-disable */
-module.exports = [{
+export default [{
 	name: 'home',
 	title: 'Home',
 	url: ['', '/', '/index', '/main', '/home'],

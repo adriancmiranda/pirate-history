@@ -1,55 +1,53 @@
 /*!
  * this script is just for test purposes.
  */
-/* eslint-disable */
-function UI(selector) {
-	this.container = document.querySelector(selector);
-}
+export default class UI {
+	constructor(selector) {
+		this.container = document.querySelector(selector);
+	}
 
-UI.prototype = {
-	createElement: function (tagName, options) {
-		var element = document.createElement(tagName);
-		Object.keys(options || {}).forEach(function (key) {
-			var attr = options[key];
+	createElement(tagName, options) {
+		const element = document.createElement(tagName);
+		Object.keys(options || {}).forEach((key) => {
+			const attr = options[key];
 			if (attr === Object(attr) && typeof attr !== 'function') {
-				return Object.keys(attr).forEach(function (prop) {
+				Object.keys(attr).forEach((prop) => {
 					if (attr[prop] === Object(attr[prop])) {
 						element[key][prop] = JSON.stringify(attr[prop], null, 0);
 					} else {
 						element[key][prop] = attr[prop];
 					}
 				});
+			} else {
+				element[key] = attr;
 			}
-			element[key] = attr;
 		}, this);
 		return element;
-	},
+	}
 
-	createInput: function (options) {
+	createInput(options) {
 		return this.createElement('input', Object.assign({}, options));
-	},
+	}
 
-	createTextArea: function (options) {
+	createTextArea(options) {
 		return this.createInput(Object.assign({}, options, {
 			type: 'textarea',
 		}));
-	},
+	}
 
-	createButton: function (options) {
+	createButton(options) {
 		return this.createInput(Object.assign({}, options, {
 			type: 'button',
 		}));
-	},
+	}
 
-	prepend: function (ui) {
+	prepend(ui) {
 		this.container.prepend(ui);
 		return ui;
-	},
+	}
 
-	append: function (ui) {
+	append(ui) {
 		this.container.append(ui);
 		return ui;
-	},
-};
-
-module.exports = UI;
+	}
+}

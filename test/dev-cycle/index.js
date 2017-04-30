@@ -1,11 +1,12 @@
-/* eslint-disable */
-var history = require('index');
-var states = require('./states');
-var UI = require('./ui');
+/* eslint-disable no-console */
+import history from 'index';
+import states from './states';
+import UI from './ui';
 
-var ui = new UI('#fixture');
-var log = ui.createTextArea({
-	value: 'hasStateList: ' + history.hasStateList,
+const ui = new UI('#fixture');
+
+const log = ui.createTextArea({
+	value: `hasStateList: ${history.hasStateList}`,
 	readOnly: true,
 	style: {
 		marginTop: '10px',
@@ -13,16 +14,18 @@ var log = ui.createTextArea({
 		width: '100%',
 	},
 });
-var removeAllEvents = ui.createButton({
+
+const removeAllEvents = ui.createButton({
 	value: 'remove all events',
 	style: {
 		marginTop: '10px',
 	},
-	onclick: function () {
+	onclick() {
 		history.removeEventListener();
 	},
 });
-var section = ui.prepend(ui.createElement('pre', {
+
+const section = ui.prepend(ui.createElement('pre', {
 	style: {
 		color: '#333',
 		marginBottom: '10px',
@@ -31,41 +34,40 @@ var section = ui.prepend(ui.createElement('pre', {
 
 function updateContent(state) {
 	document.title = state.title;
-	section.innerHTML = [state.template, 'url: ' + state.url].join('<br>');
+	section.innerHTML = [state.template, `url: ${state.url}`].join('<br>');
 }
 
-function route(state, index, states) {
-	if (Array.isArray(state.url)) {
-		return state.url.forEach(function (url) {
-			state.title = url || state.name;
-			state.url = url;
-			route(state, index, states);
-		}, this);
-	}
-	register(state, index, states);
-}
-
-function register(state, index, states) {
+function register(state, index, stateList) {
 	ui.append(ui.createButton({
 		dataset: state,
 		value: state.title,
 		style: {
-			marginRight: index === states.length - 1 ? '0' : '10px',
+			marginRight: index === stateList.length - 1 ? '0' : '10px',
 		},
-		onclick: function (event) {
-			var evt = event || window.event;
-			var state = JSON.parse(JSON.stringify(evt.currentTarget.dataset));
-			history.pushState(state, state.title, state.url);
-			updateContent(state);
+		onclick(event) {
+			const evt = event || window.event;
+			const stateObject = JSON.parse(JSON.stringify(evt.currentTarget.dataset));
+			history.pushState(stateObject, stateObject.title, stateObject.url);
+			updateContent(stateObject);
 		},
 	}));
 }
 
-history.addEventListener(history.PopStateEvent, function (event) {
+function route(state, index, stateList) {
+	if (Array.isArray(state.url)) {
+		state.url.forEach((url) => {
+			state.title = url || state.name;
+			state.url = url;
+			route(state, index, stateList);
+		}, this);
+	} else register(state, index, stateList);
+}
+
+history.addEventListener(history.PopStateEvent, (event) => {
 	updateContent(event.state);
 });
 
-history.onpopstate = function (event) {
+history.onpopstate = (event) => {
 	console.log('event.target === window', event.target === window);
 	console.log('event.currentTarget === history', event.currentTarget === history);
 	console.log('event.currentTarget.length:', event.currentTarget.length);
