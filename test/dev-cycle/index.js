@@ -4,7 +4,7 @@ var states = require('./states');
 var UI = require('./ui');
 
 var ui = new UI('#fixture');
-var content = ui.prepend(ui.createElement('pre', {
+var section = ui.prepend(ui.createElement('pre', {
 	style: {
 		color: '#333',
 		marginBottom: '10px',
@@ -13,7 +13,7 @@ var content = ui.prepend(ui.createElement('pre', {
 
 function updateContent(state) {
 	document.title = state.title;
-	content.innerHTML = [state.template, 'url: ' + state.url].join('<br>');
+	section.innerHTML = [state.template, 'url: ' + state.url].join('<br>');
 }
 
 function route(state, index, states) {
@@ -54,5 +54,6 @@ history.onpopstate = function (event) {
 };
 
 states.forEach(route, this);
+
 history.replaceState(states[0], states[0].title, states[0].url);
 updateContent(states[0]);

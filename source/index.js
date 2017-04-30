@@ -1,20 +1,36 @@
 'use strict';
 
-function pirate() {
-	return '☠  There\'s nothing for you here yet ☠';
+var pirate = {};
+
+function isValidPopStateEvent(event) {
+	var isChromeIOS = navigator.userAgent.indexOf('CriOS') > -1;
+	return event.state || isChromeIOS;
+}
+
+function emitCallbackEvent(callback, event) {
+	Object.defineProperty(event, 'currentTarget', {
+		get: function getCurrentTarget() {
+			return pirate;
+		}
+	});
+	if (typeof callback === 'function') {
+		callback.call(pirate, event);
+	}
+}
+
+function onPopState(callback, event) {
+	if (isValidPopStateEvent(event)) {
+		emitCallbackEvent(callback, event.state);
+	}
+}
+
+function onHashChange(callback) {
+	emitCallbackEvent(callback, pirate.state);
 }
 
 Object.defineProperty(pirate, 'onhashchange', {
 	set: function setOnHashChange(run) {
-		window.onhashchange = function onHashChange(event) {
-			Object.defineProperty(event, 'currentTarget', {
-				configurable: true,
-				get: function getCurrentTarget() {
-					return pirate;
-				}
-			});
-			run(event);
-		};
+		window.onhashchange = onHashChange.bind(pirate, run);
 	},
 	get: function getOnHashChange() {
 		return window.onhashchange;
@@ -23,15 +39,7 @@ Object.defineProperty(pirate, 'onhashchange', {
 
 Object.defineProperty(pirate, 'onpopstate', {
 	set: function setOnPopState(run) {
-		window.onpopstate = function onPopState(event) {
-			Object.defineProperty(event, 'currentTarget', {
-				configurable: true,
-				get: function getCurrentTarget() {
-					return pirate;
-				}
-			});
-			run(event);
-		};
+		window.onpopstate = onPopState.bind(pirate, run);
 	},
 	get: function getOnPopState() {
 		return window.onpopstate;
@@ -39,7 +47,6 @@ Object.defineProperty(pirate, 'onpopstate', {
 });
 
 Object.defineProperty(pirate, 'length', {
-	configurable: true,
 	set: function setLength(val) {
 		window.history.length = val;
 	},
@@ -49,11 +56,11 @@ Object.defineProperty(pirate, 'length', {
 });
 
 Object.defineProperty(pirate, 'state', {
-	set: function setState(val) {
-		window.history.state = val;
-	},
 	get: function getState() {
-		return window.history.state;
+		var pirateState = {};
+		try {
+			return window.history.state || pirateState;
+		} catch (err) { return pirateState; }
 	}
 });
 
@@ -87,11 +94,6 @@ pirate.forward = function forward() {
 
 pirate.back = function back() {
 	return window.history.back();
-};
-
-pirate.flush = function flush() {
-	var moves = pirate.length - 1;
-	return pirate.go(-moves);
 };
 
 module.exports = pirate;
