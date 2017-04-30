@@ -22,6 +22,13 @@ module.exports = $ => baseTemplate($).cfg({
         $('cwd', $('path.source')),
         $('cwd', $('path.test')),
       ],
+    }, {
+      loader: 'babel-loader',
+      test: /\.js$/,
+      include: [
+        $('cwd', $('path.source')),
+        $('cwd', $('path.test')),
+      ],
     }],
   },
 });

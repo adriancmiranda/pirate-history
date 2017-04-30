@@ -1,12 +1,9 @@
-const chai = require('chai');
-const pirate = require('../../');
+import { expect } from 'chai';
+import pirate from '../../';
 
-const expect = chai.expect;
-// const assert = chai.assert;
-
-describe('correct-history', function () {
+describe('correct-history', () => {
 	const UI = {
-		render: function (html) {
+		render(html) {
 			document.body.insertAdjacentHTML('afterbegin', html);
 		},
 		get root() {
@@ -14,23 +11,23 @@ describe('correct-history', function () {
 		},
 		get links() {
 			return this.root.querySelectorAll('button');
-		}
+		},
 	};
 
-	before(function () {
+	before(() => {
 		fixture.setBase('test/fixtures');
 	});
 
-	beforeEach(function () {
+	beforeEach(() => {
 		this.ui = fixture.load('history.fixture.html');
 		UI.render(fixture.el.innerHTML);
 	});
 
-	afterEach(function () {
+	afterEach(() => {
 		fixture.cleanup();
 	});
 
-	it('should pass', function () {
+	it('should pass', () => {
 		expect(pirate).to.be.instanceOf(Object);
 	});
 });

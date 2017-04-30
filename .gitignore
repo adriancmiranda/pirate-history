@@ -41,6 +41,7 @@ Session.vim
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .*
 !.github
+!.babelrc
 !.editorconfig
 !.gitattributes
 !.gitignore

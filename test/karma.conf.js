@@ -1,6 +1,6 @@
 const bin = require('../bin');
 const pkg = bin.common.res('package');
-const webpackConfig = bin({ run: 'test' });
+const webpack = bin({ run: 'test' });
 
 /*!
 |* This is a karma config file. For more details
@@ -95,6 +95,7 @@ module.exports = (config) => {
 	};
 
 	const settings = {
+		webpack,
 		customLaunchers,
 		logLevel: config.LOG_INFO,
 		basePath: '../',
@@ -129,7 +130,6 @@ module.exports = (config) => {
 		jsonFixturesPreprocessor: {
 			variableName: '__json__',
 		},
-		webpack: webpackConfig,
 		webpackServer: {
 			noInfo: true,
 		},

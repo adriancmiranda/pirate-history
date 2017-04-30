@@ -8,6 +8,7 @@
 [![appveyor][appveyor]][appveyor-url]
 [![codecov][codecov]][codecov-url]
 [![greenkeeper][greenkeeper]][greenkeeper-url]
+[![license][license]][license-url]
 
 ## ☠ There's nothing for you here yet. ☠
 
@@ -43,4 +44,5 @@
 [greenkeeper]: https://badges.greenkeeper.io/adriancmiranda/pirate-history.svg
 [greenkeeper-url]: https://greenkeeper.io/
 
-[license-url]: https://github.com/adriancmiranda/pirate-history/blob/master/LICENSE
+[license]: https://img.shields.io/badge/license-Unlicense-000000.svg
+[license-url]: https://raw.githubusercontent.com/adriancmiranda/pirate-history/master/LICENSE

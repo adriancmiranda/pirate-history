@@ -2,16 +2,19 @@
 
 ---
 root: true
-parser: esprima
-extends: airbnb-base/legacy
-plugins:
-  - import
+parser: babel-eslint
+extends: airbnb-base
+env:
+  browser: true
+
+ecmaFeatures:
+  modules: true
 
 parserOptions:
   sourceType: module
 
-env:
-  browser: true
+plugins:
+  - import
 
 settings:
   import/resolver:
@@ -20,8 +23,8 @@ settings:
 
 rules:
   no-debugger: 2
+  no-param-reassign: off
   no-tabs: off
-  vars-on-top: off
 
   import/extensions:
     - error
@@ -30,8 +33,6 @@ rules:
 
   import/no-extraneous-dependencies:
     - error
-    - optionalDependencies:
-      - test/index.js
 
   indent:
     - 2
