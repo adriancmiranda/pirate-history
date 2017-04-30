@@ -39,6 +39,7 @@ Object.defineProperty(pirate, 'onpopstate', {
 });
 
 Object.defineProperty(pirate, 'length', {
+	configurable: true,
 	set: function setLength(val) {
 		window.history.length = val;
 	},
