@@ -1,19 +1,17 @@
-/* eslint-disable */
-'use strict';
 const pirate = {};
 const events = [];
 const ua = navigator.userAgent;
 const HashChangeEvent = 'hashchange';
-const HashChangeHook = 'on' + HashChangeEvent;
+const HashChangeHook = `on${HashChangeEvent}`;
 const PopStateEvent = 'popstate';
-const PopStateHook = 'on' + PopStateEvent;
+const PopStateHook = `on${PopStateEvent}`;
 const ReplaceStateEvent = 'replacestate';
 const ChangeStateEvent = 'changestate';
 const PushStateEvent = 'pushstate';
 
 function shouldEmitPopStateEvent(event) {
-	var isChromeFromIOS = ua.indexOf('CriOS') > -1;
-	var hasState = typeof event.state !== 'undefined';
+	const isChromeFromIOS = ua.indexOf('CriOS') > -1;
+	const hasState = typeof event.state !== 'undefined';
 	return hasState || isChromeFromIOS;
 }
 
@@ -21,9 +19,8 @@ function emitCallbackEvent(callback, event) {
 	Object.defineProperty(event, 'currentTarget', {
 		get: function getCurrentTarget() {
 			return pirate;
-		}
+		},
 	});
-	pirate.dispatchEvent(ChangeStateEvent, state);
 	if (typeof callback === 'function') {
 		callback.call(pirate, event);
 	}
@@ -31,6 +28,7 @@ function emitCallbackEvent(callback, event) {
 
 function emitPopStateEvent(callback, state) {
 	emitCallbackEvent(callback, state);
+	pirate.dispatchEvent(ChangeStateEvent, state);
 }
 
 function onPopState(callback) {
@@ -38,7 +36,7 @@ function onPopState(callback) {
 		if (shouldEmitPopStateEvent(event)) {
 			emitPopStateEvent(callback, event);
 		}
-	}
+	};
 }
 
 function onHashChange(callback) {
@@ -54,7 +52,7 @@ Object.defineProperty(pirate, HashChangeHook, {
 	},
 	get: function getOnHashChange() {
 		return window[HashChangeHook];
-	}
+	},
 });
 
 Object.defineProperty(pirate, PopStateHook, {
@@ -64,7 +62,7 @@ Object.defineProperty(pirate, PopStateHook, {
 	},
 	get: function getOnPopState() {
 		return window[PopStateHook];
-	}
+	},
 });
 
 Object.defineProperty(pirate, 'length', {
@@ -73,16 +71,16 @@ Object.defineProperty(pirate, 'length', {
 	},
 	get: function getLength() {
 		return window.history.length;
-	}
+	},
 });
 
 Object.defineProperty(pirate, 'state', {
 	get: function getState() {
-		var pirateState = {};
+		const pirateState = {};
 		try {
 			return window.history.state || pirateState;
 		} catch (err) { return pirateState; }
-	}
+	},
 });
 
 Object.defineProperty(pirate, 'hasStateList', {
@@ -90,48 +88,48 @@ Object.defineProperty(pirate, 'hasStateList', {
 		return /Chrome|Windows\sPhone/.test(ua) &&
 		!/Mobile\sSafari|Android\s(2\..+|4\.0)/g.test(ua) &&
 		window.history && 'pushState' in window.history;
-	}
+	},
 });
 
 Object.defineProperty(pirate, 'HashChangeEvent', {
 	get: function getHashChangeEvent() {
 		return HashChangeEvent;
-	}
+	},
 });
 
 Object.defineProperty(pirate, 'HashChangeHook', {
 	get: function getHashChangeHook() {
 		return HashChangeHook;
-	}
+	},
 });
 
 Object.defineProperty(pirate, 'PopStateEvent', {
 	get: function getPopStateEvent() {
 		return PopStateEvent;
-	}
+	},
 });
 
 Object.defineProperty(pirate, 'PopStateHook', {
 	get: function getPopStateHook() {
 		return PopStateHook;
-	}
+	},
 });
 
 pirate.addEventListener = function addEventListener(type, listener, options) {
-	for (var id = 0; id < events.length; id += 1) {
+	for (let id = 0; id < events.length; id += 1) {
 		if (events[id].type === type && events[id].listener === listener) {
 			return;
 		}
 	}
-	events.push({ type: type, listener: listener });
+	events.push({ type, listener });
 	window.addEventListener(type, listener, options);
 };
 
 pirate.removeEventListener = function removeEventListener(type, listener, options) {
-	for (var id = 0, event; id < events.length; id += 1) {
-		var opts = arguments.length;
-		var hasSameType = opts > 0 && events[id].type === type;
-		var isSameEvent = opts > 1 && events[id].listener === listener && hasSameType;
+	for (let id = 0, event; id < events.length; id += 1) {
+		const opts = arguments.length;
+		const hasSameType = opts > 0 && events[id].type === type;
+		const isSameEvent = opts > 1 && events[id].listener === listener && hasSameType;
 		if (!opts || hasSameType || isSameEvent) {
 			event = events.splice(id, 1)[0];
 			window.removeEventListener(event.type, event.listener, options);
@@ -144,14 +142,14 @@ pirate.dispatchEvent = function dispatchEvent(event) {
 };
 
 pirate.pushState = function pushState(state, title, url) {
-	var response = window.history.pushState(state, title, url);
+	const response = window.history.pushState(state, title, url);
 	pirate.dispatchEvent(PushStateEvent, state);
 	pirate.dispatchEvent(ChangeStateEvent, state);
 	return response;
 };
 
 pirate.replaceState = function replaceState(state, title, url) {
-	var response = window.history.replaceState(state, title, url);
+	const response = window.history.replaceState(state, title, url);
 	pirate.dispatchEvent(ReplaceStateEvent, state);
 	pirate.dispatchEvent(ChangeStateEvent, state);
 	return response;
