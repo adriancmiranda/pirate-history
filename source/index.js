@@ -1,15 +1,15 @@
 /* eslint-disable */
 'use strict';
-var pirate = {};
-var events = [];
-var ua = navigator.userAgent;
-var HashChangeEvent = 'hashchange';
-var HashChangeHook = 'on' + HashChangeEvent;
-var PopStateEvent = 'popstate';
-var PopStateHook = 'on' + PopStateEvent;
-var ReplaceStateEvent = 'replacestate';
-var ChangeStateEvent = 'changestate';
-var PushStateEvent = 'pushstate';
+const pirate = {};
+const events = [];
+const ua = navigator.userAgent;
+const HashChangeEvent = 'hashchange';
+const HashChangeHook = 'on' + HashChangeEvent;
+const PopStateEvent = 'popstate';
+const PopStateHook = 'on' + PopStateEvent;
+const ReplaceStateEvent = 'replacestate';
+const ChangeStateEvent = 'changestate';
+const PushStateEvent = 'pushstate';
 
 function shouldEmitPopStateEvent(event) {
 	var isChromeFromIOS = ua.indexOf('CriOS') > -1;
@@ -173,4 +173,4 @@ pirate.on = pirate.addEventListener;
 pirate.off = pirate.removeEventListener;
 pirate.trigger = pirate.dispatchEvent;
 
-module.exports = pirate;
+export default pirate;
