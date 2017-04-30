@@ -1,3 +1,5 @@
+import { trigger, on, off } from './browser/events';
+
 const pirate = {};
 const events = [];
 const ua = navigator.userAgent;
@@ -122,7 +124,7 @@ pirate.addEventListener = function addEventListener(type, listener, options) {
 		}
 	}
 	events.push({ type, listener });
-	window.addEventListener(type, listener, options);
+	on(window, type, listener, options);
 };
 
 pirate.removeEventListener = function removeEventListener(type, listener, options) {
@@ -132,13 +134,13 @@ pirate.removeEventListener = function removeEventListener(type, listener, option
 		const isSameEvent = opts > 1 && events[id].listener === listener && hasSameType;
 		if (!opts || hasSameType || isSameEvent) {
 			event = events.splice(id, 1)[0];
-			window.removeEventListener(event.type, event.listener, options);
+			off(window, event.type, event.listener, options);
 		}
 	}
 };
 
-pirate.dispatchEvent = function dispatchEvent(event) {
-	return window.dispatchEvent(event);
+pirate.dispatchEvent = function dispatchEvent(type) {
+	return trigger(window, type);
 };
 
 pirate.pushState = function pushState(state, title, url) {

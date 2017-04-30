@@ -5,7 +5,14 @@ import UI from './ui';
 
 const ui = new UI('#fixture');
 
-const log = ui.createTextArea({
+const $sectionContent = ui.prepend(ui.createElement('pre', {
+	style: {
+		color: '#333',
+		marginBottom: '10px',
+	},
+}));
+
+const $infoBox = ui.createTextArea({
 	value: `hasStateList: ${history.hasStateList}`,
 	readOnly: true,
 	style: {
@@ -15,7 +22,7 @@ const log = ui.createTextArea({
 	},
 });
 
-const removeAllEvents = ui.createButton({
+const $disposeButton = ui.createButton({
 	value: 'remove all events',
 	style: {
 		marginTop: '10px',
@@ -25,16 +32,9 @@ const removeAllEvents = ui.createButton({
 	},
 });
 
-const section = ui.prepend(ui.createElement('pre', {
-	style: {
-		color: '#333',
-		marginBottom: '10px',
-	},
-}));
-
 function updateContent(state) {
 	document.title = state.title;
-	section.innerHTML = [state.template, `url: ${state.url}`].join('<br>');
+	$sectionContent.innerHTML = [state.template, `url: ${state.url}`].join('<br>');
 }
 
 function register(state, index, stateList) {
@@ -63,6 +63,12 @@ function route(state, index, stateList) {
 	} else register(state, index, stateList);
 }
 
+function createUI() {
+	states.forEach(route, this);
+	ui.append($infoBox);
+	ui.append($disposeButton);
+}
+
 history.addEventListener(history.PopStateEvent, (event) => {
 	updateContent(event.state);
 });
@@ -75,9 +81,6 @@ history.onpopstate = (event) => {
 	console.log('history.length:', history.length);
 };
 
-states.forEach(route, this);
-ui.append(log);
-ui.append(removeAllEvents);
-
+createUI();
 history.replaceState(states[0], states[0].title, states[0].url);
 updateContent(states[0]);
