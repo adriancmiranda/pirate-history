@@ -117,6 +117,24 @@ Object.defineProperty(pirate, 'PopStateHook', {
 	},
 });
 
+Object.defineProperty(pirate, 'ReplaceStateEvent', {
+	get: function getPopStateHook() {
+		return ReplaceStateEvent;
+	},
+});
+
+Object.defineProperty(pirate, 'ChangeStateEvent', {
+	get: function getPopStateHook() {
+		return ChangeStateEvent;
+	},
+});
+
+Object.defineProperty(pirate, 'PushStateEvent', {
+	get: function getPopStateHook() {
+		return PushStateEvent;
+	},
+});
+
 pirate.addEventListener = function addEventListener(type, listener, options) {
 	for (let id = 0; id < events.length; id += 1) {
 		if (events[id].type === type && events[id].listener === listener) {

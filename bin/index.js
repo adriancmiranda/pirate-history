@@ -63,9 +63,8 @@ module.exports = app.setConfig(lib => {
   lib.set('build.bundleAnalyzer.report', process.env.npm_config_report);
 
   // ~ entry point ~
-  lib.set(`script.entry[${pkg.name}.memory]`, './memory.js');
-  lib.set(`script.entry[${pkg.name}.query]`, './query.js');
-  lib.set(`script.entry[${pkg.name}.hash]`, './hash.js');
-  lib.set(`script.entry[${pkg.name}.state]`, './state.js');
+  lib.set(`script.entry[${pkg.name}.memory]`, './history.memory.js');
+  lib.set(`script.entry[${pkg.name}.hash]`, './history.hash.js');
+  lib.set(`script.entry[${pkg.name}.state]`, './history.state.js');
   lib.set(`script.entry.${pkg.name}`, './index.js');
 });

@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import pirate from 'index';
 
-describe('correct-history', () => {
+describe('history', () => {
 	const UI = {
 		render(html) {
 			document.body.insertAdjacentHTML('afterbegin', html);

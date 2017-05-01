@@ -79,7 +79,7 @@
     "pug": "~2.0.0-beta.12",
     "pug-loader": "~2.3.0",
     "sinon": "~2.1.0",
-    "sinon-chai": "~2.9.0",
+    "sinon-chai": "~2.10.0",
     "standard-version": "~4.0.0",
     "validate-commit-msg": "~2.12.1",
     "webpack": "~2.4.1",

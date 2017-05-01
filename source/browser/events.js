@@ -1,3 +1,24 @@
+/*!
+|*
+`*/
+export function once() {
+}
+
+/*!
+|*
+`*/
+export function willTrigger() {
+}
+
+/*!
+|*
+`*/
+export function hasEvent() {
+}
+
+/*!
+|*
+`*/
 export function trigger(domEl, type, state) {
 	let event;
 	if (document.createEvent) {
@@ -20,6 +41,9 @@ export function trigger(domEl, type, state) {
 	}
 }
 
+/*!
+|*
+`*/
 export function on(domEl, type, listener) {
 	if (domEl.addEventListener) {
 		domEl.addEventListener(type, listener, false);
@@ -30,6 +54,9 @@ export function on(domEl, type, listener) {
 	}
 }
 
+/*!
+|*
+`*/
 export function off(domEl, type, listener) {
 	if (domEl.removeventListener) {
 		domEl.removeEventListener(type, listener, false);
