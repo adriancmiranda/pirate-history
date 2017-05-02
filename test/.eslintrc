@@ -9,3 +9,6 @@ globals:
 
 rules:
   func-names: off
+  no-console: off
+  no-unused-expressions: off
+  no-use-before-define: off

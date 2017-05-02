@@ -101,10 +101,7 @@ module.exports = (config) => {
 		basePath: '../',
 		port: 9876,
 		colors: true,
-		autoWatch: false,
-		singleRun: false,
 		concurrency: 2,
-		captureTimeout: 240000,
 		browserNoActivityTimeout: 240000,
 		browserDisconnectTimeout: 10000,
 		browserDisconnectTolerance: 3,
@@ -156,10 +153,12 @@ module.exports = (config) => {
 	};
 
 	if (process.env.TRAVIS) {
+		settings.browserStack.captureTimeout = 240000;
 		settings.browserStack.browsers = Object.keys(customLaunchers);
 		settings.browserStack.build = process.env.TRAVIS_BUILD_NUMBER;
 		settings.browserStack.name = process.env.TRAVIS_JOB_NUMBER;
 	} else if (process.env.APPVEYOR) {
+		settings.browserStack.captureTimeout = 240000;
 		settings.browserStack.browsers = Object.keys(customLaunchers);
 		settings.browserStack.build = process.env.APPVEYOR_BUILD_NUMBER;
 		settings.browserStack.name = process.env.APPVEYOR_JOB_NUMBER;

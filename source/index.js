@@ -1,7 +1,6 @@
-import { trigger, on, off } from './browser/events';
+import * as dispatcher from './browser/events';
 
 const pirate = {};
-const events = [];
 const ua = navigator.userAgent;
 const HashChangeEvent = 'hashchange';
 const HashChangeHook = `on${HashChangeEvent}`;
@@ -30,7 +29,7 @@ function emitCallbackEvent(callback, event) {
 
 function emitPopStateEvent(callback, state) {
 	emitCallbackEvent(callback, state);
-	pirate.dispatchEvent(ChangeStateEvent, state);
+	pirate.emit(ChangeStateEvent, state);
 }
 
 function onPopState(callback) {
@@ -49,8 +48,8 @@ function onHashChange(callback) {
 
 Object.defineProperty(pirate, HashChangeHook, {
 	set: function setOnHashChange(val) {
-		if (!val) pirate.removeEventListener(HashChangeEvent);
-		pirate.addEventListener(HashChangeEvent, onHashChange(val));
+		if (!val) pirate.off(HashChangeEvent);
+		pirate.on(HashChangeEvent, onHashChange(val));
 	},
 	get: function getOnHashChange() {
 		return window[HashChangeHook];
@@ -59,8 +58,8 @@ Object.defineProperty(pirate, HashChangeHook, {
 
 Object.defineProperty(pirate, PopStateHook, {
 	set: function setOnPopState(val) {
-		if (!val) pirate.removeEventListener(PopStateEvent);
-		pirate.addEventListener(PopStateEvent, onPopState(val));
+		if (!val) pirate.off(PopStateEvent);
+		pirate.on(PopStateEvent, onPopState(val));
 	},
 	get: function getOnPopState() {
 		return window[PopStateHook];
@@ -135,43 +134,37 @@ Object.defineProperty(pirate, 'PushStateEvent', {
 	},
 });
 
-pirate.addEventListener = function addEventListener(type, listener, options) {
-	for (let id = 0; id < events.length; id += 1) {
-		if (events[id].type === type && events[id].listener === listener) {
-			return;
-		}
-	}
-	events.push({ type, listener });
-	on(window, type, listener, options);
+pirate.on = function on(type, listener, options) {
+	dispatcher.on(window, type, listener, options);
 };
 
-pirate.removeEventListener = function removeEventListener(type, listener, options) {
-	for (let id = 0, event; id < events.length; id += 1) {
-		const opts = arguments.length;
-		const hasSameType = opts > 0 && events[id].type === type;
-		const isSameEvent = opts > 1 && events[id].listener === listener && hasSameType;
-		if (!opts || hasSameType || isSameEvent) {
-			event = events.splice(id, 1)[0];
-			off(window, event.type, event.listener, options);
-		}
-	}
+pirate.once = function once(type, listener, options) {
+	return dispatcher.once(window, type, listener, options);
 };
 
-pirate.dispatchEvent = function dispatchEvent(type) {
-	return trigger(window, type);
+pirate.off = function off(type, listener, options) {
+	dispatcher.off(window, event.type, event.listener, options);
+};
+
+pirate.willEmit = function willEmit(type) {
+	return dispatcher.willEmit(type);
+};
+
+pirate.emit = function emit(type, data) {
+	return dispatcher.emit(window, type, data);
 };
 
 pirate.pushState = function pushState(state, title, url) {
 	const response = window.history.pushState(state, title, url);
-	pirate.dispatchEvent(PushStateEvent, state);
-	pirate.dispatchEvent(ChangeStateEvent, state);
+	pirate.emit(PushStateEvent, state);
+	pirate.emit(ChangeStateEvent, state);
 	return response;
 };
 
 pirate.replaceState = function replaceState(state, title, url) {
 	const response = window.history.replaceState(state, title, url);
-	pirate.dispatchEvent(ReplaceStateEvent, state);
-	pirate.dispatchEvent(ChangeStateEvent, state);
+	pirate.emit(ReplaceStateEvent, state);
+	pirate.emit(ChangeStateEvent, state);
 	return response;
 };
 
@@ -186,9 +179,5 @@ pirate.forward = function forward() {
 pirate.back = function back() {
 	return window.history.back();
 };
-
-pirate.on = pirate.addEventListener;
-pirate.off = pirate.removeEventListener;
-pirate.trigger = pirate.dispatchEvent;
 
 export default pirate;
