@@ -18,6 +18,28 @@ const a = (val, typeWait) =>
 ;
 
 /*!
+|* @name createEvent
+|*
+|* @description
+|*
+|* @param {String} type
+|*
+|* @api public
+`*/
+export function createEvent(type) {
+	let event = {};
+	if (document.createEvent) {
+		event = document.createEvent('HTMLEvents');
+		event.initEvent(type, true, true);
+	} else if (document.createEventObject) {
+		event = document.createEventObject();
+		event.eventType = type;
+	}
+	event.eventName = type;
+	return event;
+}
+
+/*!
 |* @name addEventListener
 |*
 |* @description
@@ -91,17 +113,9 @@ export function removeEventListener(domEl, type, listener, ...options) {
 |* @api public
 `*/
 export function dispatchEvent(domEl, type, data) {
-	let event = {};
 	let cancelled;
-	if (document.createEvent) {
-		event = document.createEvent('HTMLEvents');
-		event.initEvent(type, true, true);
-	} else if (document.createEventObject) {
-		event = document.createEventObject();
-		event.eventType = type;
-	}
+	const event = createEvent(type);
 	event.state = data;
-	event.eventName = type;
 	if (domEl.dispatchEvent) {
 		cancelled = domEl.dispatchEvent(event);
 	} else if (domEl.fireEvent && window.htmlEvents[`on${type}`]) {
