@@ -24,7 +24,7 @@ const a = (val, typeWait) =>
 |* Creates an event of the type specified. The returned object should be first
 |* initialized and can then be passed to element.dispatchEvent.
 |*
-|* @param {String} type type is a string that represents the type of event to be created.
+|* @param {String} type The type is the name of Event object to be dispatched.
 |* Possible event types include "UIEvents", "MouseEvents", "MutationEvents", and "HTMLEvents".
 |*
 |* @api public
@@ -51,11 +51,17 @@ export function createEvent(type) {
 |* on which it's called. The event target may be an Element in a document, the Document
 |* itself, a Window, or any other object that supports events (such as XMLHttpRequest).
 |*
-|* @param {HTMLElement} domEl
-|* @param {String} type
-|* @param {Function} listener
+|* @param {HTMLElement} domEl The target object for events dispatched to the Event object.
+|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {Function} listener The listener function that processes the event.
+|* This function must accept an Event object as its only parameter and must return nothing.
 |* @param {Object} options
-|* @param {Boolean} useCapture
+|* @param {Boolean} useCapture Determines whether the listener works in the capture phase or
+|* the target and bubbling phases. If useCapture is set to true, the listener processes the
+|* event only during the capture phase and not in the target or bubbling phase.
+|* If useCapture is false, the listener processes the event only during the target or bubbling phase.
+|* To listen for the event in all three phases, call addEventListener twice, once with useCapture
+|* set to true, then again with useCapture set to false.
 |*
 |* @api public
 `*/
@@ -79,11 +85,17 @@ export function addEventListener(domEl, type, listener, ...options) {
 |* event listener function itself, and various optional options that may affect the
 |* matching process; see Matching event listeners for removal.
 |*
-|* @param {HTMLElement} domEl
-|* @param {String} type
-|* @param {Function} listener
+|* @param {HTMLElement} domEl The target object for events dispatched to the Event object.
+|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {Function} listener The listener function that processes the event.
+|* This function must accept an Event object as its only parameter and must return nothing.
 |* @param {Object} options
-|* @param {Boolean} useCapture
+|* @param {Boolean} useCapture Determines whether the listener works in the capture phase or
+|* the target and bubbling phases. If useCapture is set to true, the listener processes the
+|* event only during the capture phase and not in the target or bubbling phase.
+|* If useCapture is false, the listener processes the event only during the target or bubbling phase.
+|* To listen for the event in all three phases, call addEventListener twice, once with useCapture
+|* set to true, then again with useCapture set to false.
 |*
 |* @api public
 `*/
@@ -106,7 +118,7 @@ export function removeEventListener(domEl, type, listener, ...options) {
 |* and optional bubbling phase) also apply to events dispatched manually with
 |* dispatchEvent().
 |*
-|* @param {HTMLElement} domEl
+|* @param {HTMLElement} domEl The target object for events dispatched to the Event object.
 |* @param {String} type The type is the name of Event object to be dispatched.
 |* @param {Mixed} data
 |*
@@ -138,8 +150,8 @@ export function dispatchEvent(domEl, type, data) {
 |* Execute all handlers and behaviors attached to the matched elements
 |* for the given event type.
 |*
-|* @param {HTMLElement} domEl
-|* @param {String} type
+|* @param {HTMLElement} domEl The target object for events dispatched to the Event object.
+|* @param {String} type The type is the name of Event object to be dispatched.
 |* @param {Mixed} data
 |*
 |* @api public
@@ -165,11 +177,17 @@ export function emit(domEl, type, data) {
 |* Attach an event handler function for one or more events to the
 |* selected elements.
 |*
-|* @param {HTMLElement} domEl
-|* @param {String} type
-|* @param {Function} listener
+|* @param {HTMLElement} domEl The target object for events dispatched to the Event object.
+|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {Function} listener The listener function that processes the event.
+|* This function must accept an Event object as its only parameter and must return nothing.
 |* @param {Object} options
-|* @param {Boolean} useCapture
+|* @param {Boolean} useCapture Determines whether the listener works in the capture phase or
+|* the target and bubbling phases. If useCapture is set to true, the listener processes the
+|* event only during the capture phase and not in the target or bubbling phase.
+|* If useCapture is false, the listener processes the event only during the target or bubbling phase.
+|* To listen for the event in all three phases, call addEventListener twice, once with useCapture
+|* set to true, then again with useCapture set to false.
 |*
 |* @api public
 `*/
@@ -190,11 +208,17 @@ export function on(domEl, type, listener, ...options) {
 |* @description
 |* Remove event handler(s) from element(s).
 |*
-|* @param {HTMLElement} domEl
-|* @param {String} type
-|* @param {Function} listener
+|* @param {HTMLElement} domEl The target object for events dispatched to the Event object.
+|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {Function} listener The listener function that processes the event.
+|* This function must accept an Event object as its only parameter and must return nothing.
 |* @param {Object} options
-|* @param {Boolean} useCapture
+|* @param {Boolean} useCapture Determines whether the listener works in the capture phase or
+|* the target and bubbling phases. If useCapture is set to true, the listener processes the
+|* event only during the capture phase and not in the target or bubbling phase.
+|* If useCapture is false, the listener processes the event only during the target or bubbling phase.
+|* To listen for the event in all three phases, call addEventListener twice, once with useCapture
+|* set to true, then again with useCapture set to false.
 |*
 |* @api public
 `*/
@@ -225,11 +249,17 @@ export function off(domEl, type, listener, ...options) {
 |* Attach a handler to an event for the elements. The handler is executed at most one
 |* per element per event type.
 |*
-|* @param {HTMLElement} domEl
-|* @param {String} type
-|* @param {Function} listener
+|* @param {HTMLElement} domEl The target object for events dispatched to the Event object.
+|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {Function} listener The listener function that processes the event.
+|* This function must accept an Event object as its only parameter and must return nothing.
 |* @param {Object} options
-|* @param {Boolean} useCapture
+|* @param {Boolean} useCapture Determines whether the listener works in the capture phase or
+|* the target and bubbling phases. If useCapture is set to true, the listener processes the
+|* event only during the capture phase and not in the target or bubbling phase.
+|* If useCapture is false, the listener processes the event only during the target or bubbling phase.
+|* To listen for the event in all three phases, call addEventListener twice, once with useCapture
+|* set to true, then again with useCapture set to false.
 |*
 |* @api public
 `*/
@@ -253,8 +283,8 @@ export function one(domEl, type, listener, ...options) {
 |* object to which it belongs, whereas `willEmit()` examines the entire event flow for the event
 |* specified by the `type` parameter.
 |*
-|* @param {HTMLElement} domEl
-|* @param {String} type The type of event.
+|* @param {HTMLElement} domEl The target object for events dispatched to the Event object.
+|* @param {String} type The type is the name of Event object to be dispatched.
 |*
 |* @returns {Boolean} A value of `true` if a listener of the specified type is registered;
 |* `false` otherwise.
@@ -284,7 +314,7 @@ export function hasEvent(domEl, type) {
 |* examines only the object to which it belongs, whereas the `willEmit()` method examines
 |* the entire event flow for the event specified by the type parameter.
 |*
-|* @param {String} type The type of event.
+|* @param {String} type The type is the name of Event object to be dispatched.
 |*
 |* @returns {Boolean} A value of `true` if a listener of the specified type is registered;
 |* `false` otherwise.
