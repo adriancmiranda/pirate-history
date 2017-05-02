@@ -34,10 +34,10 @@ describe('browser/events', () => {
 		});
 	});
 
-	describe('#once', () => {
-		it('should invoke the listener with a Event argument once', () => {
+	describe('#one', () => {
+		it('should invoke the listener with a Event argument one', () => {
 			expect(this.listener).to.be.spy;
-			dispatcher.once(this.element, 'popstate', this.listener);
+			dispatcher.one(this.element, 'popstate', this.listener);
 			dispatcher.emit(this.element, 'popstate');
 			dispatcher.emit(this.element, 'popstate');
 			dispatcher.emit(this.element, 'popstate');

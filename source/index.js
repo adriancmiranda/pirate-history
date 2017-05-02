@@ -138,8 +138,8 @@ pirate.on = function on(type, listener, options) {
 	dispatcher.on(window, type, listener, options);
 };
 
-pirate.once = function once(type, listener, options) {
-	return dispatcher.once(window, type, listener, options);
+pirate.one = function one(type, listener, options) {
+	return dispatcher.one(window, type, listener, options);
 };
 
 pirate.off = function off(type, listener, options) {

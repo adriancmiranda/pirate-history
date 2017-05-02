@@ -69,7 +69,7 @@ function createUI() {
 	ui.append($disposeButton);
 }
 
-history.once(history.PopStateEvent, (event) => {
+history.one(history.PopStateEvent, (event) => {
 	updateContent(event.state);
 });
 

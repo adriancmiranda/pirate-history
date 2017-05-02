@@ -117,7 +117,8 @@ export function dispatchEvent(domEl, type, data) {
 /*!
 |* @name emit
 |*
-|* @description
+|* @description Execute all handlers and behaviors attached to the matched elements
+|* for the given event type.
 |*
 |* @param {HTMLElement} domEl
 |* @param {String} type
@@ -142,7 +143,8 @@ export function emit(domEl, type, data) {
 /*!
 |* @name on
 |*
-|* @description
+|* @description Attach an event handler function for one or more events to the
+|* selected elements.
 |*
 |* @param {HTMLElement} domEl
 |* @param {String} type
@@ -166,7 +168,7 @@ export function on(domEl, type, listener, ...options) {
 /*!
 |* @name off
 |*
-|* @description
+|* @description Remove event handler(s) from element(s).
 |*
 |* @param {HTMLElement} domEl
 |* @param {String} type
@@ -197,9 +199,11 @@ export function off(domEl, type, listener, ...options) {
 }
 
 /*!
-|* @name once
+|* @name one
 |*
 |* @description
+|* Attach a handler to an event for the elements. The handler is executed at most one
+|* per element per event type.
 |*
 |* @param {HTMLElement} domEl
 |* @param {String} type
@@ -209,7 +213,7 @@ export function off(domEl, type, listener, ...options) {
 |*
 |* @api public
 `*/
-export function once(domEl, type, listener, ...options) {
+export function one(domEl, type, listener, ...options) {
 	on(domEl, type, function handler(event) {
 		off(domEl, type, handler, ...options);
 		listener(event);
