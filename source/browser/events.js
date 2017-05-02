@@ -91,7 +91,7 @@ export function removeEventListener(domEl, type, listener, ...options) {
 |* @api public
 `*/
 export function dispatchEvent(domEl, type, data) {
-	let event;
+	let event = {};
 	let cancelled;
 	if (document.createEvent) {
 		event = document.createEvent('HTMLEvents');
