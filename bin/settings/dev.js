@@ -1,4 +1,3 @@
-const { parse } = require('path');
 const webpack = require('webpack');
 const Html = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
