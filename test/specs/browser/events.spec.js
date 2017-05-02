@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars, max-len */
 import { assert, spy } from 'sinon';
 import { expect } from 'chai';
 import * as dispatcher from 'source/browser/events';
@@ -157,13 +156,19 @@ describe('browser/events', () => {
 	});
 
 	describe('#willEmit', () => {
-		it('should check whether an event listener is registered with this `dispatcher` object or any of its ancestors for the specified event type', () => {
+		it([
+			'should check whether an event listener is registered with this `dom-event-dispatcher`',
+			'object or any of its ancestors for the specified event type',
+		].join(' '), () => {
 			expect(this.listener).to.be.spy;
 		});
 	});
 
 	describe('#hasEvent', () => {
-		it('should check whether the `dispatcher` object has any listeners registered for a specific type of event', () => {
+		it([
+			'should check whether the `dom-event-dispatcher` object has any listeners',
+			'registered for a specific type of event',
+		].join(' '), () => {
 			expect(this.listener).to.be.spy;
 		});
 	});
