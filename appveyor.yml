@@ -20,10 +20,6 @@ environment:
     - nodejs_version: 6
       job_part: test
 
-cache:
-  - node_modules
-  - '%APPDATA%\npm-cache'
-
 install:
   - ps: Install-Product node $env:nodejs_version x64
   - npm prune
