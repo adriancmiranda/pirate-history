@@ -1,6 +1,23 @@
 const events = [];
 
 /*!
+|* @name a
+|*
+|* @description
+|* Test if `value` is a type of `type`.
+|*
+|* @param {mixed} value value to test.
+|* @param {string} typeWait type waited.
+|*
+|* @return {Boolean} true if `value` is a type of `type`, false otherwise.
+|*
+|* @api private
+`*/
+const a = (val, typeWait) =>
+	toString.call(val) === `[object ${typeWait}]`
+;
+
+/*!
 |* @name addEventListener
 |*
 |* @description
@@ -39,10 +56,14 @@ export function removeEventListener(domEl, type, listener, ...options) {
 |*
 |* @description
 |*
-|* @param
+|* @param {}
+|*
+|* @returns {boolean} cancelled Indicating whether the event was canceled
+|* by an event handler.
 `*/
 export function dispatchEvent(domEl, type, data) {
 	let event;
+	let cancelled;
 	if (document.createEvent) {
 		event = document.createEvent('HTMLEvents');
 		event.initEvent(type, true, true);
@@ -53,14 +74,15 @@ export function dispatchEvent(domEl, type, data) {
 	event.state = data;
 	event.eventName = type;
 	if (domEl.dispatchEvent) {
-		domEl.dispatchEvent(event);
+		cancelled = domEl.dispatchEvent(event);
 	} else if (domEl.fireEvent && window.htmlEvents[`on${type}`]) {
-		domEl.fireEvent(`on${event.eventType}`, event);
+		cancelled = domEl.fireEvent(`on${event.eventType}`, event);
 	} else if (domEl[type]) {
-		domEl[type](event);
+		cancelled = domEl[type](event);
 	} else if (domEl[`on${type}`]) {
-		domEl[`on${type}`](event);
+		cancelled = domEl[`on${type}`](event);
 	}
+	return a(cancelled, 'Boolean') ? cancelled : true;
 }
 
 /*!
@@ -71,11 +93,13 @@ export function dispatchEvent(domEl, type, data) {
 |* @param
 `*/
 export function emit(domEl, type, data) {
-	if (toString.call(domEl) === '[object String]') {
+	const numArgs = arguments.length;
+	if (numArgs <= 1 || a(domEl, 'String')) {
 		const dispatched = [];
 		for (let id = events.length - 1; id >= 0; id -= 1) {
 			const event = events[id];
-			dispatched.push(dispatchEvent(event.domEl, event.type, data));
+			const eventType = numArgs ? domEl : event.type;
+			dispatched.push(dispatchEvent(event.domEl, eventType, data));
 		}
 		return dispatched;
 	}
@@ -109,7 +133,7 @@ export function on(domEl, type, listener, ...options) {
 `*/
 export function off(domEl, type, listener, ...options) {
 	const numArgs = arguments.length;
-	const domIsAnEventType = toString.call(domEl) === '[object String]';
+	const domIsAnEventType = a(domEl, 'String');
 	const eventType = domIsAnEventType ? domEl : type;
 	for (let id = events.length - 1; id >= 0; id -= 1) {
 		const event = events[id];

@@ -143,6 +143,17 @@ describe('browser/events', () => {
 			expect(args[0].state).to.have.property('bar').to.be.a('number');
 			expect(args[0].state).to.have.property('baz').to.be.an('object');
 		});
+
+		it('should emit all events', () => {
+			['popstate', 'changestate', 'hashchange'].map((eventType) => {
+				const listener = spy();
+				dispatcher.on(this.element, eventType, listener);
+				dispatcher.emit();
+				return listener;
+			}).forEach((listener, index, spies) => {
+				expect(listener.callCount).to.be.equal(spies.length - index);
+			});
+		});
 	});
 
 	describe('#willEmit', () => {
