@@ -21,8 +21,11 @@ const a = (val, typeWait) =>
 |* @name createEvent
 |*
 |* @description
+|* Creates an event of the type specified. The returned object should be first
+|* initialized and can then be passed to element.dispatchEvent.
 |*
-|* @param {String} type
+|* @param {String} type type is a string that represents the type of event to be created.
+|* Possible event types include "UIEvents", "MouseEvents", "MutationEvents", and "HTMLEvents".
 |*
 |* @api public
 `*/
@@ -131,7 +134,8 @@ export function dispatchEvent(domEl, type, data) {
 /*!
 |* @name emit
 |*
-|* @description Execute all handlers and behaviors attached to the matched elements
+|* @description
+|* Execute all handlers and behaviors attached to the matched elements
 |* for the given event type.
 |*
 |* @param {HTMLElement} domEl
@@ -157,7 +161,8 @@ export function emit(domEl, type, data) {
 /*!
 |* @name on
 |*
-|* @description Attach an event handler function for one or more events to the
+|* @description
+|* Attach an event handler function for one or more events to the
 |* selected elements.
 |*
 |* @param {HTMLElement} domEl
@@ -182,7 +187,8 @@ export function on(domEl, type, listener, ...options) {
 /*!
 |* @name off
 |*
-|* @description Remove event handler(s) from element(s).
+|* @description
+|* Remove event handler(s) from element(s).
 |*
 |* @param {HTMLElement} domEl
 |* @param {String} type
