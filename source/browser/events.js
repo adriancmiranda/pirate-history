@@ -6,8 +6,8 @@ const events = [];
 |* @description
 |* Test if `value` is a type of `type`.
 |*
-|* @param {mixed} value value to test.
-|* @param {string} typeWait type waited.
+|* @param {Mixed} value value to test.
+|* @param {String} typeWait type waited.
 |*
 |* @return {Boolean} true if `value` is a type of `type`, false otherwise.
 |*
@@ -21,8 +21,18 @@ const a = (val, typeWait) =>
 |* @name addEventListener
 |*
 |* @description
+|* The EventTarget.addEventListener() method adds the specified EventListener-compatible
+|* object to the list of event listeners for the specified event type on the EventTarget
+|* on which it's called. The event target may be an Element in a document, the Document
+|* itself, a Window, or any other object that supports events (such as XMLHttpRequest).
 |*
-|* @param
+|* @param {HTMLElement} domEl
+|* @param {String} type
+|* @param {Function} listener
+|* @param {Object} options
+|* @param {Boolean} useCapture
+|*
+|* @api public
 `*/
 export function addEventListener(domEl, type, listener, ...options) {
 	if (domEl.addEventListener) {
@@ -38,8 +48,19 @@ export function addEventListener(domEl, type, listener, ...options) {
 |* @name removeEventListener
 |*
 |* @description
+|* The EventTarget.removeEventListener() method removes from the EventTarget an event
+|* listener previously registered with EventTarget.addEventListener(). The event
+|* listener to be removed is identified using a combination of the event type, the
+|* event listener function itself, and various optional options that may affect the
+|* matching process; see Matching event listeners for removal.
 |*
-|* @param
+|* @param {HTMLElement} domEl
+|* @param {String} type
+|* @param {Function} listener
+|* @param {Object} options
+|* @param {Boolean} useCapture
+|*
+|* @api public
 `*/
 export function removeEventListener(domEl, type, listener, ...options) {
 	if (domEl.removeEventListener) {
@@ -55,11 +76,19 @@ export function removeEventListener(domEl, type, listener, ...options) {
 |* @name dispatchEvent
 |*
 |* @description
+|* Dispatches an Event at the specified EventTarget, invoking the affected EventListeners
+|* in the appropriate order. The normal event processing rules (including the capturing
+|* and optional bubbling phase) also apply to events dispatched manually with
+|* dispatchEvent().
 |*
-|* @param {}
+|* @param {HTMLElement} domEl
+|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {Mixed} data
 |*
-|* @returns {boolean} cancelled Indicating whether the event was canceled
+|* @returns {Boolean} cancelled Indicating whether the event was canceled
 |* by an event handler.
+|*
+|* @api public
 `*/
 export function dispatchEvent(domEl, type, data) {
 	let event;
@@ -90,7 +119,11 @@ export function dispatchEvent(domEl, type, data) {
 |*
 |* @description
 |*
-|* @param
+|* @param {HTMLElement} domEl
+|* @param {String} type
+|* @param {Mixed} data
+|*
+|* @api public
 `*/
 export function emit(domEl, type, data) {
 	const numArgs = arguments.length;
@@ -111,7 +144,13 @@ export function emit(domEl, type, data) {
 |*
 |* @description
 |*
-|* @param
+|* @param {HTMLElement} domEl
+|* @param {String} type
+|* @param {Function} listener
+|* @param {Object} options
+|* @param {Boolean} useCapture
+|*
+|* @api public
 `*/
 export function on(domEl, type, listener, ...options) {
 	for (let id = 0; id < events.length; id += 1) {
@@ -129,7 +168,13 @@ export function on(domEl, type, listener, ...options) {
 |*
 |* @description
 |*
-|* @param
+|* @param {HTMLElement} domEl
+|* @param {String} type
+|* @param {Function} listener
+|* @param {Object} options
+|* @param {Boolean} useCapture
+|*
+|* @api public
 `*/
 export function off(domEl, type, listener, ...options) {
 	const numArgs = arguments.length;
@@ -156,7 +201,13 @@ export function off(domEl, type, listener, ...options) {
 |*
 |* @description
 |*
-|* @param
+|* @param {HTMLElement} domEl
+|* @param {String} type
+|* @param {Function} listener
+|* @param {Object} options
+|* @param {Boolean} useCapture
+|*
+|* @api public
 `*/
 export function once(domEl, type, listener, ...options) {
 	on(domEl, type, function handler(event) {
@@ -178,10 +229,12 @@ export function once(domEl, type, listener, ...options) {
 |* object to which it belongs, whereas `willEmit()` examines the entire event flow for the event
 |* specified by the `type` parameter.
 |*
-|* @param {string} type The type of event.
+|* @param {String} type The type of event.
 |*
-|* @returns {boolean} A value of `true` if a listener of the specified type is registered;
+|* @returns {Boolean} A value of `true` if a listener of the specified type is registered;
 |* `false` otherwise.
+|*
+|* @api public
 `*/
 export function hasEvent(type) {
 	return !!type;
@@ -200,10 +253,12 @@ export function hasEvent(type) {
 |* examines only the object to which it belongs, whereas the `willEmit()` method examines
 |* the entire event flow for the event specified by the type parameter.
 |*
-|* @param {string} type The type of event.
+|* @param {String} type The type of event.
 |*
-|* @returns {boolean} A value of `true` if a listener of the specified type is registered;
+|* @returns {Boolean} A value of `true` if a listener of the specified type is registered;
 |* `false` otherwise.
+|*
+|* @api public
 `*/
 export function willEmit(type) {
 	return !!type;
