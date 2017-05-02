@@ -3,9 +3,9 @@
 `*/
 const events = [];
 
-export function addEventListener(domEl, type, listener, options) {
+export function addEventListener(domEl, type, listener, ...options) {
 	if (domEl.addEventListener) {
-		domEl.addEventListener(type, listener, options);
+		domEl.addEventListener(type, listener, ...options);
 	} else if (domEl.attachEvent && window.htmlEvents[`on${type}`]) {
 		domEl.attachEvent(`on${type}`, listener);
 	} else {
@@ -13,9 +13,9 @@ export function addEventListener(domEl, type, listener, options) {
 	}
 }
 
-export function removeEventListener(domEl, type, listener, options) {
+export function removeEventListener(domEl, type, listener, ...options) {
 	if (domEl.removeEventListener) {
-		domEl.removeEventListener(type, listener, options);
+		domEl.removeEventListener(type, listener, ...options);
 	} else if (domEl.detachEvent && window.htmlEvents[`on${type}`]) {
 		domEl.detachEvent(`on${type}`, listener);
 	} else {
@@ -49,27 +49,35 @@ export function dispatchEvent(domEl, type, data) {
 |*
 `*/
 export function emit(domEl, type, data) {
-	dispatchEvent(domEl, type, data);
+	if (toString.call(domEl) === '[object String]') {
+		const dispatched = [];
+		for (let id = events.length - 1; id >= 0; id -= 1) {
+			const event = events[id];
+			dispatched.push(dispatchEvent(event.domEl, event.type, data));
+		}
+		return dispatched;
+	}
+	return dispatchEvent(domEl, type, data);
 }
 
 /*!
 |*
 `*/
-export function on(domEl, type, listener, options) {
+export function on(domEl, type, listener, ...options) {
 	for (let id = 0; id < events.length; id += 1) {
 		const event = events[id];
 		if (event.type === type && event.listener === listener) {
 			return;
 		}
 	}
-	addEventListener(domEl, type, listener, options);
+	addEventListener(domEl, type, listener, ...options);
 	events.push({ domEl, type, listener });
 }
 
 /*!
 |*
 `*/
-export function off(domEl, type, listener, options) {
+export function off(domEl, type, listener, ...options) {
 	const numArgs = arguments.length;
 	const domIsAnEventType = toString.call(domEl) === '[object String]';
 	const eventType = domIsAnEventType ? domEl : type;
@@ -80,10 +88,10 @@ export function off(domEl, type, listener, options) {
 		const isSameEvent = numArgs > 2 && event.listener === listener && hasSameType;
 		if (allElements) {
 			event.type = domIsAnEventType ? eventType : event.type;
-			removeEventListener(event.domEl, event.type, event.listener, options);
+			removeEventListener(event.domEl, event.type, event.listener, ...options);
 			events.splice(id, 1);
 		} else if (hasSameType || isSameEvent) {
-			removeEventListener(domEl, eventType, event.listener, options);
+			removeEventListener(domEl, eventType, event.listener, ...options);
 			events.splice(id, 1);
 		}
 	}
@@ -92,11 +100,11 @@ export function off(domEl, type, listener, options) {
 /*!
 |*
 `*/
-export function once(domEl, type, listener) {
+export function once(domEl, type, listener, ...options) {
 	on(domEl, type, function handler(event) {
-		off(domEl, type, handler);
+		off(domEl, type, handler, ...options);
 		listener(event);
-	});
+	}, ...options);
 }
 
 /*!
