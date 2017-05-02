@@ -229,6 +229,7 @@ export function once(domEl, type, listener, ...options) {
 |* object to which it belongs, whereas `willEmit()` examines the entire event flow for the event
 |* specified by the `type` parameter.
 |*
+|* @param {HTMLElement} domEl
 |* @param {String} type The type of event.
 |*
 |* @returns {Boolean} A value of `true` if a listener of the specified type is registered;
@@ -236,9 +237,10 @@ export function once(domEl, type, listener, ...options) {
 |*
 |* @api public
 `*/
-export function hasEvent(type) {
+export function hasEvent(domEl, type) {
 	for (let id = events.length - 1; id >= 0; id -= 1) {
-		if (events[id].type === type) {
+		const event = events[id];
+		if (event.domEl === domEl && event.type === type) {
 			return true;
 		}
 	}
@@ -266,5 +268,10 @@ export function hasEvent(type) {
 |* @api public
 `*/
 export function willEmit(type) {
-	return !!type;
+	for (let id = events.length - 1; id >= 0; id -= 1) {
+		if (events[id].type === type) {
+			return true;
+		}
+	}
+	return false;
 }
