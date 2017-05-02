@@ -37,7 +37,7 @@ function updateContent(state) {
 	$sectionContent.innerHTML = [state.template, `url: ${state.url}`].join('<br>');
 }
 
-function register(state, index, stateList) {
+function createStateButton(state, index, stateList) {
 	ui.append(ui.createButton({
 		dataset: state,
 		value: state.title,
@@ -53,23 +53,23 @@ function register(state, index, stateList) {
 	}));
 }
 
-function route(state, index, stateList) {
+function parseState(state, index, stateList) {
 	if (Array.isArray(state.url)) {
 		state.url.forEach((url) => {
 			state.title = url || state.name;
 			state.url = url;
-			route(state, index, stateList);
+			parseState(state, index, stateList);
 		}, this);
-	} else register(state, index, stateList);
+	} else createStateButton(state, index, stateList);
 }
 
 function createUI() {
-	states.forEach(route, this);
+	states.forEach(parseState, this);
 	ui.append($infoBox);
 	ui.append($disposeButton);
 }
 
-history.one(history.PopStateEvent, (event) => {
+history.on(history.PopStateEvent, (event) => {
 	updateContent(event.state);
 });
 

@@ -146,12 +146,12 @@ pirate.off = function off(type, listener, options) {
 	dispatcher.off(window, event.type, event.listener, options);
 };
 
-pirate.willEmit = function willEmit(type) {
-	return dispatcher.willEmit(type);
-};
-
 pirate.emit = function emit(type, data) {
 	return dispatcher.emit(window, type, data);
+};
+
+pirate.willEmit = function willEmit(type) {
+	return dispatcher.willEmit(type);
 };
 
 pirate.pushState = function pushState(state, title, url) {
