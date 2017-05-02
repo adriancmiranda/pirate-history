@@ -1,8 +1,12 @@
-/*!
-|*
-`*/
 const events = [];
 
+/*!
+|* @name addEventListener
+|*
+|* @description
+|*
+|* @param
+`*/
 export function addEventListener(domEl, type, listener, ...options) {
 	if (domEl.addEventListener) {
 		domEl.addEventListener(type, listener, ...options);
@@ -13,6 +17,13 @@ export function addEventListener(domEl, type, listener, ...options) {
 	}
 }
 
+/*!
+|* @name removeEventListener
+|*
+|* @description
+|*
+|* @param
+`*/
 export function removeEventListener(domEl, type, listener, ...options) {
 	if (domEl.removeEventListener) {
 		domEl.removeEventListener(type, listener, ...options);
@@ -23,6 +34,13 @@ export function removeEventListener(domEl, type, listener, ...options) {
 	}
 }
 
+/*!
+|* @name dispatchEvent
+|*
+|* @description
+|*
+|* @param
+`*/
 export function dispatchEvent(domEl, type, data) {
 	let event;
 	if (document.createEvent) {
@@ -46,7 +64,11 @@ export function dispatchEvent(domEl, type, data) {
 }
 
 /*!
+|* @name emit
 |*
+|* @description
+|*
+|* @param
 `*/
 export function emit(domEl, type, data) {
 	if (toString.call(domEl) === '[object String]') {
@@ -61,7 +83,11 @@ export function emit(domEl, type, data) {
 }
 
 /*!
+|* @name on
 |*
+|* @description
+|*
+|* @param
 `*/
 export function on(domEl, type, listener, ...options) {
 	for (let id = 0; id < events.length; id += 1) {
@@ -75,7 +101,11 @@ export function on(domEl, type, listener, ...options) {
 }
 
 /*!
+|* @name off
 |*
+|* @description
+|*
+|* @param
 `*/
 export function off(domEl, type, listener, ...options) {
 	const numArgs = arguments.length;
@@ -98,7 +128,11 @@ export function off(domEl, type, listener, ...options) {
 }
 
 /*!
+|* @name once
 |*
+|* @description
+|*
+|* @param
 `*/
 export function once(domEl, type, listener, ...options) {
 	on(domEl, type, function handler(event) {
@@ -108,13 +142,45 @@ export function once(domEl, type, listener, ...options) {
 }
 
 /*!
+|* @name hasEvent
 |*
+|* @description
+|* Checks whether the `dom-event-dispatcher` object has any listeners registered for a specific
+|* type of event. This allows you to determine where an `dom-event-dispatcher` object has altered
+|* handling of an event type in the event flow hierarchy. To determine whether a specific event
+|* type actually triggers an event listener, use `willEmit()`.
+|*
+|* The difference between `hasEvent()` and `willEmit()` is that `hasEvent()` examines only the
+|* object to which it belongs, whereas `willEmit()` examines the entire event flow for the event
+|* specified by the `type` parameter.
+|*
+|* @param {string} type The type of event.
+|*
+|* @returns {boolean} A value of `true` if a listener of the specified type is registered;
+|* `false` otherwise.
 `*/
-export function hasEvent() {
+export function hasEvent(type) {
+	return !!type;
 }
 
 /*!
+|* @name willEmit
 |*
+|* @description
+|* Checks whether an event listener is registered with this `dom-event-dispatcher` object or
+|* any of its ancestors for the specified event type. This method returns `true` if an event
+|* listener is triggered during any phase of the event flow when an event of the specified
+|* type is dispatched to this `dom-event-dispatcher` object or any of its descendants.
+|*
+|* The difference between the `hasEvent()` and the `willEmit()` methods is that `hasEvent()`
+|* examines only the object to which it belongs, whereas the `willEmit()` method examines
+|* the entire event flow for the event specified by the type parameter.
+|*
+|* @param {string} type The type of event.
+|*
+|* @returns {boolean} A value of `true` if a listener of the specified type is registered;
+|* `false` otherwise.
 `*/
-export function willEmit() {
+export function willEmit(type) {
+	return !!type;
 }
