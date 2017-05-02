@@ -162,6 +162,11 @@ module.exports = (config) => {
 		settings.browserStack.browsers = Object.keys(customLaunchers);
 		settings.browserStack.build = process.env.APPVEYOR_BUILD_NUMBER;
 		settings.browserStack.name = process.env.APPVEYOR_JOB_NUMBER;
+	} else if (process.env.CIRCLECI) {
+		settings.browserStack.captureTimeout = 240000;
+		settings.browserStack.browsers = Object.keys(customLaunchers);
+		settings.browserStack.build = process.env.CIRCLE_BUILD_NUM;
+		settings.browserStack.name = process.env.CIRCLE_BUILD_URL;
 	}
 
 	config.set(settings);
