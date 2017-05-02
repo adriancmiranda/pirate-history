@@ -237,7 +237,12 @@ export function once(domEl, type, listener, ...options) {
 |* @api public
 `*/
 export function hasEvent(type) {
-	return !!type;
+	for (let id = events.length - 1; id >= 0; id -= 1) {
+		if (events[id].type === type) {
+			return true;
+		}
+	}
+	return false;
 }
 
 /*!
