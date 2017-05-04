@@ -119,16 +119,16 @@ export function removeEventListener(domEl, type, listener, ...options) {
 |*
 |* @param {String} type The type is the name of Event object to be dispatched.
 |*
-|* @param {Mixed} data
+|* @param {Mixed} options
 |*
 |* @returns {Boolean} cancelled Indicating whether the event was canceled
 |* by an event handler.
 |*
 |* @api public
 `*/
-export function dispatchEvent(domEl, type, data) {
+export function dispatchEvent(domEl, type, options) {
 	let cancelled;
-	const event = createEvent(type, data);
+	const event = createEvent(type, options);
 	if (domEl.dispatchEvent) {
 		cancelled = domEl.dispatchEvent(event);
 	} else if (domEl.fireEvent && window.htmlEvents[`on${event.type}`]) {
