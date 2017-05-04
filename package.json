@@ -82,7 +82,7 @@
     "sinon-chai": "~2.10.0",
     "standard-version": "~4.0.0",
     "validate-commit-msg": "~2.12.1",
-    "webpack": "~2.4.1",
+    "webpack": "~2.5.0",
     "webpack-cfg": "~1.2.4",
     "webpack-dev-server": "~2.4.5"
   },
