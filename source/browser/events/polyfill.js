@@ -11,16 +11,17 @@
 |*
 |* @api public
 `*/
-export function createEvent(type) {
+export function createEvent(type, data) {
 	let event = { type };
 	if (document.createEvent) {
 		event = document.createEvent('HTMLEvents');
 		event.initEvent(type, true, true);
 	} else if (document.createEventObject) {
 		event = document.createEventObject();
+		event.eventType = type;
 		event.type = type;
 	}
-	return event;
+	return Object.assign(event, data);
 }
 
 /*!
@@ -126,8 +127,7 @@ export function removeEventListener(domEl, type, listener, ...options) {
 `*/
 export function dispatchEvent(domEl, type, data) {
 	let cancelled;
-	const event = createEvent(type);
-	event.state = data;
+	const event = createEvent(type, data);
 	if (domEl.dispatchEvent) {
 		cancelled = domEl.dispatchEvent(event);
 	} else if (domEl.fireEvent && window.htmlEvents[`on${event.type}`]) {
