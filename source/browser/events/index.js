@@ -26,22 +26,23 @@ const events = [];
 |*
 |* @api public
 `*/
-export function emit(domEl, name, data) {
+export function emit(domEl, name, options) {
 	let cancelled = false;
 	const numArgs = arguments.length;
 	const types = String(name).split(' ');
-	for (let ix = 0; ix < types.length; ix += 1) {
+	const numTypes = types.length;
+	for (let ix = numTypes - 1; ix >= 0; ix -= 1) {
 		const type = types[ix];
-		if (numArgs <= 1 || a(domEl, 'String')) {
+		if (numTypes > 1 || numArgs <= 1 || a(domEl, 'String')) {
 			const dispatched = [];
 			for (let id = events.length - 1; id >= 0; id -= 1) {
 				const event = events[id];
 				const eventType = numArgs ? domEl : event.type;
-				dispatched.push(polyfill.dispatchEvent(event.domEl, eventType, data));
+				dispatched.push(polyfill.dispatchEvent(event.domEl, eventType, options));
 			}
 			return dispatched;
 		}
-		if (polyfill.dispatchEvent(domEl, type, data)) {
+		if (polyfill.dispatchEvent(domEl, type, options)) {
 			cancelled = true;
 		}
 	}
