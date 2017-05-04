@@ -146,8 +146,8 @@ pirate.off = function off(type, listener, options) {
 	dispatcher.off(window, event.type, event.listener, options);
 };
 
-pirate.emit = function emit(type, data) {
-	return dispatcher.emit(window, type, data);
+pirate.emit = function emit(type, state) {
+	return dispatcher.emit(window, type, { bubbles: true, cancelable: true, detail: { state } });
 };
 
 pirate.willEmit = function willEmit(type) {
