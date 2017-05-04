@@ -157,6 +157,7 @@ describe('browser/events', () => {
 			expect(this.listener).to.be.spy;
 			dispatcher.on(window, 'changestate', this.listener);
 			expect(dispatcher.willEmit('changestate popstate')).to.be.true;
+			expect(dispatcher.willEmit('foo bar baz')).to.be.false;
 			expect(dispatcher.willEmit('changestate')).to.be.true;
 			expect(dispatcher.willEmit('popstate')).to.be.false;
 		});
@@ -170,6 +171,7 @@ describe('browser/events', () => {
 			expect(this.listener).to.be.spy;
 			dispatcher.on(window, 'changestate', this.listener);
 			expect(dispatcher.hasEvent(window, 'changestate popstate')).to.be.true;
+			expect(dispatcher.hasEvent(window, 'foo bar baz')).to.be.false;
 			expect(dispatcher.hasEvent(window, 'changestate')).to.be.true;
 			expect(dispatcher.hasEvent(window, 'popstate')).to.be.false;
 		});
