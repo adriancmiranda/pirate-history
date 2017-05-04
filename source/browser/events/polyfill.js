@@ -12,15 +12,14 @@
 |* @api public
 `*/
 export function createEvent(type) {
-	let event = {};
+	let event = { type };
 	if (document.createEvent) {
 		event = document.createEvent('HTMLEvents');
 		event.initEvent(type, true, true);
 	} else if (document.createEventObject) {
 		event = document.createEventObject();
-		event.eventType = type;
+		event.type = type;
 	}
-	event.eventName = type;
 	return event;
 }
 
@@ -132,7 +131,7 @@ export function dispatchEvent(domEl, type, data) {
 	if (domEl.dispatchEvent) {
 		cancelled = domEl.dispatchEvent(event);
 	} else if (domEl.fireEvent && window.htmlEvents[`on${type}`]) {
-		cancelled = domEl.fireEvent(`on${event.eventType}`, event);
+		cancelled = domEl.fireEvent(`on${event.type}`, event);
 	} else if (domEl[type]) {
 		cancelled = domEl[type](event);
 	} else if (domEl[`on${type}`]) {
