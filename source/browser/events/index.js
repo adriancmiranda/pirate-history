@@ -22,7 +22,7 @@ const events = [];
 |*
 |* @param {String} name The type is the name of Event object to be dispatched.
 |*
-|* @param {Mixed} data
+|* @param {Mixed} options
 |*
 |* @api public
 `*/
