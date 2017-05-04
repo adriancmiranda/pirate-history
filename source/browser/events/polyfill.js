@@ -11,17 +11,18 @@
 |*
 |* @api public
 `*/
-export function createEvent(type, data) {
+export function createEvent(type, options) {
 	let event = { type };
+	const opts = Object.assign({ bubbles: true, cancelable: true }, options);
 	if (document.createEvent) {
 		event = document.createEvent('HTMLEvents');
-		event.initEvent(type, true, true);
+		event.initEvent(type, opts.bubbles, opts.cancelable, opts.detail);
 	} else if (document.createEventObject) {
 		event = document.createEventObject();
 		event.eventType = type;
 		event.type = type;
 	}
-	return Object.assign(event, data);
+	return Object.assign(event, opts.detail);
 }
 
 /*!
