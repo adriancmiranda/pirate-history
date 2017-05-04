@@ -13,7 +13,7 @@
 `*/
 export function createEvent(type, options) {
 	let event = { type };
-	const opts = Object.assign({ bubbles: true, cancelable: true }, options);
+	const opts = Object.assign({ bubbles: false, cancelable: false }, options);
 	if (document.createEvent) {
 		event = document.createEvent('HTMLEvents');
 		event.initEvent(type, opts.bubbles, opts.cancelable, opts.detail);
