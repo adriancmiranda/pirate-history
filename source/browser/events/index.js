@@ -20,24 +20,32 @@ const events = [];
 |*
 |* @param {HTMLElement} domEl The target object for events dispatched to the EventTarget object.
 |*
-|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {String} name The type is the name of Event object to be dispatched.
 |*
 |* @param {Mixed} data
 |*
 |* @api public
 `*/
-export function emit(domEl, type, data) {
+export function emit(domEl, name, data) {
+	let cancelled = false;
 	const numArgs = arguments.length;
-	if (numArgs <= 1 || a(domEl, 'String')) {
-		const dispatched = [];
-		for (let id = events.length - 1; id >= 0; id -= 1) {
-			const event = events[id];
-			const eventType = numArgs ? domEl : event.type;
-			dispatched.push(polyfill.dispatchEvent(event.domEl, eventType, data));
+	const types = String(name).split(' ');
+	for (let ix = 0; ix < types.length; ix += 1) {
+		const type = types[ix];
+		if (numArgs <= 1 || a(domEl, 'String')) {
+			const dispatched = [];
+			for (let id = events.length - 1; id >= 0; id -= 1) {
+				const event = events[id];
+				const eventType = numArgs ? domEl : event.type;
+				dispatched.push(polyfill.dispatchEvent(event.domEl, eventType, data));
+			}
+			return dispatched;
 		}
-		return dispatched;
+		if (!cancelled && polyfill.dispatchEvent(domEl, type, data)) {
+			cancelled = true;
+		}
 	}
-	return polyfill.dispatchEvent(domEl, type, data);
+	return cancelled;
 }
 
 /*!
@@ -49,7 +57,7 @@ export function emit(domEl, type, data) {
 |*
 |* @param {HTMLElement} domEl The target object for events dispatched to the EventTarget object.
 |*
-|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {String} name The type is the name of Event object to be dispatched.
 |*
 |* @param {Function} listener The listener function that processes the event.
 |* This function must accept an Event object as its only parameter and must return nothing.
@@ -67,15 +75,19 @@ export function emit(domEl, type, data) {
 |*
 |* @api public
 `*/
-export function on(domEl, type, listener, ...options) {
-	for (let id = 0; id < events.length; id += 1) {
-		const event = events[id];
-		if (event.type === type && event.listener === listener) {
-			return;
+export function on(domEl, name, listener, ...options) {
+	const types = String(name).split(' ');
+	for (let ix = types.length - 1; ix >= 0; ix -= 1) {
+		const type = types[ix];
+		for (let iy = events.length - 1; iy >= 0; iy -= 1) {
+			const event = events[iy];
+			if (event.type === type && event.listener === listener) {
+				return;
+			}
 		}
+		polyfill.addEventListener(domEl, type, listener, ...options);
+		events.push({ domEl, type, listener });
 	}
-	polyfill.addEventListener(domEl, type, listener, ...options);
-	events.push({ domEl, type, listener });
 }
 
 /*!
@@ -86,7 +98,7 @@ export function on(domEl, type, listener, ...options) {
 |*
 |* @param {HTMLElement} domEl The target object for events dispatched to the EventTarget object.
 |*
-|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {String} name The type is the name of Event object to be dispatched.
 |*
 |* @param {Function} listener The listener function that processes the event.
 |* This function must accept an Event object as its only parameter and must return nothing.
@@ -104,22 +116,26 @@ export function on(domEl, type, listener, ...options) {
 |*
 |* @api public
 `*/
-export function off(domEl, type, listener, ...options) {
+export function off(domEl, name, listener, ...options) {
+	const types = String(name).split(' ');
 	const numArgs = arguments.length;
 	const domIsAnEventType = a(domEl, 'String');
-	const eventType = domIsAnEventType ? domEl : type;
-	for (let id = events.length - 1; id >= 0; id -= 1) {
-		const event = events[id];
-		const allElements = numArgs <= 1;
-		const hasSameType = numArgs > 1 && event.type === eventType;
-		const isSameEvent = numArgs > 2 && event.listener === listener && hasSameType;
-		if (allElements) {
-			event.type = domIsAnEventType ? eventType : event.type;
-			polyfill.removeEventListener(event.domEl, event.type, event.listener, ...options);
-			events.splice(id, 1);
-		} else if (hasSameType || isSameEvent) {
-			polyfill.removeEventListener(domEl, eventType, event.listener, ...options);
-			events.splice(id, 1);
+	for (let ix = types.length - 1; ix >= 0; ix -= 1) {
+		const type = types[ix];
+		const eventType = domIsAnEventType ? domEl : type;
+		for (let iy = events.length - 1; iy >= 0; iy -= 1) {
+			const event = events[iy];
+			const allElements = numArgs <= 1;
+			const hasSameType = numArgs > 1 && event.type === eventType;
+			const isSameEvent = numArgs > 2 && event.listener === listener && hasSameType;
+			if (allElements) {
+				event.type = domIsAnEventType ? eventType : event.type;
+				polyfill.removeEventListener(event.domEl, event.type, event.listener, ...options);
+				events.splice(iy, 1);
+			} else if (hasSameType || isSameEvent) {
+				polyfill.removeEventListener(domEl, eventType, event.listener, ...options);
+				events.splice(iy, 1);
+			}
 		}
 	}
 }
@@ -133,7 +149,7 @@ export function off(domEl, type, listener, ...options) {
 |*
 |* @param {HTMLElement} domEl The target object for events dispatched to the EventTarget object.
 |*
-|* @param {String} type The type is the name of Event object to be dispatched.
+|* @param {String} name The type is the name of Event object to be dispatched.
 |*
 |* @param {Function} listener The listener function that processes the event.
 |* This function must accept an Event object as its only parameter and must return nothing.
@@ -151,9 +167,9 @@ export function off(domEl, type, listener, ...options) {
 |*
 |* @api public
 `*/
-export function one(domEl, type, listener, ...options) {
-	on(domEl, type, function handler(event) {
-		off(domEl, type, handler, ...options);
+export function one(domEl, name, listener, ...options) {
+	on(domEl, name, function handler(event) {
+		off(domEl, name, handler, ...options);
 		listener(event);
 	}, ...options);
 }
@@ -180,11 +196,15 @@ export function one(domEl, type, listener, ...options) {
 |*
 |* @api public
 `*/
-export function hasEvent(domEl, type) {
-	for (let id = events.length - 1; id >= 0; id -= 1) {
-		const event = events[id];
-		if (event.domEl === domEl && event.type === type) {
-			return true;
+export function hasEvent(domEl, name) {
+	const types = String(name).split(' ');
+	for (let ix = types.length - 1; ix >= 0; ix -= 1) {
+		const type = types[ix];
+		for (let iy = events.length - 1; iy >= 0; iy -= 1) {
+			const event = events[iy];
+			if (event.domEl === domEl && event.type === type) {
+				return true;
+			}
 		}
 	}
 	return false;
@@ -210,10 +230,14 @@ export function hasEvent(domEl, type) {
 |*
 |* @api public
 `*/
-export function willEmit(type) {
-	for (let id = events.length - 1; id >= 0; id -= 1) {
-		if (events[id].type === type) {
-			return true;
+export function willEmit(name) {
+	const types = String(name).split(' ');
+	for (let ix = types.length - 1; ix >= 0; ix -= 1) {
+		const type = types[ix];
+		for (let iy = events.length - 1; iy >= 0; iy -= 1) {
+			if (events[iy].type === type) {
+				return true;
+			}
 		}
 	}
 	return false;
