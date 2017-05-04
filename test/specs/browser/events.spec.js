@@ -78,8 +78,7 @@ describe('browser/events', () => {
 		it('should remove all event handlers from a specific element by type', () => {
 			const anotherListener = spy();
 			expect(this.listener).to.be.spy;
-			dispatcher.on(this.element, 'popstate', this.listener);
-			dispatcher.on(this.element, 'changestate', this.listener);
+			dispatcher.on(this.element, 'popstate changestate', this.listener);
 			dispatcher.on(this.element, 'pushstate', anotherListener);
 			dispatcher.on(this.element, 'pushstate', this.listener);
 			dispatcher.off(this.element, 'pushstate'); // <= all pushstate listeners from this.element
