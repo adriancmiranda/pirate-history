@@ -155,6 +155,9 @@ describe('browser/events', () => {
 			'object or any of its ancestors for the specified event type',
 		].join(' '), () => {
 			expect(this.listener).to.be.spy;
+			dispatcher.on(window, 'changestate', this.listener);
+			expect(dispatcher.willEmit('changestate')).to.be.true;
+			expect(dispatcher.willEmit('popstate')).to.be.false;
 		});
 	});
 
