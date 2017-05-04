@@ -31,9 +31,10 @@ export function emit(domEl, name, options) {
 	const numArgs = arguments.length;
 	const types = String(name).split(' ');
 	const numTypes = types.length;
-	for (let ix = numTypes - 1; ix >= 0; ix -= 1) {
+	const domIsAnEventType = a(domEl, 'String');
+	for (let ix = 0; ix < numTypes; ix += 1) {
 		const type = types[ix];
-		if (numTypes > 1 || numArgs <= 1 || a(domEl, 'String')) {
+		if (numArgs <= 1 || domIsAnEventType) {
 			const dispatched = [];
 			for (let id = events.length - 1; id >= 0; id -= 1) {
 				const event = events[id];
