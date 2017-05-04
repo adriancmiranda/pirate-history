@@ -19,9 +19,7 @@ describe('browser/events', () => {
 	describe('#on', () => {
 		it('should invoke the listener with a Event argument multiple times', () => {
 			dispatcher.on(this.element, 'popstate', this.listener);
-			dispatcher.emit(this.element, 'popstate');
-			dispatcher.emit(this.element, 'popstate');
-			dispatcher.emit(this.element, 'popstate');
+			dispatcher.emit(this.element, 'popstate popstate popstate');
 			expect(this.listener.called).to.be.true;
 			expect(this.listener.calledOnce).to.be.false;
 			expect(this.listener.callCount).to.be.equal(3);
@@ -38,9 +36,7 @@ describe('browser/events', () => {
 		it('should invoke the listener with a Event argument one', () => {
 			expect(this.listener).to.be.spy;
 			dispatcher.one(this.element, 'popstate', this.listener);
-			dispatcher.emit(this.element, 'popstate');
-			dispatcher.emit(this.element, 'popstate');
-			dispatcher.emit(this.element, 'popstate');
+			dispatcher.emit(this.element, 'popstate popstate popstate');
 			expect(this.listener.called).to.be.true;
 			expect(this.listener.calledOnce).to.be.true;
 			const args = this.listener.getCall(0).args;
@@ -55,9 +51,7 @@ describe('browser/events', () => {
 			expect(this.listener).to.be.spy;
 			dispatcher.on(this.element, 'popstate changestate pushstate', this.listener);
 			dispatcher.off(this.element, 'pushstate', this.listener); // <= specific listener
-			dispatcher.emit(this.element, 'popstate');
-			dispatcher.emit(this.element, 'changestate');
-			dispatcher.emit(this.element, 'pushstate');
+			dispatcher.emit(this.element, 'popstate changestate pushstate');
 			expect(this.listener.callCount).to.be.equal(2);
 		});
 
@@ -65,9 +59,7 @@ describe('browser/events', () => {
 			expect(this.listener).to.be.spy;
 			dispatcher.on(this.element, 'pushstate popstate changestate', this.listener);
 			dispatcher.off(this.element); // <= all types
-			dispatcher.emit(this.element, 'popstate');
-			dispatcher.emit(this.element, 'changestate');
-			dispatcher.emit(this.element, 'pushstate');
+			dispatcher.emit(this.element, 'popstate changestate pushstate');
 			expect(this.listener.callCount).to.be.equal(0);
 		});
 
@@ -77,9 +69,7 @@ describe('browser/events', () => {
 			dispatcher.on(this.element, 'pushstate popstate changestate', this.listener);
 			dispatcher.on(this.element, 'pushstate', anotherListener);
 			dispatcher.off(this.element, 'pushstate'); // <= all pushstate listeners from this.element
-			dispatcher.emit(this.element, 'popstate');
-			dispatcher.emit(this.element, 'changestate');
-			dispatcher.emit(this.element, 'pushstate');
+			dispatcher.emit(this.element, 'popstate changestate pushstate');
 			expect(this.listener.callCount).to.be.equal(2);
 			expect(anotherListener.callCount).to.be.equal(0);
 		});

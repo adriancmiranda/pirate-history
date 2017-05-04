@@ -41,7 +41,7 @@ export function emit(domEl, name, data) {
 			}
 			return dispatched;
 		}
-		if (!cancelled && polyfill.dispatchEvent(domEl, type, data)) {
+		if (polyfill.dispatchEvent(domEl, type, data)) {
 			cancelled = true;
 		}
 	}

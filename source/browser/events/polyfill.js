@@ -1,5 +1,3 @@
-import { a } from 'source/common';
-
 /*!
 |* @name createEvent
 |*
@@ -140,5 +138,5 @@ export function dispatchEvent(domEl, type, data) {
 	} else if (domEl[`on${type}`]) {
 		cancelled = domEl[`on${type}`](event);
 	}
-	return a(cancelled, 'Boolean') ? cancelled : true;
+	return typeof cancelled === 'undefined' || cancelled;
 }
