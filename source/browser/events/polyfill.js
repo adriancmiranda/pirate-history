@@ -115,8 +115,7 @@ export function removeEventListener(domEl, type, listener, ...options) {
 |* and optional bubbling phase) also apply to events dispatched manually with
 |* dispatchEvent().
 |*
-|* @param {HTMLElement} domEl The target object for events dispatched to the
-|* EventTarget object.
+|* @param {HTMLElement} domEl The target object for events dispatched to the EventTarget object.
 |*
 |* @param {String} type The type is the name of Event object to be dispatched.
 |*
