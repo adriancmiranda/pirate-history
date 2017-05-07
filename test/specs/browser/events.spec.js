@@ -164,6 +164,7 @@ describe('browser/events', () => {
 			expect(dispatcher.hasEvent(window, 'foo bar baz')).to.be.false;
 			expect(dispatcher.hasEvent(window, 'changestate')).to.be.true;
 			expect(dispatcher.hasEvent(window, 'popstate')).to.be.false;
+			expect(dispatcher.hasEvent(window, 'anon')).to.be.false;
 		});
 	});
 });
