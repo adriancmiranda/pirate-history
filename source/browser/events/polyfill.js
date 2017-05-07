@@ -16,13 +16,15 @@ export function createEvent(type, options) {
 	const opts = Object.assign({ bubbles: false, cancelable: false }, options);
 	if (document.createEvent) {
 		event = document.createEvent('HTMLEvents');
-		event.initEvent(type, opts.bubbles, opts.cancelable, opts.detail);
+		event.initEvent(type, opts.bubbles, opts.cancelable);
+		event.detail = opts.detail;
+		return event;
 	} else if (document.createEventObject) {
 		event = document.createEventObject();
 		event.eventType = type;
 		event.type = type;
 	}
-	return Object.assign(event, opts.detail);
+	return Object.assign(event, opts);
 }
 
 /*!

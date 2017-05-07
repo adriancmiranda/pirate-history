@@ -27,7 +27,7 @@ describe('browser/events', () => {
 				const args = this.listener.getCall(ix).args;
 				expect(args.length).to.be.at.least(1);
 				expect(args[0]).to.be.instanceOf(Event);
-				expect(Object.prototype.hasOwnProperty.call(args[0], 'state')).to.be.true;
+				expect(Object.prototype.hasOwnProperty.call(args[0], 'detail')).to.be.true;
 			}
 		});
 	});
@@ -42,7 +42,7 @@ describe('browser/events', () => {
 			const args = this.listener.getCall(0).args;
 			expect(args.length).to.be.at.least(1);
 			expect(args[0]).to.be.instanceOf(Event);
-			expect(Object.prototype.hasOwnProperty.call(args[0], 'state')).to.be.true;
+			expect(Object.prototype.hasOwnProperty.call(args[0], 'detail')).to.be.true;
 		});
 	});
 
@@ -113,18 +113,17 @@ describe('browser/events', () => {
 		});
 
 		it('should pass arguments to the listeners', () => {
+			const state = { foo: 'foo', bar: 1, baz: {} };
 			expect(this.listener).to.be.spy;
 			dispatcher.on(this.element, 'popstate', this.listener);
-			dispatcher.emit(this.element, 'popstate', { foo: 'foo', bar: 1, baz: {} });
+			dispatcher.emit(this.element, 'popstate', { detail: { state } });
 			assert.calledOnce(this.listener);
 			const args = this.listener.getCall(0).args;
 			expect(args.length).to.be.at.least(1);
 			expect(args[0]).to.be.instanceOf(Event);
-			expect(Object.prototype.hasOwnProperty.call(args[0], 'state')).to.be.true;
-			expect(args[0].state).to.be.an('object');
-			expect(args[0].state).to.have.property('foo').to.be.a('string');
-			expect(args[0].state).to.have.property('bar').to.be.a('number');
-			expect(args[0].state).to.have.property('baz').to.be.an('object');
+			expect(args[0].detail).to.be.a('object');
+			expect(args[0].detail.state).to.equal(state);
+			expect(args[0].type).to.equal('popstate'); // <= crossbrowser
 		});
 
 		it('should emit all events', () => {
