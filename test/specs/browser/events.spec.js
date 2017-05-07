@@ -113,17 +113,18 @@ describe('browser/events', () => {
 		});
 
 		it('should pass arguments to the listeners', () => {
+			const type = 'popstate';
 			const state = { foo: 'foo', bar: 1, baz: {} };
 			expect(this.listener).to.be.spy;
-			dispatcher.on(this.element, 'popstate', this.listener);
-			dispatcher.emit(this.element, 'popstate', { detail: { state } });
+			dispatcher.on(this.element, type, this.listener);
+			dispatcher.emit(this.element, type, { detail: { state } });
 			assert.calledOnce(this.listener);
 			const args = this.listener.getCall(0).args;
 			expect(args.length).to.be.at.least(1);
 			expect(args[0]).to.be.instanceOf(Event);
 			expect(args[0].detail).to.be.a('object');
 			expect(args[0].detail.state).to.equal(state);
-			expect(args[0].type).to.equal('popstate'); // <= crossbrowser
+			expect(args[0].type).to.equal(type); // <= crossbrowser
 		});
 
 		it('should emit all events', () => {
