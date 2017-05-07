@@ -36,8 +36,7 @@ export function createEvent(type, options) {
 |* on which it's called. The event target may be an Element in a document, the Document
 |* itself, a Window, or any other object that supports events (such as XMLHttpRequest).
 |*
-|* @param {HTMLElement} domEl The target object for events dispatched to the
-|* EventTarget object.
+|* @param {HTMLElement} domEl The target object for events dispatched to the EventTarget object.
 |*
 |* @param {String} type The type is the name of Event object to be dispatched.
 |*
@@ -50,8 +49,8 @@ export function createEvent(type, options) {
 |* @param {Boolean} useCapture Determines whether the listener works in the capture phase or
 |* the target and bubbling phases. If useCapture is set to true, the listener processes the
 |* event only during the capture phase and not in the target or bubbling phase.
-|* If useCapture is false, the listener processes the event only during the target
-|* or bubbling phase.
+|* If useCapture is false, the listener processes the event only during the target or bubbling
+|* phase.
 |* To listen for the event in all three phases, call addEventListener twice, once
 |* with useCapture set to true, then again with useCapture set to false.
 |*
