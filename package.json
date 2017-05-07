@@ -28,7 +28,7 @@
   },
   "optionalDependencies": {
     "compression-webpack-plugin": "0.4.0",
-    "webpack-bundle-analyzer": "2.4.1"
+    "webpack-bundle-analyzer": "2.6.0"
   },
   "devDependencies": {
     "babel-core": "~6.24.1",
@@ -57,7 +57,7 @@
     "husky": "~0.13.3",
     "karma": "~1.7.0",
     "karma-browserstack-launcher": "~1.2.0",
-    "karma-chrome-launcher": "~2.1.0",
+    "karma-chrome-launcher": "~2.1.1",
     "karma-coverage": "~1.1.1",
     "karma-firefox-launcher": "~1.0.1",
     "karma-fixture": "~0.2.6",
@@ -82,7 +82,7 @@
     "sinon-chai": "~2.10.0",
     "standard-version": "~4.0.0",
     "validate-commit-msg": "~2.12.1",
-    "webpack": "~2.5.0",
+    "webpack": "~2.5.1",
     "webpack-cfg": "~1.2.4",
     "webpack-dev-server": "~2.4.5"
   },
