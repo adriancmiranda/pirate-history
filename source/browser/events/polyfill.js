@@ -91,8 +91,8 @@ export function addEventListener(domEl, type, listener, ...options) {
 |* event only during the capture phase and not in the target or bubbling phase.
 |* If useCapture is false, the listener processes the event only during the target or
 |* bubbling phase.
-|* To listen for the event in all three phases, call addEventListener twice, once
-|* with useCapture set to true, then again with useCapture set to false.
+|* To listen for the event in all three phases, call addEventListener twice, once with useCapture
+|* set to true, then again with useCapture set to false.
 |*
 |* @api public
 `*/
