@@ -22,6 +22,40 @@ const $infoBox = ui.createTextArea({
 	},
 });
 
+const $createStateButton = ui.createButton({
+	value: '+',
+	style: {
+		marginTop: '10px',
+		marginLeft: '10px',
+	},
+	onclick() {
+		this.page = (this.page || 0) + 1;
+		history.pushState({ page: this.page }, null, `/${this.page}`);
+	},
+});
+
+const $forwardButton = ui.createButton({
+	value: '>',
+	style: {
+		marginTop: '10px',
+		marginLeft: '10px',
+	},
+	onclick() {
+		history.forward();
+	},
+});
+
+const $backButton = ui.createButton({
+	value: '<',
+	style: {
+		marginTop: '10px',
+		marginLeft: '10px',
+	},
+	onclick() {
+		history.back();
+	},
+});
+
 const $disposeButton = ui.createButton({
 	value: 'remove all events',
 	style: {
@@ -65,6 +99,9 @@ function parseState(state, index, stateList) {
 
 function createUI() {
 	states.forEach(parseState, this);
+	ui.append($createStateButton);
+	ui.append($backButton);
+	ui.append($forwardButton);
 	ui.append($infoBox);
 	ui.append($disposeButton);
 }

@@ -1,2 +1,1 @@
-/* eslint-disable */
-console.log('history.memory');
+export * as memory from './browser/history/memory';

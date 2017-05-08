@@ -133,8 +133,6 @@ export function dispatchEvent(domEl, type, options) {
 		cancelled = domEl.dispatchEvent(event);
 	} else if (domEl.fireEvent && window.htmlEvents[`on${event.type}`]) {
 		cancelled = domEl.fireEvent(`on${event.type}`, event);
-	} else if (domEl[event.type]) {
-		cancelled = domEl[event.type](event);
 	} else if (domEl[`on${event.type}`]) {
 		cancelled = domEl[`on${event.type}`](event);
 	}

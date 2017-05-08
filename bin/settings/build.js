@@ -22,27 +22,39 @@ module.exports = $ => commonTemplate($).cfg({
       root: $('cwd'),
       verbose: true,
     }),
-    new webpack.optimize.UglifyJsPlugin(Object.assign({
-      compress: {
-        warnings: false,
-      },
-      output: {
-        comments: false,
-      },
-    }, $('script.uglify'), {
-      sourceMap: $('build.sourceMap'),
-    })),
-    new webpack.BannerPlugin({
-      banner: pirateFlag($('package'), {
-        moment: $('now'),
-        commit: $('git.commithash'),
-        homepage: $('package.homepage'),
-        author: $('package.author'),
-        license: $('package.license'),
-      }),
-    }),
   ],
 })
+
+// --------------------------------------------------------------------------
+// *optional minification
+// --------------------------------------------------------------------------
+.cfg('plugins', $('build.minify') ? [(() => {
+  return new webpack.optimize.UglifyJsPlugin(Object.assign({
+    compress: {
+      warnings: false,
+    },
+    output: {
+      comments: false,
+    },
+  }, $('script.uglify'), {
+    sourceMap: $('build.sourceMap'),
+  }));
+})()] : [])
+
+// --------------------------------------------------------------------------
+// *optional signature
+// --------------------------------------------------------------------------
+.cfg('plugins', $('build.sign') ? [(() => {
+  return new webpack.BannerPlugin({
+    banner: pirateFlag($('package'), {
+      moment: $('now'),
+      commit: $('git.commithash'),
+      homepage: $('package.homepage'),
+      author: $('package.author'),
+      license: $('package.license'),
+    }),
+  });
+})()] : [])
 
 // --------------------------------------------------------------------------
 // *optional: https://www.npmjs.com/package/compression-webpack-plugin

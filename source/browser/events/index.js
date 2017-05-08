@@ -1,4 +1,4 @@
-import { a } from 'source/common';
+import a from 'source/common/a';
 import * as polyfill from './polyfill';
 
 /*!

@@ -1,2 +1,1 @@
-/* eslint-disable */
-console.log('history.hash');
+export * as hash from './browser/history/hash';

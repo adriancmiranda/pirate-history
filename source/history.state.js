@@ -1,2 +1,1 @@
-/* eslint-disable */
-console.log('history.state');
+export * as state from './browser/history/state';
