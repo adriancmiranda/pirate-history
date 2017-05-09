@@ -1,5 +1,5 @@
 /*!
-|* @name a
+|* @name is
 |*
 |* @description
 |* Test if `value` is a type of `type`.
@@ -11,6 +11,6 @@
 |*
 |* @api private
 `*/
-export default function a(value, expectedType) {
-	return toString.call(value) === `[object ${expectedType}]`;
+export default function is(expected, value) {
+	return new RegExp(`(${expected})`).test(toString.call(value));
 }

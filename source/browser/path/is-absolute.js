@@ -19,10 +19,10 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import a from 'source/common/a';
+import is from 'source/common/is';
 
 export default function isAbsolute(path) {
-	if (a(path, 'String')) {
+	if (is('String', path)) {
 		const len = path.length;
 		if (len === 0) return false;
 		let code = path.charCodeAt(0);

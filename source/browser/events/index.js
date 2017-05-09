@@ -1,4 +1,4 @@
-import a from 'source/common/a';
+import is from 'source/common/is';
 import * as polyfill from './polyfill';
 
 /*!
@@ -31,7 +31,7 @@ export function emit(domEl, name, options) {
 	const numArgs = arguments.length;
 	const types = String(name).split(' ');
 	const numTypes = types.length;
-	const domIsAnEventType = a(domEl, 'String');
+	const domIsAnEventType = is('String', domEl);
 	for (let ix = 0; ix < numTypes; ix += 1) {
 		const type = types[ix];
 		if (numArgs <= 1 || domIsAnEventType) {
@@ -121,7 +121,7 @@ export function on(domEl, name, listener, ...options) {
 export function off(domEl, name, listener, ...options) {
 	const types = String(name).split(' ');
 	const numArgs = arguments.length;
-	const domIsAnEventType = a(domEl, 'String');
+	const domIsAnEventType = is('String', domEl);
 	for (let ix = types.length - 1; ix >= 0; ix -= 1) {
 		const type = types[ix];
 		const eventType = domIsAnEventType ? domEl : type;
