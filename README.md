@@ -43,5 +43,5 @@
 [greenkeeper]: https://badges.greenkeeper.io/adriancmiranda/pirate-history.svg
 [greenkeeper-url]: https://greenkeeper.io/
 
-[license]: https://img.shields.io/badge/license-Unlicense-000000.svg
+[license]: https://img.shields.io/badge/license-Unlicense-44cc11.svg
 [license-url]: https://raw.githubusercontent.com/adriancmiranda/pirate-history/master/LICENSE
