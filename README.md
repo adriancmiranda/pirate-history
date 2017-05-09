@@ -19,7 +19,7 @@
 
 <!-- links -->
 
-[npm]: https://img.shields.io/npm/v/pirate-history.svg
+[npm]: https://badge.fury.io/js/pirate-history.svg
 [npm-url]: https://npmjs.com/package/pirate-history
 
 [npm]: https://img.shields.io/npm/v/pirate-history.svg
