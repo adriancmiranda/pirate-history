@@ -28,6 +28,9 @@
 [deps]: https://david-dm.org/adriancmiranda/pirate-history.svg
 [deps-url]: https://david-dm.org/adriancmiranda/pirate-history
 
+[circleci]: https://circleci.com/gh/adriancmiranda/pirate-history/tree/master.svg?style=shield
+[circleci-url]:  https://circleci.com/gh/adriancmiranda/pirate-history/tree/master
+
 [depsci]: https://dependencyci.com/github/adriancmiranda/pirate-history/badge
 [depsci-url]: https://dependencyci.com/github/adriancmiranda/pirate-history
 
