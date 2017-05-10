@@ -1,5 +1,5 @@
 import * as dispatcher from 'source/browser/events/polyfill';
-import * as url from 'source/browser/url/polyfill';
+import parsePath from 'source/browser/path/parse';
 
 const ua = window.navigator.userAgent;
 export const native = window.history;
@@ -35,7 +35,7 @@ export const hasStateList = 'pushState' in Object(native) &&
 |* @api private
 `*/
 export function updateStateList(URL, put) {
-	put(url.parse(URL)); // @TODO: storage
+	put(parsePath(URL)); // @TODO: storage
 }
 
 /*!
