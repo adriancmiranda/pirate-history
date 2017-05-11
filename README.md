@@ -1,21 +1,21 @@
-# pirate-history
+# pirate-history [![npm][npm]][npm-url]
 > Handles cross-browser history management
 
-[![npm][npm]][npm-url]
-[![deps][deps]][deps-url]
-[![depsci][depsci]][depsci-url]
 [![travis][travis]][travis-url]
 [![appveyor][appveyor]][appveyor-url]
+[![browserstack][browserstack]][browserstack-url]
 [![codecov][codecov]][codecov-url]
-[![license][license]][license-url]
 
 ## ☠ There's nothing for you here yet. ☠
 
+## 🏴‍ Dependencies
+
+[![deps][deps]][deps-url]
+[![depsci][depsci]][depsci-url]
 
 ## 🏴‍ License
 
-[Unlicense][license-url]
-
+[![license][license]][license-url]
 
 <!-- links -->
 
@@ -45,6 +45,9 @@
 
 [greenkeeper]: https://badges.greenkeeper.io/adriancmiranda/pirate-history.svg
 [greenkeeper-url]: https://greenkeeper.io/
+
+[browserstack]: https://www.browserstack.com/automate/badge.svg?badge_key=QXNiZ2dxcmxFVUxQZDRHNUsrNFd3dzl2MUo4TGt1RG8zeTNhRXpXSTl6MD0tLTRpY0JkY2VGdDg0ak9ZTnBzN0tFVXc9PQ==--37f49533fa5db5c89b895d055d6f374c8c8c7346
+[browserstack-url]: https://www.browserstack.com
 
 [license]: https://img.shields.io/badge/license-Unlicense-44cc11.svg
 [license-url]: https://raw.githubusercontent.com/adriancmiranda/pirate-history/master/LICENSE
