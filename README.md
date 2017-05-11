@@ -39,6 +39,9 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 [codestyle]: https://david-dm.org/adriancmiranda/pirate-history.svg
 [codestyle-url]: https://david-dm.org/adriancmiranda/pirate-history
 
+[codacy]: https://api.codacy.com/project/badge/Grade/3e0f59413b9e466ea528760f857a08db
+[codacy-url]: https://www.codacy.com/app/adriancmiranda/pirate-history?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=adriancmiranda/pirate-history&amp;utm_campaign=Badge_Grade
+
 [inch]: https://inch-ci.org/github/adriancmiranda/pirate-history.svg?branch=master
 [inch-url]: https://inch-ci.org/github/adriancmiranda/pirate-history
 
