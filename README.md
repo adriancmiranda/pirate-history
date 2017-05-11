@@ -3,16 +3,21 @@
 
 [![travis][travis]][travis-url]
 [![appveyor][appveyor]][appveyor-url]
-[![browserstack][browserstack]][browserstack-url]
 [![codecov][codecov]][codecov-url]
 
+
 ## ☠ There's nothing for you here yet. ☠
+
+
+## 🏴‍ Compatibility
+
+[![browserstack][browserstack]][browserstack-url]
+
 
 ## 🏴‍ Dependencies
 
 [![deps][deps]][deps-url]
 [![depsci][depsci]][depsci-url]
-
 
 ## 🏴 Support
 
