@@ -13,11 +13,25 @@
 [![deps][deps]][deps-url]
 [![depsci][depsci]][depsci-url]
 
+
+## 🏴 Support
+
+Bugs and issues should be reported via the [issue tracker][issue_tracker].
+
+
 ## 🏴‍ License
 
 [![license][license]][license-url]
 
-<!-- links -->
+
+<!-- project links -->
+
+[fork]: https://github.com/adriancmiranda/pirate-history/fork "Fork it"
+[pull_request]: https://github.com/adriancmiranda/pirate-history/compare "Pull request"
+[issue_tracker]: http://github.com/adriancmiranda/pirate-history/issues "Issue tracker"
+
+
+<!-- badges -->
 
 [npm]: https://badge.fury.io/js/pirate-history.svg
 [npm-url]: https://npmjs.com/package/pirate-history

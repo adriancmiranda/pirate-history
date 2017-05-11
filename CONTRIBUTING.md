@@ -9,6 +9,6 @@
 
 <!-- project links -->
 
-[fork]: https://github.com/adriancmiranda/django-template/fork "Fork it"
-[pull_request]: https://github.com/adriancmiranda/django-template/compare "Pull request"
-[issue_tracker]: http://github.com/adriancmiranda/django-template/issues "Issue tracker"
+[fork]: https://github.com/adriancmiranda/pirate-history/fork "Fork it"
+[pull_request]: https://github.com/adriancmiranda/pirate-history/compare "Pull request"
+[issue_tracker]: http://github.com/adriancmiranda/pirate-history/issues "Issue tracker"
