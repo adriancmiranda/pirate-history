@@ -9,22 +9,6 @@
 ## ☠ There's nothing for you here yet. ☠
 
 
-## 🏴‍ Installation
-
-Using [npm][npm-link]:
-
-```bash
-npm install --save pirate-history
-```
-
-
-Using [bower][bower-link]:
-
-```bash
-bower install --save pirate-history
-```
-
-
 ## 🏴‍ Compatibility
 
 [![browserstack][browserstack]][browserstack-url]
