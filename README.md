@@ -12,11 +12,13 @@
 ## 🏴‍ Installation
 
 using [npm][npm-link]:
+
 ```bash
 npm install --save pirate-history
 ```
 
 using [bower][bower-link]:
+
 ```bash
 bower install --save pirate-history
 ```
