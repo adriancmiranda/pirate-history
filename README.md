@@ -6,7 +6,7 @@
 
 ## 🏴‍ Status
 
-| Dependencies                      | Build                                 | Coverage/Quality                                  |
+| Dependencies                      | Build                                 | Coverage/Compatibility                            |
 | --------------------------------- | ------------------------------------- | ------------------------------------------------- |
 | [![deps][deps]][deps-url]         | [![travis][travis]][travis-url]       | [![codecov][codecov]][codecov-url]                |
 | [![depsci][depsci]][depsci-url]   | [![appveyor][appveyor]][appveyor-url] | [![browserstack][browserstack]][browserstack-url] |
