@@ -3,10 +3,11 @@
 
 ## 🏴‍ Info
 
-| Module                             | Dependencies                      | Build                                 | Coverage/Compatibility                            |
-| :--------------------------------- | :-------------------------------- | :------------------------------------ | :------------------------------------------------ |
-| [![npm][npm]][npm-url]             | [![deps][deps]][deps-url]         | [![travis][travis]][travis-url]       | [![codecov][codecov]][codecov-url]                |
-| [![license][license]][license-url] | [![depsci][depsci]][depsci-url]   | [![appveyor][appveyor]][appveyor-url] | [![browserstack][browserstack]][browserstack-url] |
+| Module                                   | Dependencies                       | Build                                 | Coverage/Compatibility                            |
+| :--------------------------------------- | :--------------------------------- | :------------------------------------ | :------------------------------------------------ |
+| [![npm-fury][npm-fury]][npm-url]         | [![deps][deps]][deps-url]          | [![travis][travis]][travis-url]       | [![inch][inch]][inch-url]                         |
+| [![waffle][waffle]][waffle-url]          | [![devDeps][devDeps]][devDeps-url] | [![appveyor][appveyor]][appveyor-url] | [![codecov][codecov]][codecov-url]                |
+| [![license][license]][license-url]       | [![depsci][depsci]][depsci-url]    | [![circleci][circleci]][circleci-url] | [![browserstack][browserstack]][browserstack-url] |
 
 
 ## ☠ There's nothing for you here yet. ☠
@@ -31,14 +32,24 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 
 <!-- badges -->
 
-[npm]: https://badge.fury.io/js/pirate-history.svg
+[npm-fury]: https://badge.fury.io/js/pirate-history.svg
+[npm-shields]: https://img.shields.io/npm/v/pirate-history.svg
 [npm-url]: https://npmjs.com/package/pirate-history
 
-[npm]: https://img.shields.io/npm/v/pirate-history.svg
-[npm-url]: https://npmjs.com/package/pirate-history
+[codestyle]: https://david-dm.org/adriancmiranda/pirate-history.svg
+[codestyle-url]: https://david-dm.org/adriancmiranda/pirate-history
+
+[inch]: https://inch-ci.org/github/adriancmiranda/pirate-history.svg?branch=master
+[inch-url]: https://inch-ci.org/github/adriancmiranda/pirate-history
+
+[waffle]: https://img.shields.io/waffle/label/evancohen/smart-mirror/in%20progress.svg
+[waffle-url]: https://waffle.io/adriancmiranda/pirate-history
 
 [deps]: https://david-dm.org/adriancmiranda/pirate-history.svg
 [deps-url]: https://david-dm.org/adriancmiranda/pirate-history
+
+[devDeps]: https://david-dm.org/adriancmiranda/pirate-history/dev-status.svg
+[devDeps-url]: https://david-dm.org/adriancmiranda/pirate-history?type=dev
 
 [circleci]: https://circleci.com/gh/adriancmiranda/pirate-history/tree/master.svg?style=shield
 [circleci-url]:  https://circleci.com/gh/adriancmiranda/pirate-history/tree/master
