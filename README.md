@@ -5,8 +5,8 @@
 [![depsci][depsci]][depsci-url]
 [![travis][travis]][travis-url]
 [![appveyor][appveyor]][appveyor-url]
-[![codecov][codecov]][codecov-url]
 [![browserstack][browserstack]][browserstack-url]
+[![codecov][codecov]][codecov-url]
 [![license][license]][license-url]
 
 ## ☠ There's nothing for you here yet. ☠
