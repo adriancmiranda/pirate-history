@@ -1,4 +1,4 @@
-# Contributing
+# :octocat: Contributing
 
 1. [_Fork_][fork] it
 2. Create your feature/fix branch (`git checkout -b my-new-feature`).
