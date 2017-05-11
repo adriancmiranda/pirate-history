@@ -16,7 +16,7 @@
 
 ## 🏴 Support
 
-Bugs and issues should be reported via the [issue tracker][issue_tracker].
+Questions, proposals, bugs and issues should be reported via the [issue tracker][issue_tracker].
 
 
 ## 🏴‍ License
