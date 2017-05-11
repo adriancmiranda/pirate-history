@@ -8,6 +8,7 @@
 [![appveyor][appveyor]][appveyor-url]
 [![codecov][codecov]][codecov-url]
 [![license][license]][license-url]
+[![browserstack][browserstack]][browserstack-url]
 
 ## ☠ There's nothing for you here yet. ☠
 
