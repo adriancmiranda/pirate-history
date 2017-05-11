@@ -9,6 +9,19 @@
 ## ☠ There's nothing for you here yet. ☠
 
 
+## 🏴‍ Installation
+
+using [npm][npm-link]:
+```bash
+npm install --save pirate-history
+```
+
+using [bower][bower-link]:
+```bash
+bower install --save pirate-history
+```
+
+
 ## 🏴‍ Compatibility
 
 [![browserstack][browserstack]][browserstack-url]
@@ -27,6 +40,12 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 ## 🏴‍ License
 
 [![license][license]][license-url]
+
+
+<!-- prerequisites -->
+
+[npm-link]: https://www.npmjs.com/ "npm is the package manager for everything"
+[bower-link]: https://bower.io/ "A package manager for the web"
 
 
 <!-- project links -->
