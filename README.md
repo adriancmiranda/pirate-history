@@ -6,8 +6,8 @@
 | Module                                   | Dependencies                       | Build                                 | Coverage/Compatibility                            |
 | :--------------------------------------- | :--------------------------------- | :------------------------------------ | :------------------------------------------------ |
 | [![npm-fury][npm-fury]][npm-url]         | [![deps][deps]][deps-url]          | [![travis][travis]][travis-url]       | [![inch][inch]][inch-url]                         |
-| [![waffle][waffle]][waffle-url]          | [![devDeps][devDeps]][devDeps-url] | [![appveyor][appveyor]][appveyor-url] | [![codecov][codecov]][codecov-url]                |
-| [![license][license]][license-url]       | [![depsci][depsci]][depsci-url]    | [![circleci][circleci]][circleci-url] | [![browserstack][browserstack]][browserstack-url] |
+| [![license][license]][license-url]       | [![devDeps][devDeps]][devDeps-url] | [![appveyor][appveyor]][appveyor-url] | [![codecov][codecov]][codecov-url]                |
+| [![fossa][fossa]][fossa-url]             | [![depsci][depsci]][depsci-url]    | [![circleci][circleci]][circleci-url] | [![browserstack][browserstack]][browserstack-url] |
 
 
 ## ☠ There's nothing for you here yet. ☠
@@ -77,3 +77,6 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 
 [license]: https://img.shields.io/badge/license-Unlicense-44cc11.svg
 [license-url]: https://raw.githubusercontent.com/adriancmiranda/pirate-history/master/LICENSE
+
+[fossa]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fadriancmiranda%2Fpirate-history.svg?type=shield
+[fossa-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fadriancmiranda%2Fpirate-history?ref=badge_shield
