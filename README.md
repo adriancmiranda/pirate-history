@@ -1,14 +1,13 @@
-# pirate-history
+# pirate-history [![npm][npm]][npm-url]
 > Handles cross-browser history management
 
-[![npm][npm]][npm-url]
 [![deps][deps]][deps-url]
 [![depsci][depsci]][depsci-url]
 [![travis][travis]][travis-url]
 [![appveyor][appveyor]][appveyor-url]
 [![codecov][codecov]][codecov-url]
-[![license][license]][license-url]
 [![browserstack][browserstack]][browserstack-url]
+[![license][license]][license-url]
 
 ## ☠ There's nothing for you here yet. ☠
 
