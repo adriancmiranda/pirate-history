@@ -1,5 +1,6 @@
 # pirate-history
 > Handles cross-browser history management
+
 [![npm][npm]][npm-url]
 
 
