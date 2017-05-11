@@ -1,15 +1,12 @@
 # pirate-history
 > Handles cross-browser history management
 
-[![npm][npm]][npm-url]
+## 🏴‍ Info
 
-
-## 🏴‍ Status
-
-| Dependencies                      | Build                                 | Coverage/Compatibility                            |
-| --------------------------------- | ------------------------------------- | ------------------------------------------------- |
-| [![deps][deps]][deps-url]         | [![travis][travis]][travis-url]       | [![codecov][codecov]][codecov-url]                |
-| [![depsci][depsci]][depsci-url]   | [![appveyor][appveyor]][appveyor-url] | [![browserstack][browserstack]][browserstack-url] |
+| Module                             | Dependencies                      | Build                                 | Coverage/Compatibility                            |
+| :--------------------------------- | :-------------------------------- | :------------------------------------ | :------------------------------------------------ |
+| [![npm][npm]][npm-url]             | [![deps][deps]][deps-url]         | [![travis][travis]][travis-url]       | [![codecov][codecov]][codecov-url]                |
+| [![license][license]][license-url] | [![depsci][depsci]][depsci-url]   | [![appveyor][appveyor]][appveyor-url] | [![browserstack][browserstack]][browserstack-url] |
 
 
 ## ☠ There's nothing for you here yet. ☠
@@ -17,11 +14,6 @@
 ## 🏴 Support
 
 Questions, proposals, bugs and issues should be reported via the [issue tracker][issue_tracker].
-
-
-## 🏴‍ License
-
-[![license][license]][license-url]
 
 
 <!-- prerequisites -->
