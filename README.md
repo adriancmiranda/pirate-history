@@ -8,9 +8,14 @@
 
 ## ☠ There's nothing for you here yet. ☠
 
-## 🏴‍ Dependencies [![deps][deps]][deps-url] [![depsci][depsci]][depsci-url]
+## 🏴‍ Dependencies
 
-## 🏴‍ License [![license][license]][license-url]
+[![deps][deps]][deps-url]
+[![depsci][depsci]][depsci-url]
+
+## 🏴‍ License
+
+[![license][license]][license-url]
 
 <!-- links -->
 
