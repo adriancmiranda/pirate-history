@@ -7,13 +7,12 @@
 [![appveyor][appveyor]][appveyor-url]
 [![browserstack][browserstack]][browserstack-url]
 [![codecov][codecov]][codecov-url]
-[![license][license]][license-url]
 
 ## ☠ There's nothing for you here yet. ☠
 
 ## 🏴‍ License
 
-[Unlicense][license-url]
+[![license][license]][license-url]
 
 <!-- links -->
 
