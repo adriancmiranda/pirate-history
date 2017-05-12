@@ -26,6 +26,12 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 - [BrowserStack](https://www.browserstack.com) for having a list of devices in order to provide us a maximum coverage to the real browsers.
 - [GreenKeeper](https://greenkeeper.io) for the real-time monitoring and automatic updates from our npm dependencies.
 
+
+## 🏴 License
+
+[![licenses][licenses]][licenses-url]
+
+
 <!-- prerequisites -->
 
 [npm-link]: https://www.npmjs.com/ "npm is the package manager for everything"
@@ -89,3 +95,6 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 
 [fossa]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fadriancmiranda%2Fpirate-history.svg?type=shield
 [fossa-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fadriancmiranda%2Fpirate-history?ref=badge_shield
+
+[licenses]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fadriancmiranda%2Fpirate-history.svg?type=large
+[licenses-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fadriancmiranda%2Fpirate-history?ref=badge_large
