@@ -18,7 +18,7 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 ## 🏴 Thanks to
 
 - [BrowserStack](https://www.browserstack.com) for having a list of devices in order to provide us a maximum coverage to the real browsers.
-
+- [GreenKeeper](https://greenkeeper.io) for the real-time monitoring and automatic updates our npm dependencies.
 
 <!-- prerequisites -->
 
