@@ -15,6 +15,11 @@
 Questions, proposals, bugs and issues should be reported via the [issue tracker][issue_tracker].
 
 
+## 🏴 Thanks to
+
+- [BrowserStack](https://www.browserstack.com) for having a list of devices in order to provide us with maximum coverage to the real browsers.
+
+
 <!-- prerequisites -->
 
 [npm-link]: https://www.npmjs.com/ "npm is the package manager for everything"
