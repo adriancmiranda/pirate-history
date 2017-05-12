@@ -1,0 +1,23 @@
+machine:
+  timezone:
+    America/Sao_Paulo
+
+  environment:
+    NO_WATCH_TESTS: 1
+
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
+dependencies:
+  override:
+    - yarn
+
+  cache_directories:
+    - ~/.cache/yarn
+
+test:
+  override:
+    - node -v
+    - npm --version
+    - yarn --version
+    - yarn run test:circleci

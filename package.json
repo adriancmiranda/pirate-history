@@ -22,6 +22,7 @@
     "test:watch": "karma start test/karma.conf.js",
     "test:travis": "npm test",
     "test:appveyor": "npm test",
+    "test:circleci": "npm test",
     "precommit": "run-s test",
     "commitmsg": "validate-commit-msg",
     "release": "standard-version"
