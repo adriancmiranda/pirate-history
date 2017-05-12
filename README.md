@@ -1,11 +1,17 @@
 # pirate-history
 > Handles cross-browser history management
 
-| Module                                   | Dependencies                       | Build                                 | Coverage/Compatibility                            |
-| :--------------------------------------- | :--------------------------------- | :------------------------------------ | :------------------------------------------------ |
-| [![npm-fury][npm-fury]][npm-url]         | [![deps][deps]][deps-url]          | [![travis][travis]][travis-url]       | [![inch][inch]][inch-url]                         |
-| [![license][license]][license-url]       | [![devDeps][devDeps]][devDeps-url] | [![circleci][circleci]][circleci-url] | [![codecov][codecov]][codecov-url]                |
-| [![fossa][fossa]][fossa-url]             | [![depsci][depsci]][depsci-url]    | [![appveyor][appveyor]][appveyor-url] | [![browserstack][browserstack]][browserstack-url] |
+[![npm-fury][npm-fury]][npm-url]
+[![license][license]][license-url]
+[![fossa][fossa]][fossa-url]
+
+## 🏴 Status
+
+| Dependencies                       | Build                                 | Coverage/Compatibility                            |
+| :--------------------------------- | :------------------------------------ | :------------------------------------------------ |
+| [![deps][deps]][deps-url]          | [![travis][travis]][travis-url]       | [![inch][inch]][inch-url]                         |
+| [![devDeps][devDeps]][devDeps-url] | [![circleci][circleci]][circleci-url] | [![codecov][codecov]][codecov-url]                |
+| [![depsci][depsci]][depsci-url]    | [![appveyor][appveyor]][appveyor-url] | [![browserstack][browserstack]][browserstack-url] |
 
 
 ## ☠ There's nothing for you here yet. ☠
