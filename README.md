@@ -7,7 +7,7 @@
 
 ## 🏴 Status
 
-| Dependencies                       | Build                                 | Coverage/Compatibility                            |
+| Dependencies                       | Build                                 | Coverage                            |
 | :--------------------------------- | :------------------------------------ | :------------------------------------------------ |
 | [![deps][deps]][deps-url]          | [![travis][travis]][travis-url]       | [![inch][inch]][inch-url]                         |
 | [![devDeps][devDeps]][devDeps-url] | [![circleci][circleci]][circleci-url] | [![codecov][codecov]][codecov-url]                |
