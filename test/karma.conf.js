@@ -96,8 +96,8 @@ module.exports = function (config) {
 	};
 
 	const settings = {
-		webpack,
-		customLaunchers,
+		webpack: webpack,
+		customLaunchers: customLaunchers,
 		logLevel: config.LOG_INFO,
 		basePath: '../',
 		port: 9876,
