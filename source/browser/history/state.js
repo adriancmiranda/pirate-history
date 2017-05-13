@@ -12,15 +12,15 @@ export const ChangeStateEvent = 'changestate';
 export const PushStateEvent = 'pushstate';
 
 /*!
-|* @name hasStateList
-|*
-|* @description
-|*
-|* @return {Boolean}
-|*
-|* @see http://caniuse.com/#search=history
-|*
-|* @api public
+ * @name hasStateList
+ *
+ * @description
+ *
+ * @return {Boolean}
+ *
+ * @see http://caniuse.com/#search=history
+ *
+ * @api public
 `*/
 export const hasStateList = 'pushState' in Object(native) &&
 	!/Android\s(2\..+|4\.0)|Mobile\sSafari/gi.test(ua) &&
@@ -28,22 +28,22 @@ export const hasStateList = 'pushState' in Object(native) &&
 ;
 
 /*!
-|* @name updateStateList
-|*
-|* @description
-|*
-|* @api private
+ * @name updateStateList
+ *
+ * @description
+ *
+ * @api private
 `*/
 export function updateStateList(URL, put) {
 	put(parsePath(URL)); // @TODO: storage
 }
 
 /*!
-|* @name pushState
-|*
-|* @description
-|*
-|* @api public
+ * @name pushState
+ *
+ * @description
+ *
+ * @api public
 `*/
 export function pushState(state, title, URL) {
 	return updateStateList(URL, () => {
@@ -54,11 +54,11 @@ export function pushState(state, title, URL) {
 }
 
 /*!
-|* @name replaceState
-|*
-|* @description
-|*
-|* @api public
+ * @name replaceState
+ *
+ * @description
+ *
+ * @api public
 `*/
 export function replaceState(state, title, URL) {
 	return updateStateList(URL, () => {
@@ -69,33 +69,33 @@ export function replaceState(state, title, URL) {
 }
 
 /*!
-|* @name go
-|*
-|* @description
-|*
-|* @api public
+ * @name go
+ *
+ * @description
+ *
+ * @api public
 `*/
 export function go(factor) {
 	return native.go(factor);
 }
 
 /*!
-|* @name forward
-|*
-|* @description
-|*
-|* @api public
+ * @name forward
+ *
+ * @description
+ *
+ * @api public
 `*/
 export function forward() {
 	return native.forward();
 }
 
 /*!
-|* @name back
-|*
-|* @description
-|*
-|* @api public
+ * @name back
+ *
+ * @description
+ *
+ * @api public
 `*/
 export function back() {
 	return native.back();
