@@ -102,10 +102,6 @@ module.exports = (config) => {
 		basePath: '../',
 		port: 9876,
 		colors: true,
-		concurrency: 2,
-		browserNoActivityTimeout: 240000,
-		browserDisconnectTimeout: 10000,
-		browserDisconnectTolerance: 3,
 		browsers: ['PhantomJS'],
 		frameworks: ['mocha', 'sinon-chai', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
@@ -153,21 +149,23 @@ module.exports = (config) => {
 		},
 	};
 
-	if (process.env.TRAVIS) {
+	if (process.env.TRAVIS || process.env.APPVEYOR || process.env.CIRCLECI) {
+		settings.browserStack.concurrency = 2;
+		settings.browserStack.browserNoActivityTimeout = 240000;
+		settings.browserStack.browserDisconnectTimeout = 10000;
+		settings.browserStack.browserDisconnectTolerance = 3;
 		settings.browserStack.captureTimeout = 240000;
 		settings.browserStack.browsers = Object.keys(customLaunchers);
-		settings.browserStack.build = process.env.TRAVIS_BUILD_NUMBER;
-		settings.browserStack.name = process.env.TRAVIS_JOB_NUMBER;
-	} else if (process.env.APPVEYOR) {
-		settings.browserStack.captureTimeout = 240000;
-		settings.browserStack.browsers = Object.keys(customLaunchers);
-		settings.browserStack.build = process.env.APPVEYOR_BUILD_NUMBER;
-		settings.browserStack.name = process.env.APPVEYOR_JOB_NUMBER;
-	} else if (process.env.CIRCLECI) {
-		settings.browserStack.captureTimeout = 240000;
-		settings.browserStack.browsers = Object.keys(customLaunchers);
-		settings.browserStack.build = process.env.CIRCLE_BUILD_NUM;
-		settings.browserStack.name = process.env.CIRCLE_BUILD_URL;
+		if (process.env.TRAVIS) {
+			settings.browserStack.build = process.env.TRAVIS_BUILD_NUMBER;
+			settings.browserStack.name = process.env.TRAVIS_JOB_NUMBER;
+		} else if (process.env.APPVEYOR) {
+			settings.browserStack.build = process.env.APPVEYOR_BUILD_NUMBER;
+			settings.browserStack.name = process.env.APPVEYOR_JOB_NUMBER;
+		} else if (process.env.CIRCLECI) {
+			settings.browserStack.build = process.env.CIRCLE_BUILD_NUM;
+			settings.browserStack.name = process.env.CIRCLE_BUILD_URL;
+		}
 	}
 
 	config.set(settings);
