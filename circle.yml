@@ -1,4 +1,7 @@
 machine:
+  node:
+    version: stable
+
   timezone:
     America/Sao_Paulo
 

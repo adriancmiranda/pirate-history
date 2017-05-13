@@ -11,7 +11,7 @@ const webpack = bin({ run: 'test' });
 |* @see http://karma-runner.github.io/0.13/config/browsers.html
 |* @see https://github.com/webpack/karma-webpack
 `*/
-module.exports = function (config) {
+module.exports = (config) => {
 	const customLaunchers = {
 		bs_mobile_chrome: {
 			base: 'BrowserStack',
@@ -96,8 +96,8 @@ module.exports = function (config) {
 	};
 
 	const settings = {
-		webpack: webpack,
-		customLaunchers: customLaunchers,
+		webpack,
+		customLaunchers,
 		logLevel: config.LOG_INFO,
 		basePath: '../',
 		port: 9876,
