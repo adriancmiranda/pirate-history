@@ -17,12 +17,7 @@
   "env": {
     "test": {
       "presets": ["env", "stage-1"],
-      "plugins": ["istanbul", {
-        "include": [
-          "index.js",
-          "source/**/*.js"
-        ]
-      }]
+      "plugins": ["istanbul"]
     }
   },
   "ignore": [
