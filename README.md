@@ -28,8 +28,9 @@ bower i pirate-history -S
 
 ## 🏴 Get Started
 
-<p align="center">☠ There's nothing for you here yet. ☠</p>
-
+```diff
+- ☠ There's nothing for you here yet. ☠
+```
 
 ## 🏴 **C**ontent **D**elivery **N**etwork (CDN)
 
