@@ -68,27 +68,6 @@ pirate.history.dispatchEvent('popstate', onPopState);
 ```
 
 
-### :large_blue_circle: [Polyfill/Wrapper] The `state` property
-
-To retrieve the `state` object for the current history entry you can examine the state property on the `pirate.history` object. This is useful if you need to read the state object when a popstate event has not been fired.
-
-```javascript
-pirate.history.state;
-```
-
-
-### :large_blue_circle: [Polyfill/Wrapper] The `length` property
-
-The history objects `length` property tells you how many entries are in the session history. This can be useful when used in conjunction with the `go()` method.
-
-```javascript
-// Go back to the first page.
-// (Assuming the you are starting on the last page.)
-var moves = pirate.history.length - 1;
-pirate.history.go(-moves);
-```
-
-
 ### :large_blue_circle: [Polyfill/Wrapper] The `pushState()` method
 
 The `pushState()` method is used to create a new history entry. This method has three parameters:
@@ -142,6 +121,27 @@ pirate.history.go(-2);
 
 // Go forward 3 entries.
 pirate.history.go(3);
+```
+
+
+### :large_blue_circle: [Polyfill/Wrapper] The `state` property
+
+To retrieve the `state` object for the current history entry you can examine the state property on the `pirate.history` object. This is useful if you need to read the state object when a popstate event has not been fired.
+
+```javascript
+pirate.history.state;
+```
+
+
+### :large_blue_circle: [Polyfill/Wrapper] The `length` property
+
+The history objects `length` property tells you how many entries are in the session history. This can be useful when used in conjunction with the `go()` method.
+
+```javascript
+// Go back to the first page.
+// (Assuming the you are starting on the last page.)
+var moves = pirate.history.length - 1;
+pirate.history.go(-moves);
 ```
 
 
