@@ -14,6 +14,8 @@
 | [![depsci][depsci]][depsci-url]    | [![appveyor][appveyor]][appveyor-url] | [![browserstack][browserstack]][browserstack-url] |
 
 
+## 🏴 Get Started
+
 ## ☠ There's nothing for you here yet. ☠
 
 
