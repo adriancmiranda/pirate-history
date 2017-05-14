@@ -54,7 +54,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### [stand-alone] Hash
+### Hash _(stand-alone)_
 
 #### :package: concatenated
 
@@ -89,7 +89,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### [stand-alone] State
+### State _(stand-alone)_
 
 #### :package: concatenated
 
@@ -124,7 +124,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### [stand-alone] Memory
+### Memory _(stand-alone)_
 
 #### :package: concatenated
 
