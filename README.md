@@ -17,7 +17,7 @@
 ## ☠ There's nothing for you here yet. ☠
 
 
-## 🏴 *C*ontent *D*elivery *N*etwork
+## 🏴 **C**ontent **D**elivery **N**etwork (CDN)
 
 ### history
 
