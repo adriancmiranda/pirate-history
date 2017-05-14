@@ -167,7 +167,7 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 
 - [BrowserStack](https://www.browserstack.com) for having a list of devices in order to provide us a maximum coverage to the real browsers.
 - [GreenKeeper](https://greenkeeper.io) for the real-time monitoring and automatic updates from our npm dependencies.
-
+- [RawGit](https://rawgit.com/) & [StackPath](https://www.stackpath.com/) for the speed up and secure our files with SecureCDN and serves our raw files directly from GitHub.
 
 ## 🏴 License
 
