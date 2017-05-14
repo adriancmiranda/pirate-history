@@ -13,6 +13,18 @@
 | [![devDeps][devDeps]][devDeps-url] | [![circleci][circleci]][circleci-url] | [![codecov][codecov]][codecov-url]                |
 | [![depsci][depsci]][depsci-url]    | [![appveyor][appveyor]][appveyor-url] | [![browserstack][browserstack]][browserstack-url] |
 
+## 🏴 Install
+
+with npm
+```bash
+npm i pirate-history -S 
+```
+
+with bower
+```bash
+bower i pirate-history -S 
+```
+
 
 ## 🏴 Get Started
 
