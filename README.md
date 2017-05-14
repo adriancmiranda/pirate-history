@@ -15,12 +15,12 @@
 
 ## 🏴 Install
 
-### Using npm
+### Using [npm](https://www.npmjs.com/package/npm "A package manager for everything")
 ```bash
 npm i pirate-history -S 
 ```
 
-### Using bower
+### Using [bower](https://www.bower.io "A package manager for the web")
 ```bash
 bower i pirate-history -S 
 ```
