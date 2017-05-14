@@ -163,16 +163,15 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 Questions, proposals, bugs and issues should be reported via the [issue tracker][issue_tracker].
 
 
-## 🏴 License
-
-[![licenses][licenses]][licenses-url]
-
-
 ## 🏴 Thanks to
 
 - [BrowserStack](https://www.browserstack.com) for having a list of devices in order to provide us a maximum coverage to the real browsers.
 - [GreenKeeper](https://greenkeeper.io) for the real-time monitoring and automatic updates from our npm dependencies.
 
+
+## 🏴 License
+
+[![licenses][licenses]][licenses-url]
 
 <!-- prerequisites -->
 
