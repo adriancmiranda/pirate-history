@@ -21,28 +21,36 @@
 
 ### history
 
+#### :package: concatenated
+
 ```javascript
-<script src=""></script>
+<script src="pirate-history.js"></script>
 ```
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.map"></script>
+```
+
+
+#### :fire: minified
+
+```javascript
+<script src="pirate-history.min.js"></script>
 ```
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.min.map"></script>
+```
+
+
+#### :rocket: gzipped
+
+```javascript
+pirate-history.min.js.gz
 ```
 
 ```javascript
-<script src=""></script>
-```
-
-```javascript
-<script src=""></script>
-```
-
-```javascript
-<script src=""></script>
+pirate-history.min.map.gz
 ```
 
 
@@ -86,31 +94,33 @@ pirate-history.hash.min.map.gz
 #### :package: concatenated
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.state.js"></script>
 ```
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.state.map"></script>
 ```
 
 
 #### :fire: minified
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.state.min.js"></script>
 ```
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.state.min.map"></script>
 ```
 
 
 #### :rocket: gzipped
 
 ```javascript
+pirate-history.state.min.js.gz
 ```
 
 ```javascript
+pirate-history.state.min.map.gz
 ```
 
 
@@ -119,31 +129,33 @@ pirate-history.hash.min.map.gz
 #### :package: concatenated
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.memory.js"></script>
 ```
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.memory.map"></script>
 ```
 
 
 #### :fire: minified
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.memory.min.js"></script>
 ```
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.memory.min.map"></script>
 ```
 
 
 #### :rocket: gzipped
 
 ```javascript
+pirate-history.memory.min.js.gz
 ```
 
 ```javascript
+pirate-history.memory.min.map.gz
 ```
 
 ## 🏴 Support
