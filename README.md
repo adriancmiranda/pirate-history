@@ -73,11 +73,11 @@
 #### gzipped
 
 ```javascript
-<script src="pirate-history.hash.min.js.gz"></script>
+pirate-history.hash.min.js.gz
 ```
 
 ```javascript
-<script src="pirate-history.hash.min.map.gz"></script>
+pirate-history.hash.min.map.gz
 ```
 
 
@@ -108,11 +108,9 @@
 #### gzipped
 
 ```javascript
-<script src=""></script>
 ```
 
 ```javascript
-<script src=""></script>
 ```
 
 
@@ -143,11 +141,9 @@
 #### gzipped
 
 ```javascript
-<script src=""></script>
 ```
 
 ```javascript
-<script src=""></script>
 ```
 
 ## 🏴 Support
