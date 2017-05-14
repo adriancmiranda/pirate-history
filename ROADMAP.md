@@ -40,6 +40,22 @@ pirate.history.dispatchEvent('init', onInit);
 ```
 
 
+## :large_blue_circle: [Polyfill/Wrapper] The `popstate` event
+
+The `popstate` event is fired on `pirate` when the active history entry changes. Most commonly when the browsers back or forward buttons are clicked (or a call to `back()`, `forward()` or `go()` is executed).
+
+The `event` passed into the listener callback contains a state property that is used to retrieve the state object that is associated with the history entry.
+
+```javascript
+function onPopState(event) {
+  var state = event.state;
+}
+pirate.history.addEventListener('popstate', onPopState);
+pirate.history.removeEventListener('popstate', onPopState);
+pirate.history.dispatchEvent('popstate', onPopState);
+```
+
+
 ## :black_circle: [Extension] The `change` event
 
 ```javascript
@@ -58,6 +74,18 @@ To retrieve the `state` object for the current history entry you can examine the
 
 ```javascript
 pirate.history.state;
+```
+
+
+## :large_blue_circle: [Polyfill/Wrapper] The `length` property
+
+The history objects `length` property tells you how many entries are in the session history. This can be useful when used in conjunction with the `go()` method.
+
+```javascript
+// Go back to the first page.
+// (Assuming the you are starting on the last page.)
+var moves = pirate.history.length - 1;
+pirate.history.go(-moves);
 ```
 
 
@@ -83,22 +111,6 @@ The `replaceState()` method is similar to `pushState()` in that it takes the sam
 
 ```javascript
 // Updates the current history entry.
-```
-
-
-## :large_blue_circle: [Polyfill/Wrapper] The `popstate` event
-
-The `popstate` event is fired on `pirate` when the active history entry changes. Most commonly when the browsers back or forward buttons are clicked (or a call to `back()`, `forward()` or `go()` is executed).
-
-The `event` passed into the listener callback contains a state property that is used to retrieve the state object that is associated with the history entry.
-
-```javascript
-function onPopState(event) {
-  var state = event.state;
-}
-pirate.history.addEventListener('popstate', onPopState);
-pirate.history.removeEventListener('popstate', onPopState);
-pirate.history.dispatchEvent('popstate', onPopState);
 ```
 
 
@@ -130,18 +142,6 @@ pirate.history.go(-2);
 
 // Go forward 3 entries.
 pirate.history.go(3);
-```
-
-
-## :large_blue_circle: [Polyfill/Wrapper] The `length` property
-
-The history objects `length` property tells you how many entries are in the session history. This can be useful when used in conjunction with the `go()` method.
-
-```javascript
-// Go back to the first page.
-// (Assuming the you are starting on the last page.)
-var moves = pirate.history.length - 1;
-pirate.history.go(-moves);
 ```
 
 
