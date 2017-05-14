@@ -48,36 +48,42 @@
 
 ### [stand-alone] hash
 
+#### concatenated
+
 ```javascript
-<script src=""></script>
+<script src="pirate-history.hash.js"></script>
 ```
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.hash.map"></script>
+```
+
+
+#### minified
+
+```javascript
+<script src="pirate-history.hash.min.js"></script>
 ```
 
 ```javascript
-<script src=""></script>
+<script src="pirate-history.hash.min.map"></script>
+```
+
+
+#### gzipped
+
+```javascript
+<script src="pirate-history.hash.min.js.gz"></script>
 ```
 
 ```javascript
-<script src=""></script>
-```
-
-```javascript
-<script src=""></script>
-```
-
-```javascript
-<script src=""></script>
+<script src="pirate-history.hash.min.map.gz"></script>
 ```
 
 
 ### [stand-alone] state
 
-```javascript
-<script src=""></script>
-```
+#### concatenated
 
 ```javascript
 <script src=""></script>
@@ -87,9 +93,19 @@
 <script src=""></script>
 ```
 
+
+#### minified
+
 ```javascript
 <script src=""></script>
 ```
+
+```javascript
+<script src=""></script>
+```
+
+
+#### gzipped
 
 ```javascript
 <script src=""></script>
@@ -102,9 +118,7 @@
 
 ### [stand-alone] memory
 
-```javascript
-<script src=""></script>
-```
+#### concatenated
 
 ```javascript
 <script src=""></script>
@@ -114,9 +128,19 @@
 <script src=""></script>
 ```
 
+
+#### minified
+
 ```javascript
 <script src=""></script>
 ```
+
+```javascript
+<script src=""></script>
+```
+
+
+#### gzipped
 
 ```javascript
 <script src=""></script>
