@@ -14,7 +14,7 @@
     "report-coverage": "codecov -f test/coverage/coverage-final.json",
     "upgrade": "ncu -a --loglevel verbose --packageFile package.json && npm i",
     "dev": "webpack-dev-server --config bin --env.run=dev --env.dev",
-    "build": "webpack --config bin --env.run=build --env.minify --env.sign",
+    "build": "webpack --config bin --env.run=build --env.sign --env.minify --env.gzip=js",
     "build:examples": "cd examples && node build-all",
     "stats": "webpack --config bin --profile --json > stats.json",
     "test": "run-s test:unit",

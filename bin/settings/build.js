@@ -59,14 +59,14 @@ module.exports = $ => commonTemplate($).cfg({
 // --------------------------------------------------------------------------
 // *optional: https://www.npmjs.com/package/compression-webpack-plugin
 // --------------------------------------------------------------------------
-.cfg('plugins', $('build.gzip.compress') ? [(() => {
+.cfg('plugins', $('argv.gzip') ? [(() => {
   const CompressionWebpackPlugin = require('compression-webpack-plugin');
   return new CompressionWebpackPlugin({
     algorithm: 'gzip',
     threshold: 300,
     minRatio: 0.8,
   }, $('build.gzip.options'), {
-    test: new RegExp(`\\.(${$('build.gzip.extensions').join('|')})$`),
+    test: new RegExp(`\\.(${[].concat($('argv.gzip')).join('|')})$`),
     asset: '[path].gz[query]',
   });
 })()] : [])
