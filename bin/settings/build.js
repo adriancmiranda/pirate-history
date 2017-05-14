@@ -13,7 +13,7 @@ module.exports = $ => commonTemplate($).cfg({
     filename: $('path.output.script', '[name].min.js'),
     chunkFilename: $('path.output.script', '[id].min.js'),
     sourceMapFilename: $('path.output.script', '[name].min.map'),
-    library: $('package.name'),
+    library: $('package.name').replace('pirate-', ''),
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
