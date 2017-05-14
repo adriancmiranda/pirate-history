@@ -15,7 +15,7 @@
     "upgrade": "ncu -a --loglevel verbose --packageFile package.json && npm i",
     "dev": "webpack-dev-server --config bin --env.run=dev --env.dev",
     "build:examples": "cd examples && node build-all",
-    "build": "run-s gzip",
+    "build": "run-s gzip \"concat -- --env.dirty\"",
     "gzip": "npm run minify -- --env.gzip=js",
     "minify": "npm run concat -- --env.minify",
     "concat": "webpack --config bin --env.run=build --env.sign",

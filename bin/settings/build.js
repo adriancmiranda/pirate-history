@@ -17,13 +17,17 @@ module.exports = $ => commonTemplate($).cfg({
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
-  plugins: [
-    new Clean([$('path.output.bundle')], {
-      root: $('cwd'),
-      verbose: true,
-    }),
-  ],
 })
+
+// --------------------------------------------------------------------------
+// *optional cleaning
+// --------------------------------------------------------------------------
+.cfg('plugins', !$('argv.dirty') ? [(() => {
+  return new Clean([$('path.output.bundle')], {
+    root: $('cwd'),
+    verbose: true,
+  });
+})()] : [])
 
 // --------------------------------------------------------------------------
 // *optional minification
