@@ -41,6 +41,10 @@
 <script src=""></script>
 ```
 
+```javascript
+<script src=""></script>
+```
+
 
 ### [stand-alone] hash
 
@@ -121,8 +125,6 @@
 ```javascript
 <script src=""></script>
 ```
-
-### history
 
 ## 🏴 Support
 
