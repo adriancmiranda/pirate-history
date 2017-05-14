@@ -19,143 +19,143 @@
 
 ## 🏴 **C**ontent **D**elivery **N**etwork (CDN)
 
-### history
+### History
 
 #### :package: concatenated
 
 ```javascript
-<script src="pirate-history.js"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.js"></script>
 ```
 
 ```javascript
-<script src="pirate-history.map"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.map"></script>
 ```
 
 
 #### :fire: minified
 
 ```javascript
-<script src="pirate-history.min.js"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.min.js"></script>
 ```
 
 ```javascript
-<script src="pirate-history.min.map"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.min.map"></script>
 ```
 
 
 #### :rocket: gzipped
 
 ```javascript
-pirate-history.min.js.gz
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.min.js.gz
 ```
 
 ```javascript
-pirate-history.min.map.gz
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.min.map.gz
 ```
 
 
-### [stand-alone] hash
+### [stand-alone] Hash
 
 #### :package: concatenated
 
 ```javascript
-<script src="pirate-history.hash.js"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.js"></script>
 ```
 
 ```javascript
-<script src="pirate-history.hash.map"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.map"></script>
 ```
 
 
 #### :fire: minified
 
 ```javascript
-<script src="pirate-history.hash.min.js"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.js"></script>
 ```
 
 ```javascript
-<script src="pirate-history.hash.min.map"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.map"></script>
 ```
 
 
 #### :rocket: gzipped
 
 ```javascript
-pirate-history.hash.min.js.gz
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.js.gz
 ```
 
 ```javascript
-pirate-history.hash.min.map.gz
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.map.gz
 ```
 
 
-### [stand-alone] state
+### [stand-alone] State
 
 #### :package: concatenated
 
 ```javascript
-<script src="pirate-history.state.js"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.state.js"></script>
 ```
 
 ```javascript
-<script src="pirate-history.state.map"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.state.map"></script>
 ```
 
 
 #### :fire: minified
 
 ```javascript
-<script src="pirate-history.state.min.js"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.state.min.js"></script>
 ```
 
 ```javascript
-<script src="pirate-history.state.min.map"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.state.min.map"></script>
 ```
 
 
 #### :rocket: gzipped
 
 ```javascript
-pirate-history.state.min.js.gz
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.state.min.js.gz
 ```
 
 ```javascript
-pirate-history.state.min.map.gz
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.state.min.map.gz
 ```
 
 
-### [stand-alone] memory
+### [stand-alone] Memory
 
 #### :package: concatenated
 
 ```javascript
-<script src="pirate-history.memory.js"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.memory.js"></script>
 ```
 
 ```javascript
-<script src="pirate-history.memory.map"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.memory.map"></script>
 ```
 
 
 #### :fire: minified
 
 ```javascript
-<script src="pirate-history.memory.min.js"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.memory.min.js"></script>
 ```
 
 ```javascript
-<script src="pirate-history.memory.min.map"></script>
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.memory.min.map"></script>
 ```
 
 
 #### :rocket: gzipped
 
 ```javascript
-pirate-history.memory.min.js.gz
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.memory.min.js.gz
 ```
 
 ```javascript
-pirate-history.memory.min.map.gz
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.memory.min.map.gz
 ```
 
 ## 🏴 Support
