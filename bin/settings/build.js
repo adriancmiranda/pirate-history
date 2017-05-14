@@ -28,7 +28,7 @@ module.exports = $ => commonTemplate($).cfg({
 // --------------------------------------------------------------------------
 // *optional minification
 // --------------------------------------------------------------------------
-.cfg('plugins', $('build.minify') ? [(() => {
+.cfg('plugins', $('argv.minify') ? [(() => {
   return new webpack.optimize.UglifyJsPlugin(Object.assign({
     compress: {
       warnings: false,

@@ -58,7 +58,6 @@ module.exports = app.setConfig(lib => {
   lib.set('build.env.NODE_ENV', '"production"');
   lib.set('build.sourceMap', '#source-map');
   lib.set('build.assetsPublicPath', '/');
-  lib.set('build.minify', true);
   lib.set('build.sign', true);
   lib.set('build.gzip', true);
   lib.set('build.gzip.extensions', ['js']);
