@@ -172,6 +172,35 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.memory.min.map.gz
 ```
 
+
+## 🏴 What you need to build your own _pirate-history_
+
+In order to build _pirate-history_, you need to have the latest node/npm and git 1.7 or later. Earlier versions might work, but are not supported.
+
+For Windows, you have to download and install [git](http://git-scm.com/downloads) and [node](http://nodejs.org/download/).
+
+OS X users should install [git](http://git-scm.com/download).
+
+Linux/BSD users should use their appropriate package managers to install git and node, or build from source
+if you swing that way. Easy-peasy.
+
+
+## 🏴 How to build your own _pirate-history_
+Clone a copy of the main _pirate-history_ git repo by running:
+
+```bash
+git clone git://github.com/adriancmiranda/pirate-history.git
+```
+
+Enter the _pirate-history_ directory and run the install script and the build script:
+
+```bash
+cd pirate-history && npm i && npm run build
+```
+
+The built version of _pirate-history_ will be put in the `dist/` subdirectory, along with the minified copy and associated map file.
+
+
 ## 🏴 Support
 
 Questions, proposals, bugs and issues should be reported via the [issue tracker][issue_tracker].
