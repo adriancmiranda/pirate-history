@@ -10,9 +10,9 @@ module.exports = $ => commonTemplate($).cfg({
   devtool: $('build.sourceMap'),
   output: {
     publicPath: $('build.assetsPublicPath'),
-    filename: $('path.output.script', '[name].min.js'),
-    chunkFilename: $('path.output.script', '[id].min.js'),
-    sourceMapFilename: $('path.output.script', '[name].min.map'),
+    filename: $('path.output.script', `[name]${$('argv.minify') ? '.min' : ''}.js`),
+    chunkFilename: $('path.output.script', `[id]${$('argv.minify') ? '.min' : ''}.js`),
+    sourceMapFilename: $('path.output.script', `[name]${$('argv.minify') ? '.min' : ''}.map`),
     library: $('package.name').replace('pirate-', ''),
     libraryTarget: 'umd',
     umdNamedDefine: true,
