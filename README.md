@@ -48,7 +48,7 @@
 
 ### [stand-alone] hash
 
-#### concatenated
+#### :package: concatenated
 
 ```javascript
 <script src="pirate-history.hash.js"></script>
@@ -59,7 +59,7 @@
 ```
 
 
-#### minified
+#### :fire: minified
 
 ```javascript
 <script src="pirate-history.hash.min.js"></script>
@@ -70,7 +70,7 @@
 ```
 
 
-#### gzipped
+#### :rocket: gzipped
 
 ```javascript
 pirate-history.hash.min.js.gz
@@ -83,7 +83,7 @@ pirate-history.hash.min.map.gz
 
 ### [stand-alone] state
 
-#### concatenated
+#### :package: concatenated
 
 ```javascript
 <script src=""></script>
@@ -94,7 +94,7 @@ pirate-history.hash.min.map.gz
 ```
 
 
-#### minified
+#### :fire: minified
 
 ```javascript
 <script src=""></script>
@@ -105,7 +105,7 @@ pirate-history.hash.min.map.gz
 ```
 
 
-#### gzipped
+#### :rocket: gzipped
 
 ```javascript
 ```
@@ -116,7 +116,7 @@ pirate-history.hash.min.map.gz
 
 ### [stand-alone] memory
 
-#### concatenated
+#### :package: concatenated
 
 ```javascript
 <script src=""></script>
@@ -127,7 +127,7 @@ pirate-history.hash.min.map.gz
 ```
 
 
-#### minified
+#### :fire: minified
 
 ```javascript
 <script src=""></script>
@@ -138,7 +138,7 @@ pirate-history.hash.min.map.gz
 ```
 
 
-#### gzipped
+#### :rocket: gzipped
 
 ```javascript
 ```
