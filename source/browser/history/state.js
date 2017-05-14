@@ -1,8 +1,6 @@
 import * as dispatcher from 'source/browser/events/polyfill';
 import parsePath from 'source/browser/path/parse';
 
-const ua = window.navigator.userAgent;
-export const native = window.history;
 export const HashChangeEvent = 'hashchange';
 export const HashChangeHook = `on${HashChangeEvent}`;
 export const PopStateEvent = 'popstate';
@@ -10,6 +8,24 @@ export const PopStateHook = `on${PopStateEvent}`;
 export const ReplaceStateEvent = 'replacestate';
 export const ChangeStateEvent = 'changestate';
 export const PushStateEvent = 'pushstate';
+
+/*!
+ * @name ua
+ *
+ * @description
+ *
+ * @api private
+`*/
+const ua = window.navigator.userAgent;
+
+/*!
+ * @name native
+ *
+ * @description
+ *
+ * @api public
+`*/
+export const native = window.history;
 
 /*!
  * @name hasStateList
