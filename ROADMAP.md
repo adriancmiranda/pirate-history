@@ -40,6 +40,18 @@ pirate.history.dispatchEvent('init', onInit);
 ```
 
 
+## :black_circle: [Extension] The `change` event
+
+```javascript
+function onChanged(event) {
+  var state = event.state;
+}
+pirate.history.addEventListener('change', onChanged);
+pirate.history.removeEventListener('change', onChanged);
+pirate.history.dispatchEvent('change', onChanged);
+```
+
+
 ## :large_blue_circle: [Polyfill/Wrapper] The `popstate` event
 
 The `popstate` event is fired on `pirate` when the active history entry changes. Most commonly when the browsers back or forward buttons are clicked (or a call to `back()`, `forward()` or `go()` is executed).
@@ -53,18 +65,6 @@ function onPopState(event) {
 pirate.history.addEventListener('popstate', onPopState);
 pirate.history.removeEventListener('popstate', onPopState);
 pirate.history.dispatchEvent('popstate', onPopState);
-```
-
-
-## :black_circle: [Extension] The `change` event
-
-```javascript
-function onChanged(event) {
-  var state = event.state;
-}
-pirate.history.addEventListener('change', onChanged);
-pirate.history.removeEventListener('change', onChanged);
-pirate.history.dispatchEvent('change', onChanged);
 ```
 
 
