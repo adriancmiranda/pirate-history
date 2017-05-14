@@ -44,7 +44,7 @@ module.exports = $ => commonTemplate($).cfg({
 // --------------------------------------------------------------------------
 // *optional signature
 // --------------------------------------------------------------------------
-.cfg('plugins', $('build.sign') ? [(() => {
+.cfg('plugins', $('argv.sign') ? [(() => {
   return new webpack.BannerPlugin({
     banner: pirateFlag($('package'), {
       moment: $('now'),
