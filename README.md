@@ -34,7 +34,7 @@ bower i pirate-history -S
 
 ## 🏴 History
 
-### **C**ontent **D**elivery **N**etwork (CDN)
+### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
 
 #### :package: concatenated
 
@@ -71,7 +71,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ## 🏴 Hash (standalone)
 
-### **C**ontent **D**elivery **N**etwork (CDN)
+### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
 
 #### :package: concatenated
 
@@ -108,7 +108,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ## 🏴 State (standalone)
 
-### **C**ontent **D**elivery **N**etwork (CDN)
+### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
 
 #### :package: concatenated
 
@@ -145,7 +145,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ## 🏴 Memory (standalone)
 
-### **C**ontent **D**elivery **N**etwork (CDN)
+### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
 
 #### :package: concatenated
 
