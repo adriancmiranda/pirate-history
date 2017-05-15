@@ -14,7 +14,7 @@ module.exports = $ => commonTemplate($).cfg({
     chunkFilename: $('path.output.script', `[id]${$('argv.minify') ? '.min' : ''}.js`),
     sourceMapFilename: $('path.output.script', `[name]${$('argv.minify') ? '.min' : ''}.map`),
     library: $('package.name').replace('pirate-', ''),
-    libraryTarget: 'umd',
+    libraryTarget: $('argv.target'),
     umdNamedDefine: true,
   },
 })

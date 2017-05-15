@@ -8,23 +8,14 @@
  *                       
  *  pirate-history v0.0.1
  * 
- * @moment Sunday, May 14, 2017 3:37 PM
- * @commit 162e602f33603af937abdffef6f9e77aa4c7ffb3
+ * @moment Monday, May 15, 2017 7:52 AM
+ * @commit 25654720e4b4b3cf62a0d99c03dc24a7ed596e3e
  * @homepage https://github.com/adriancmiranda/pirate-history
  * @author Adrian C. Miranda
  * @license Unlicense
  */
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define("history", [], factory);
-	else if(typeof exports === 'object')
-		exports["history"] = factory();
-	else
-		root["history"] = factory();
-})(this, function() {
-return /******/ (function(modules) { // webpackBootstrap
+var history =
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -116,5 +107,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 /******/ });
-});
 //# sourceMappingURL=pirate-history.memory.map

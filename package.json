@@ -18,7 +18,7 @@
     "build": "run-s gzip \"concat -- --env.dirty\"",
     "gzip": "npm run minify -- --env.gzip=js",
     "minify": "npm run concat -- --env.minify",
-    "concat": "webpack --config bin --env.run=build --env.sign",
+    "concat": "webpack --config bin --env.run=build --env.sign --env.target=var",
     "stats": "webpack --config bin --profile --json > stats.json",
     "test:unit": "run-s \"test:watch -- --single-run\"",
     "test:watch": "karma start test/karma.conf.js",
