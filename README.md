@@ -32,9 +32,9 @@ bower i pirate-history -S
 - ☠ There's nothing for you here yet. ☠
 ```
 
-## 🏴 **C**ontent **D**elivery **N**etwork (CDN)
+## 🏴 History
 
-### History
+### **C**ontent **D**elivery **N**etwork (CDN)
 
 #### :package: concatenated
 
@@ -69,7 +69,9 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### Hash _(standalone)_
+## 🏴 Hash _(standalone)_
+
+### **C**ontent **D**elivery **N**etwork (CDN)
 
 #### :package: concatenated
 
@@ -104,7 +106,9 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### State _(standalone)_
+## 🏴 State _(standalone)_
+
+### **C**ontent **D**elivery **N**etwork (CDN)
 
 #### :package: concatenated
 
@@ -139,7 +143,9 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### Memory _(standalone)_
+## 🏴 Memory _(standalone)_
+
+### **C**ontent **D**elivery **N**etwork (CDN)
 
 #### :package: concatenated
 
