@@ -1,4 +1,4 @@
-# pirate-history
+# :construction: pirate-history :construction:
 > Handles cross-browser history management
 
 [![npm-fury][npm-fury]][npm-url]
@@ -62,7 +62,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### Get Started
+### :beginner: Get Started
 
 ```diff
 - ☠ There's nothing for you here yet. ☠
@@ -106,7 +106,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### Get Started
+### :beginner: Get Started
 
 ```diff
 - ☠ There's nothing for you here yet. ☠
@@ -150,7 +150,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### Get Started
+### :beginner: Get Started
 
 ```diff
 - ☠ There's nothing for you here yet. ☠
@@ -194,7 +194,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-### Get Started
+### :beginner: Get Started
 
 ```diff
 - ☠ There's nothing for you here yet. ☠
