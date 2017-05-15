@@ -69,7 +69,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-## 🏴 Hash _(standalone)_
+## 🏴 Hash (standalone)
 
 ### **C**ontent **D**elivery **N**etwork (CDN)
 
@@ -106,7 +106,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-## 🏴 State _(standalone)_
+## 🏴 State (standalone)
 
 ### **C**ontent **D**elivery **N**etwork (CDN)
 
@@ -143,7 +143,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
-## 🏴 Memory _(standalone)_
+## 🏴 Memory (standalone)
 
 ### **C**ontent **D**elivery **N**etwork (CDN)
 
