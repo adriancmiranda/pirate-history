@@ -44,17 +44,6 @@ export const hasStateList = 'pushState' in Object(native) &&
 ;
 
 /*!
- * @name updateStateList
- *
- * @description
- *
- * @api private
-`*/
-export function updateStateList(URL, put) {
-	put(parsePath(URL)); // @TODO: storage
-}
-
-/*!
  * @name pushState
  *
  * @description
@@ -115,4 +104,15 @@ export function forward() {
 `*/
 export function back() {
 	return native.back();
+}
+
+/*!
+ * @name updateStateList
+ *
+ * @description
+ *
+ * @api private
+`*/
+function updateStateList(URL, put) {
+	put(parsePath(URL)); // @TODO: storage
 }
