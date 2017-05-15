@@ -25,13 +25,6 @@ npm i pirate-history -S
 bower i pirate-history -S 
 ```
 
-
-## 🏴 Get Started
-
-```diff
-- ☠ There's nothing for you here yet. ☠
-```
-
 ## 🏴 History
 
 ### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
@@ -66,6 +59,13 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ```javascript
 https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.min.map.gz
+```
+
+
+### Get Started
+
+```diff
+- ☠ There's nothing for you here yet. ☠
 ```
 
 
@@ -106,6 +106,13 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
+### Get Started
+
+```diff
+- ☠ There's nothing for you here yet. ☠
+```
+
+
 ## 🏴 State (standalone)
 
 ### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
@@ -143,6 +150,13 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ```
 
 
+### Get Started
+
+```diff
+- ☠ There's nothing for you here yet. ☠
+```
+
+
 ## 🏴 Memory (standalone)
 
 ### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
@@ -177,6 +191,13 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ```javascript
 https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.memory.min.map.gz
+```
+
+
+### Get Started
+
+```diff
+- ☠ There's nothing for you here yet. ☠
 ```
 
 
