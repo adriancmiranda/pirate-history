@@ -3,7 +3,9 @@ import * as path from 'source/browser/path';
 
 describe('browser/path', () => {
 	describe('#is-absolute', () => {
+		expect(path.isAbsolute('./foo')).to.be.false;
 		expect(path.isAbsolute('/foo')).to.be.true;
+		expect(path.isAbsolute('foo')).to.be.false;
 	});
 
 	describe('#parse', () => {
