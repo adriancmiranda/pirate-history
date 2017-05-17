@@ -72,6 +72,7 @@ module.exports = $ => commonTemplate($).cfg({
   }, $('build.gzip.options'), {
     test: new RegExp(`\\.(${[].concat($('argv.gzip')).join('|')})$`),
     asset: '[path].gz[query]',
+    filename: (filename) => filename,
   });
 })()] : [])
 
