@@ -1,5 +1,7 @@
 import * as dispatcher from 'source/browser/events/polyfill';
 import parsePath from 'source/browser/path/parse';
+import toInt from 'source/common/to-int';
+import is from 'source/common/is';
 
 export const HashChangeEvent = 'hashchange';
 export const HashChangeHook = `on${HashChangeEvent}`;
@@ -115,4 +117,58 @@ export function forward() {
 `*/
 export function back() {
 	return native.back();
+}
+
+/*!
+ * @name length
+ *
+ * @description
+ *
+ * @api public
+`*/
+export function length() {
+	return toInt(native.length);
+}
+
+/*!
+ * @name state
+ *
+ * @description
+ *
+ * @api public
+`*/
+export function $state() {
+	const info = {};
+	try {
+		return native.state || info;
+	} catch (err) { return info; }
+}
+
+/*!
+ * @name title
+ *
+ * @description
+ *
+ * @api public
+`*/
+export function $title(val) {
+	if (is('Function', val)) {
+		val = val(document.title);
+	}
+	if (is('String', val)) {
+		document.title = val;
+	}
+	return document.title;
+}
+
+/*!
+ * @name location
+ *
+ * @description
+ *
+ * @api public
+`*/
+export function location(val) {
+	if (val) return parsePath(val);
+	return parsePath(window.location.href);
 }
