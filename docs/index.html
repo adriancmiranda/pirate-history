@@ -1,0 +1,1158 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>pirate-history 0.0.1 | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation'>
+  <div class='max-width-4 mx-auto'>
+    <div class='clearfix md-mxn2'>
+      <div class='fixed xs-hide fix-3 overflow-auto max-height-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>pirate-history</h3>
+          <div class='mb1'><code>0.0.1</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#events'
+                  class="">
+                  events
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#emit'
+                  class="">
+                  emit
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#on'
+                  class="">
+                  on
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#off'
+                  class="">
+                  off
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#one'
+                  class="">
+                  one
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#hasevent'
+                  class="">
+                  hasEvent
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#willemit'
+                  class="">
+                  willEmit
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#createevent'
+                  class="">
+                  createEvent
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#addeventlistener'
+                  class="">
+                  addEventListener
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#removeeventlistener'
+                  class="">
+                  removeEventListener
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#dispatchevent'
+                  class="">
+                  dispatchEvent
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div class='fix-margin-3'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='events'>
+      events
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A collection of events.</p>
+
+
+  <div class='pre p1 fill-light mt0'>events</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='emit'>
+      emit
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Execute all handlers and behaviors attached to the matched elements
+for the given event type.</p>
+
+
+  <div class='pre p1 fill-light mt0'>emit(domEl: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, options: Mixed)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>domEl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>)</code>
+	    The target object for events dispatched to the EventTarget object.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(Mixed)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='on'>
+      on
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Attach an event handler function for one or more events to the
+selected elements.</p>
+
+
+  <div class='pre p1 fill-light mt0'>on(domEl: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, listener: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, useCapture: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>domEl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>)</code>
+	    The target object for events dispatched to the EventTarget object.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>listener</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    The listener function that processes the event.
+This function must accept an Event object as its only parameter and must return nothing.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    An options object that specifies characteristics about the
+event listener.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>useCapture</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+	    Determines whether the listener works in the capture phase or
+the target and bubbling phases. If useCapture is set to true, the listener processes the
+event only during the capture phase and not in the target or bubbling phase.
+If useCapture is false, the listener processes the event only during the target or
+bubbling phase.
+To listen for the event in all three phases, call addEventListener twice, once
+with useCapture set to true, then again with useCapture set to false.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='off'>
+      off
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Remove event handler(s) from element(s).</p>
+
+
+  <div class='pre p1 fill-light mt0'>off(domEl: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, listener: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, useCapture: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>domEl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>)</code>
+	    The target object for events dispatched to the EventTarget object.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>listener</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    The listener function that processes the event.
+This function must accept an Event object as its only parameter and must return nothing.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    An options object that specifies characteristics about the
+event listener.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>useCapture</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+	    Determines whether the listener works in the capture phase or
+the target and bubbling phases. If useCapture is set to true, the listener processes the
+event only during the capture phase and not in the target or bubbling phase.
+If useCapture is false, the listener processes the event only during the target or
+bubbling phase.
+To listen for the event in all three phases, call addEventListener twice, once
+with useCapture set to true, then again with useCapture set to false.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='one'>
+      one
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Attach a handler to an event for the elements. The handler is executed at most one
+per element per event type.</p>
+
+
+  <div class='pre p1 fill-light mt0'>one(domEl: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, listener: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, useCapture: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>domEl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>)</code>
+	    The target object for events dispatched to the EventTarget object.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>listener</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    The listener function that processes the event.
+This function must accept an Event object as its only parameter and must return nothing.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    An options object that specifies characteristics about the
+event listener.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>useCapture</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+	    Determines whether the listener works in the capture phase or
+the target and bubbling phases. If useCapture is set to true, the listener processes the
+event only during the capture phase and not in the target or bubbling phase.
+If useCapture is false, the listener processes the event only during the target or
+bubbling phase.
+To listen for the event in all three phases, call addEventListener twice, once
+with useCapture set to true, then again with useCapture set to false.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='hasevent'>
+      hasEvent
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks whether the <code>dom-event-dispatcher</code> object has any listeners registered for a specific
+type of event. This allows you to determine where an <code>dom-event-dispatcher</code> object has altered
+handling of an event type in the event flow hierarchy. To determine whether a specific event
+type actually triggers an event listener, use <code>willEmit()</code>.</p>
+<p>The difference between <code>hasEvent()</code> and <code>willEmit()</code> is that <code>hasEvent()</code> examines only the
+object to which it belongs, whereas <code>willEmit()</code> examines the entire event flow for the event
+specified by the <code>type</code> parameter.</p>
+
+
+  <div class='pre p1 fill-light mt0'>hasEvent(domEl: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>, name: any, type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>domEl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>)</code>
+	    The target object for events dispatched to the EventTarget object.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>:
+        A value of 
+<code>true</code>
+ if a listener of the specified type is registered;
+
+<code>false</code>
+ otherwise.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='willemit'>
+      willEmit
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks whether an event listener is registered with this <code>dom-event-dispatcher</code> object or
+any of its ancestors for the specified event type. This method returns <code>true</code> if an event
+listener is triggered during any phase of the event flow when an event of the specified
+type is dispatched to this <code>dom-event-dispatcher</code> object or any of its descendants.</p>
+<p>The difference between the <code>hasEvent()</code> and the <code>willEmit()</code> methods is that <code>hasEvent()</code>
+examines only the object to which it belongs, whereas the <code>willEmit()</code> method examines
+the entire event flow for the event specified by the type parameter.</p>
+
+
+  <div class='pre p1 fill-light mt0'>willEmit(name: any, type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>:
+        A value of 
+<code>true</code>
+ if a listener of the specified type is registered;
+
+<code>false</code>
+ otherwise.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='createevent'>
+      createEvent
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Creates an event of the type specified. The returned object should be first
+initialized and can then be passed to <code>element.dispatchEvent</code>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>createEvent(type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, options: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+Possible event types include "UIEvents", "MouseEvents", "MutationEvents",
+and "HTMLEvents".
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='addeventlistener'>
+      addEventListener
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The EventTarget.addEventListener() method adds the specified EventListener-compatible
+object to the list of event listeners for the specified event type on the EventTarget
+on which it's called. The event target may be an Element in a document, the Document
+itself, a Window, or any other object that supports events (such as XMLHttpRequest).</p>
+
+
+  <div class='pre p1 fill-light mt0'>addEventListener(domEl: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>, type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, listener: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, useCapture: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>domEl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>)</code>
+	    The target object for events dispatched to the EventTarget object.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>listener</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    The listener function that processes the event.
+This function must accept an Event object as its only parameter and must return nothing.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    An options object that specifies characteristics about the event
+listener.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>useCapture</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+	    Determines whether the listener works in the capture phase or
+the target and bubbling phases. If useCapture is set to true, the listener processes the
+event only during the capture phase and not in the target or bubbling phase.
+If useCapture is false, the listener processes the event only during the target or bubbling
+phase.
+To listen for the event in all three phases, call addEventListener twice, once
+with useCapture set to true, then again with useCapture set to false.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='removeeventlistener'>
+      removeEventListener
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The EventTarget.removeEventListener() method removes from the EventTarget an event
+listener previously registered with EventTarget.addEventListener(). The event
+listener to be removed is identified using a combination of the event type, the
+event listener function itself, and various optional options that may affect the
+matching process; see Matching event listeners for removal.</p>
+
+
+  <div class='pre p1 fill-light mt0'>removeEventListener(domEl: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>, type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, listener: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, useCapture: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>domEl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>)</code>
+	    The target object for events dispatched to the EventTarget object.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>listener</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    The listener function that processes the event.
+This function must accept an Event object as its only parameter and must return nothing.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    An options object that specifies characteristics about the event
+listener.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>useCapture</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+	    Determines whether the listener works in the capture phase or
+the target and bubbling phases. If useCapture is set to true, the listener processes the
+event only during the capture phase and not in the target or bubbling phase.
+If useCapture is false, the listener processes the event only during the target or
+bubbling phase.
+To listen for the event in all three phases, call addEventListener twice, once with useCapture
+set to true, then again with useCapture set to false.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='dispatchevent'>
+      dispatchEvent
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Dispatches an Event at the specified EventTarget, invoking the affected EventListeners
+in the appropriate order. The normal event processing rules (including the capturing
+and optional bubbling phase) also apply to events dispatched manually with
+dispatchEvent().</p>
+
+
+  <div class='pre p1 fill-light mt0'>dispatchEvent(domEl: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>, type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, options: Mixed): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>domEl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a>)</code>
+	    The target object for events dispatched to the EventTarget object.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The type is the name of Event object to be dispatched.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(Mixed)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>:
+        cancelled Indicating whether the event was canceled
+by an event handler.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
