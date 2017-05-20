@@ -9,7 +9,10 @@ const DEFAULT_PORTS = { http: 80, https: 443, ftp: 21, gopher: 70 };
 export default function parse(href, baseUrlObject, defaultPorts = DEFAULT_PORTS) {
 	const info = {};
 	if (is('Function', href)) href = href(baseUrlObject, defaultPorts);
-	if (!is('String', href)) href = window.location.href;
+	if (!is('String', href)) {
+		const base = document.getElementsByTagName('base')[0];
+		href = (base && base.getAttribute('href')) || window.location.href;
+	}
 	$a.setAttribute('href', normalize(href, baseUrlObject));
 	info.pathname = $a.pathname.charAt(0) === '/' ? $a.pathname : `/${$a.pathname}`;
 	info.protocol = $a.protocol ? $a.protocol.replace(/:$/, '') : '';
