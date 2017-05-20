@@ -11,6 +11,9 @@ export default function parse(href, baseUrlObject, defaultPorts = DEFAULT_PORTS)
 	if (is('Function', href)) {
 		href = href(baseUrlObject, defaultPorts);
 	}
+	if (is('URL', href) && href.href) {
+		return parse(href.href);
+	}
 	if (!is('String', href)) {
 		const base = document.getElementsByTagName('base')[0];
 		href = (base && base.getAttribute('href')) || window.location.href;
