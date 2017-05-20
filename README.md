@@ -79,17 +79,17 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
-##### :black_circle: back([n])
+##### :black_circle: go(n)
+
+- **`n`**: The position to the current page (with the current page being relative index 0). _**Default**_ 0
+
+##### :black_circle: back()
 
 To move backward through history. 
 
-- **`n`**: The position to the current page (with the current page being, of course, relative index 0). _**Default**_ 1
-
-##### :black_circle: forward([n])
+##### :black_circle: forward()
 
 To move forward through history.
-
-- **`n`**: The position to the current page (with the current page being, of course, relative index 0). _**Default**_ 1
 
 
 #### Events
@@ -165,9 +165,17 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
-##### :black_circle: back(n)
+##### :black_circle: go(n)
 
-##### :black_circle: forward(n)
+- **`n`**: The position to the current page (with the current page being relative index 0). _**Default**_ 0
+
+##### :black_circle: back()
+
+To move backward through history. 
+
+##### :black_circle: forward()
+
+To move forward through history.
 
 
 #### Events
@@ -243,9 +251,17 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
-##### :black_circle: back(n)
+##### :black_circle: go(n)
 
-##### :black_circle: forward(n)
+- **`n`**: The position to the current page (with the current page being relative index 0). _**Default**_ 0
+
+##### :black_circle: back()
+
+To move backward through history. 
+
+##### :black_circle: forward()
+
+To move forward through history.
 
 
 #### Events
@@ -321,9 +337,17 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
-##### :black_circle: back(n)
+##### :black_circle: go(n)
 
-##### :black_circle: forward(n)
+- **`n`**: The position to the current page (with the current page being relative index 0). _**Default**_ 0
+
+##### :black_circle: back()
+
+To move backward through history. 
+
+##### :black_circle: forward()
+
+To move forward through history.
 
 
 #### Events
