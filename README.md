@@ -75,7 +75,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :black_circle: url()
 
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
-Except for your `searchParams` attribute that returns an object not an (URLSearchParams)[https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams].
+Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
 ##### :black_circle: back(n)
 
@@ -151,7 +151,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :black_circle: url()
 
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
-Except for your `searchParams` attribute that returns an object not an (URLSearchParams)[https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams].
+Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
 ##### :black_circle: back(n)
 
@@ -227,7 +227,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :black_circle: url()
 
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
-Except for your `searchParams` attribute that returns an object not an (URLSearchParams)[https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams].
+Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
 ##### :black_circle: back(n)
 
@@ -303,7 +303,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :black_circle: url()
 
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
-Except for your `searchParams` attribute that returns an object not an (URLSearchParams)[https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams].
+Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
 ##### :black_circle: back(n)
 
