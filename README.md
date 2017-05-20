@@ -65,8 +65,18 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ### :beginner: Get Started
 
 ```diff
-- ☠ There's nothing for you here yet. ☠
+- ☠ There's nothing for you here yet. ☠ -
 ```
+
+#### :black_circle: push
+
+#### :black_circle: replace
+
+#### :black_circle: back
+
+#### :black_circle: forward
+
+#### :black_circle: go
 
 
 ## 🏴 Hash (standalone)
@@ -109,8 +119,18 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ### :beginner: Get Started
 
 ```diff
-- ☠ There's nothing for you here yet. ☠
+- ☠ There's nothing for you here yet. ☠ - 
 ```
+
+#### :black_circle: push
+
+#### :black_circle: replace
+
+#### :black_circle: back
+
+#### :black_circle: forward
+
+#### :black_circle: go
 
 
 ## 🏴 State (standalone)
@@ -153,8 +173,18 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ### :beginner: Get Started
 
 ```diff
-- ☠ There's nothing for you here yet. ☠
+- ☠ There's nothing for you here yet. ☠ -
 ```
+
+#### :black_circle: push
+
+#### :black_circle: replace
+
+#### :black_circle: back
+
+#### :black_circle: forward
+
+#### :black_circle: go
 
 
 ## 🏴 Memory (standalone)
@@ -197,9 +227,25 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ### :beginner: Get Started
 
 ```diff
-- ☠ There's nothing for you here yet. ☠
+- ☠ There's nothing for you here yet. ☠ -
 ```
 
+#### :black_circle: push
+
+The `push()` method is used to create a new memory entry.
+
+
+#### :black_circle: replace
+
+The `replace()` method is similar to `push()` in that it takes the same three parameters.
+However, rather than creating a new memory entry, `replace()` updates the current memory entry.
+This can be useful if you want to add some data to your memory object after `push()` has been called.
+
+#### :black_circle: back
+
+#### :black_circle: forward
+
+#### :black_circle: go
 
 ## 🏴 What you need to build your own **pirate-history**
 
