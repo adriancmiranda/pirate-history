@@ -94,6 +94,12 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: pop
 
 
+#### Example
+
+```javascript
+```
+
+
 ## 🏴 Hash (standalone)
 
 ### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
@@ -157,6 +163,12 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: change
 
 ##### :white_circle: pop
+
+
+#### Example
+
+```javascript
+```
 
 
 ## 🏴 State (standalone)
@@ -224,6 +236,12 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: pop
 
 
+#### Example
+
+```javascript
+```
+
+
 ## 🏴 Memory (standalone)
 
 ### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
@@ -287,6 +305,12 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: change
 
 ##### :white_circle: pop
+
+
+#### Example
+
+```javascript
+```
 
 
 ## 🏴 What you need to build your own **pirate-history**
