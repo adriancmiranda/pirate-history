@@ -12,7 +12,7 @@
   "license": "Unlicense",
   "scripts": {
     "report-coverage": "codecov -f test/coverage/coverage-final.json",
-    "doc": "docco index.js",
+    "doc": "documentation build index.js -f html -o docs",
     "upgrade": "ncu -a --loglevel verbose --packageFile package.json && npm i",
     "dev": "webpack-dev-server --config bin --env.run=dev --env.dev",
     "build:examples": "cd examples && node build-all",
@@ -50,7 +50,7 @@
     "codecov": "~2.2.0",
     "compression-webpack-plugin": "~0.4.0",
     "conventional-commit-types": "~2.1.0",
-    "docco": "~0.7.0",
+    "documentation": "~4.0.0-rc.1",
     "eslint": "~3.19.0",
     "eslint-config-airbnb-base": "~11.2.0",
     "eslint-friendly-formatter": "~3.0.0",
