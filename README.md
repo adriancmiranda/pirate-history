@@ -1,11 +1,11 @@
-# :construction: pirate-history :construction:
+# pirate-history
 > Handles cross-browser history management
 
 [![npm-fury][npm-fury]][npm-url]
 [![license][license]][license-url]
 [![fossa][fossa]][fossa-url]
 
-## 🏴 Status
+## 🚧 Status
 
 ```diff
 - ☠ This library is under construction. There's nothing for you here yet. ☠ -
@@ -324,7 +324,7 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 
 [![licenses][licenses]][licenses-url]
 
-<sub>[▴ Back to top](#)</sub>
+<sub>[▴ Back to top](#pirate-history)</sub>
 
 <!-- prerequisites -->
 
