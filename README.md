@@ -324,6 +324,8 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 
 [![licenses][licenses]][licenses-url]
 
+<sub>[▴ Back to top](#)</sub>
+
 <!-- prerequisites -->
 
 [npm-link]: https://www.npmjs.com/ "npm is the package manager for everything"
