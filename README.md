@@ -94,7 +94,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: pop
 
 
-#### Example
+#### Usage
 
 ```javascript
 ```
@@ -165,7 +165,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: pop
 
 
-#### Example
+#### Usage
 
 ```javascript
 ```
@@ -236,7 +236,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: pop
 
 
-#### Example
+#### Usage
 
 ```javascript
 ```
@@ -307,7 +307,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: pop
 
 
-#### Example
+#### Usage
 
 ```javascript
 ```
