@@ -484,3 +484,5 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 
 [licenses]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fadriancmiranda%2Fpirate-history.svg?type=large
 [licenses-url]: https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fadriancmiranda%2Fpirate-history?ref=badge_large
+
+<!-- https://unpkg.com/pirate-history@0.0.2/dist/ -->
