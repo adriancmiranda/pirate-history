@@ -1,3 +1,10 @@
+/**
+ * Browser events
+ * @module browser/events
+ * @exports browser/events
+ * @alias module:browser/events
+ */
+
 import is from 'source/common/is';
 import * as polyfill from './polyfill';
 
@@ -7,7 +14,7 @@ import * as polyfill from './polyfill';
  * @description
  * A collection of events.
  *
- * @api private
+ * @private
 `*/
 const events = [];
 

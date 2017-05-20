@@ -3,7 +3,7 @@
  *
  * @return {String}
  *
- * @api private
+ * @private
 `*/
 export default function escapeRegExp(rule) {
 	return String(rule).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');

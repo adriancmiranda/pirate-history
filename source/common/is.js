@@ -9,7 +9,7 @@
  *
  * @return {Boolean} true if `value` is a type of `type`, false otherwise.
  *
- * @api private
+ * @private
 `*/
 export default function is(expected, value) {
 	return new RegExp(`(${expected})`).test(toString.call(value));

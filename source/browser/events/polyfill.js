@@ -1,4 +1,9 @@
 /**
+ * Browser events polyfill
+ * @module browser/events/polyfill
+ */
+
+/**
  * @name createEvent
  *
  * @description

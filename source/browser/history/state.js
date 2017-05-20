@@ -16,7 +16,7 @@ export const PushStateEvent = 'pushstate';
  *
  * @description
  *
- * @api private
+ * @private
 `*/
 const ua = window.navigator.userAgent;
 
@@ -50,7 +50,7 @@ export const hasStateList = 'pushState' in Object(native) &&
  *
  * @description
  *
- * @api private
+ * @private
 `*/
 function updateStateList(URL, put) {
 	put(parsePath(URL)); // @TODO: storage
