@@ -7,6 +7,10 @@
 
 ## 🏴 Status
 
+```diff
+- ☠ This library is under construction. There's nothing for you here yet. ☠ -
+```
+
 | Dependencies                       | Build                                 | Coverage                            |
 | :--------------------------------- | :------------------------------------ | :------------------------------------------------ |
 | [![deps][deps]][deps-url]          | [![travis][travis]][travis-url]       | [![inch][inch]][inch-url]                         |
@@ -64,10 +68,6 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ### :beginner: Get Started
 
-```diff
-- ☠ There's nothing for you here yet. ☠ -
-```
-
 #### Methods
 
 ##### :black_circle: go(location, replace, options)
@@ -75,6 +75,21 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :black_circle: back(n)
 
 ##### :black_circle: forward(n)
+
+
+#### Events
+
+##### :white_circle: push
+
+##### :white_circle: replace
+
+##### :white_circle: forward
+
+##### :white_circle: back
+
+##### :white_circle: change
+
+##### :white_circle: pop
 
 
 ## 🏴 Hash (standalone)
@@ -116,10 +131,6 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ### :beginner: Get Started
 
-```diff
-- ☠ There's nothing for you here yet. ☠ - 
-```
-
 #### Methods
 
 ##### :black_circle: go(location, replace, options)
@@ -127,6 +138,21 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :black_circle: back(n)
 
 ##### :black_circle: forward(n)
+
+
+#### Events
+
+##### :white_circle: push
+
+##### :white_circle: replace
+
+##### :white_circle: forward
+
+##### :white_circle: back
+
+##### :white_circle: change
+
+##### :white_circle: pop
 
 
 ## 🏴 State (standalone)
@@ -168,10 +194,6 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ### :beginner: Get Started
 
-```diff
-- ☠ There's nothing for you here yet. ☠ -
-```
-
 #### Methods
 
 ##### :black_circle: go(location, replace, options)
@@ -179,6 +201,21 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :black_circle: back(n)
 
 ##### :black_circle: forward(n)
+
+
+#### Events
+
+##### :white_circle: push
+
+##### :white_circle: replace
+
+##### :white_circle: forward
+
+##### :white_circle: back
+
+##### :white_circle: change
+
+##### :white_circle: pop
 
 
 ## 🏴 Memory (standalone)
@@ -220,10 +257,6 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ### :beginner: Get Started
 
-```diff
-- ☠ There's nothing for you here yet. ☠ -
-```
-
 #### Methods
 
 ##### :black_circle: go(location, replace, options)
@@ -231,6 +264,21 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :black_circle: back(n)
 
 ##### :black_circle: forward(n)
+
+
+#### Events
+
+##### :white_circle: push
+
+##### :white_circle: replace
+
+##### :white_circle: forward
+
+##### :white_circle: back
+
+##### :white_circle: change
+
+##### :white_circle: pop
 
 
 ## 🏴 What you need to build your own **pirate-history**
