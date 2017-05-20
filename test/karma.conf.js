@@ -116,7 +116,7 @@ module.exports = (config) => {
 		basePath: '../',
 		port: 9876,
 		colors: true,
-		browsers: ['PhantomJS'],
+		browsers: ['Chrome'],
 		frameworks: ['mocha', 'sinon-chai', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
 		files: [{
