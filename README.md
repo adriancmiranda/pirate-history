@@ -70,9 +70,9 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### :black_circle: go(location, replace, options)
 
-#### :black_circle: back
+#### :black_circle: back(n)
 
-#### :black_circle: forward
+#### :black_circle: forward(n)
 
 
 ## 🏴 Hash (standalone)
@@ -120,9 +120,9 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### :black_circle: go(location, replace, options)
 
-#### :black_circle: back
+#### :black_circle: back(n)
 
-#### :black_circle: forward
+#### :black_circle: forward(n)
 
 
 ## 🏴 State (standalone)
@@ -170,9 +170,9 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### :black_circle: go(location, replace, options)
 
-#### :black_circle: back
+#### :black_circle: back(n)
 
-#### :black_circle: forward
+#### :black_circle: forward(n)
 
 
 ## 🏴 Memory (standalone)
@@ -220,18 +220,9 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### :black_circle: go(location, replace, options)
 
-The `push()` method is used to create a new memory entry.
+#### :black_circle: back(n)
 
-
-#### :black_circle: replace
-
-The `replace()` method is similar to `push()` in that it takes the same three parameters.
-However, rather than creating a new memory entry, `replace()` updates the current memory entry.
-This can be useful if you want to add some data to your memory object after `push()` has been called.
-
-#### :black_circle: back
-
-#### :black_circle: forward
+#### :black_circle: forward(n)
 
 
 ## 🏴 What you need to build your own **pirate-history**
