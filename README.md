@@ -81,13 +81,13 @@ Except for your `searchParams` attribute that returns an object not an [URLSearc
 
 To move backward through history. 
 
-`**n**`: The position to the current page (with the current page being, of course, relative index 0). _Default_ -1
+**`n`**: The position to the current page (with the current page being, of course, relative index 0). _**Default**_ -1
 
 ##### :black_circle: forward(n)
 
 To move forward through history.
 
-`**n**`: The position to the current page (with the current page being, of course, relative index 0). _Default_ 1
+**`n`**: The position to the current page (with the current page being, of course, relative index 0). _**Default**_ 1
 
 
 #### Events
