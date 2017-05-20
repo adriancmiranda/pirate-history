@@ -7,15 +7,15 @@
 
 ## 🚧 Status
 
+```diff
+- ☠ This library is under construction. There's nothing for you here yet. ☠ -
+```
+
 | Dependencies                       | Build                                 | Coverage                            |
 | :--------------------------------- | :------------------------------------ | :------------------------------------------------ |
 | [![deps][deps]][deps-url]          | [![travis][travis]][travis-url]       | [![inch][inch]][inch-url]                         |
 | [![devDeps][devDeps]][devDeps-url] | [![circleci][circleci]][circleci-url] | [![codecov][codecov]][codecov-url]                |
 | [![depsci][depsci]][depsci-url]    | [![appveyor][appveyor]][appveyor-url] | [![browserstack][browserstack]][browserstack-url] |
-
-```diff
-- ☠ This library is under construction. There's nothing for you here yet. ☠ -
-```
 
 ## 🏴 Install
 
