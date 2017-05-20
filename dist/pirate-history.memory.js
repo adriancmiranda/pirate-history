@@ -8,8 +8,8 @@
  *                       
  *  pirate-history v0.0.1
  * 
- * @moment Monday, May 15, 2017 7:52 AM
- * @commit 25654720e4b4b3cf62a0d99c03dc24a7ed596e3e
+ * @moment Saturday, May 20, 2017 5:03 PM
+ * @commit b75bbcfcbc779ac518c67fe74e913d5115f94604
  * @homepage https://github.com/adriancmiranda/pirate-history
  * @author Adrian C. Miranda
  * @license Unlicense
@@ -85,7 +85,7 @@ var history =
 /************************************************************************/
 /******/ ({
 
-/***/ 42:
+/***/ 43:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99,7 +99,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__browser_history_memory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__browser_history_memory__ = __webpack_require__(43);
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "memory", function() { return __WEBPACK_IMPORTED_MODULE_0__browser_history_memory__; });
 
 
