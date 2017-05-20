@@ -87,6 +87,8 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ##### :white_circle: back
 
+##### :white_circle: action
+
 ##### :white_circle: change
 
 ##### :white_circle: pop
@@ -149,6 +151,8 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: forward
 
 ##### :white_circle: back
+
+##### :white_circle: action
 
 ##### :white_circle: change
 
@@ -213,6 +217,8 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 ##### :white_circle: back
 
+##### :white_circle: action
+
 ##### :white_circle: change
 
 ##### :white_circle: pop
@@ -275,6 +281,8 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 ##### :white_circle: forward
 
 ##### :white_circle: back
+
+##### :white_circle: action
 
 ##### :white_circle: change
 
