@@ -81,7 +81,7 @@ Except for your `searchParams` attribute that returns an object not an [URLSearc
 
 ##### :black_circle: go(n)
 
-- **`n`**: The position to the current page (with the current page being relative index 0). _**Default**_ 0
+- **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
 
 ##### :black_circle: back()
 
@@ -167,7 +167,7 @@ Except for your `searchParams` attribute that returns an object not an [URLSearc
 
 ##### :black_circle: go(n)
 
-- **`n`**: The position to the current page (with the current page being relative index 0). _**Default**_ 0
+- **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
 
 ##### :black_circle: back()
 
@@ -253,7 +253,7 @@ Except for your `searchParams` attribute that returns an object not an [URLSearc
 
 ##### :black_circle: go(n)
 
-- **`n`**: The position to the current page (with the current page being relative index 0). _**Default**_ 0
+- **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
 
 ##### :black_circle: back()
 
@@ -339,7 +339,7 @@ Except for your `searchParams` attribute that returns an object not an [URLSearc
 
 ##### :black_circle: go(n)
 
-- **`n`**: The position to the current page (with the current page being relative index 0). _**Default**_ 0
+- **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
 
 ##### :black_circle: back()
 
