@@ -1,4 +1,4 @@
-/*!
+/**
  * @name is
  *
  * @description

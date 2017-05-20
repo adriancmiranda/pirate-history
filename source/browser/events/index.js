@@ -1,7 +1,7 @@
 import is from 'source/common/is';
 import * as polyfill from './polyfill';
 
-/*!
+/**
  * @name events
  *
  * @description
@@ -11,7 +11,7 @@ import * as polyfill from './polyfill';
 `*/
 const events = [];
 
-/*!
+/**
  * @name emit
  *
  * @description
@@ -50,7 +50,7 @@ export function emit(domEl, name, options) {
 	return cancelled;
 }
 
-/*!
+/**
  * @name on
  *
  * @description
@@ -92,7 +92,7 @@ export function on(domEl, name, listener, ...options) {
 	}
 }
 
-/*!
+/**
  * @name off
  *
  * @description
@@ -142,7 +142,7 @@ export function off(domEl, name, listener, ...options) {
 	}
 }
 
-/*!
+/**
  * @name one
  *
  * @description
@@ -176,7 +176,7 @@ export function one(domEl, name, listener, ...options) {
 	}, ...options);
 }
 
-/*!
+/**
  * @name hasEvent
  *
  * @description
@@ -212,7 +212,7 @@ export function hasEvent(domEl, name) {
 	return false;
 }
 
-/*!
+/**
  * @name willEmit
  *
  * @description

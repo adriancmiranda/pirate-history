@@ -1,4 +1,4 @@
-/*!
+/**
  * @name createEvent
  *
  * @description
@@ -27,7 +27,7 @@ export function createEvent(type, options) {
 	return Object.assign(event, opts);
 }
 
-/*!
+/**
  * @name addEventListener
  *
  * @description
@@ -66,7 +66,7 @@ export function addEventListener(domEl, type, listener, ...options) {
 	}
 }
 
-/*!
+/**
  * @name removeEventListener
  *
  * @description
@@ -106,7 +106,7 @@ export function removeEventListener(domEl, type, listener, ...options) {
 	}
 }
 
-/*!
+/**
  * @name dispatchEvent
  *
  * @description

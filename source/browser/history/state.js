@@ -11,7 +11,7 @@ export const ReplaceStateEvent = 'replacestate';
 export const ChangeStateEvent = 'changestate';
 export const PushStateEvent = 'pushstate';
 
-/*!
+/**
  * @name ua
  *
  * @description
@@ -20,7 +20,7 @@ export const PushStateEvent = 'pushstate';
 `*/
 const ua = window.navigator.userAgent;
 
-/*!
+/**
  * @name native
  *
  * @description
@@ -29,7 +29,7 @@ const ua = window.navigator.userAgent;
 `*/
 export const native = window.history;
 
-/*!
+/**
  * @name hasStateList
  *
  * @description
@@ -45,7 +45,7 @@ export const hasStateList = 'pushState' in Object(native) &&
 	/Windows\sPhone|Chrome/gi.test(ua)
 ;
 
-/*!
+/**
  * @name updateStateList
  *
  * @description
@@ -56,7 +56,7 @@ function updateStateList(URL, put) {
 	put(parsePath(URL)); // @TODO: storage
 }
 
-/*!
+/**
  * @name pushState
  *
  * @description
@@ -71,7 +71,7 @@ export function pushState(state, title, URL) {
 	});
 }
 
-/*!
+/**
  * @name replaceState
  *
  * @description
@@ -86,7 +86,7 @@ export function replaceState(state, title, URL) {
 	});
 }
 
-/*!
+/**
  * @name go
  *
  * @description
@@ -97,7 +97,7 @@ export function go(factor) {
 	return native.go(factor);
 }
 
-/*!
+/**
  * @name forward
  *
  * @description
@@ -108,7 +108,7 @@ export function forward() {
 	return native.forward();
 }
 
-/*!
+/**
  * @name back
  *
  * @description
@@ -119,7 +119,7 @@ export function back() {
 	return native.back();
 }
 
-/*!
+/**
  * @name length
  *
  * @description
@@ -130,7 +130,7 @@ export function length() {
 	return toInt(native.length);
 }
 
-/*!
+/**
  * @name state
  *
  * @description
@@ -144,7 +144,7 @@ export function $state() {
 	} catch (err) { return info; }
 }
 
-/*!
+/**
  * @name title
  *
  * @description
@@ -161,7 +161,7 @@ export function $title(val) {
 	return document.title;
 }
 
-/*!
+/**
  * @name location
  *
  * @description

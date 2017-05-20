@@ -1,4 +1,4 @@
-/*!
+/**
  * @name toInt
  *
  * @return {Number}
