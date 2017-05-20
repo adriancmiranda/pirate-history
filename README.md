@@ -338,7 +338,7 @@ Enter the **pirate-history** directory and run the install script and the build 
 cd pirate-history && npm i && npm run build
 ```
 
-The built version of **pirate-history** will be put in the `dist/` subdirectory, along with the internal dependencies, minified copy and associated map file to each one of your parts.
+The built version of **pirate-history** will be put in the `dist/` subdirectory, along with the internal dependencies, minified copy and associated map file to each one of your parts that should be work apart and also could be used independently.
 
 
 ## 🏴 Support
