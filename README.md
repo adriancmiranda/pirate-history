@@ -68,15 +68,11 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 - ☠ There's nothing for you here yet. ☠ -
 ```
 
-#### :black_circle: push
-
-#### :black_circle: replace
+#### :black_circle: go(location, replace, options)
 
 #### :black_circle: back
 
 #### :black_circle: forward
-
-#### :black_circle: go
 
 
 ## 🏴 Hash (standalone)
@@ -122,15 +118,11 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 - ☠ There's nothing for you here yet. ☠ - 
 ```
 
-#### :black_circle: push
-
-#### :black_circle: replace
+#### :black_circle: go(location, replace, options)
 
 #### :black_circle: back
 
 #### :black_circle: forward
-
-#### :black_circle: go
 
 
 ## 🏴 State (standalone)
@@ -176,15 +168,11 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 - ☠ There's nothing for you here yet. ☠ -
 ```
 
-#### :black_circle: push
-
-#### :black_circle: replace
+#### :black_circle: go(location, replace, options)
 
 #### :black_circle: back
 
 #### :black_circle: forward
-
-#### :black_circle: go
 
 
 ## 🏴 Memory (standalone)
@@ -230,7 +218,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 - ☠ There's nothing for you here yet. ☠ -
 ```
 
-#### :black_circle: push
+#### :black_circle: go(location, replace, options)
 
 The `push()` method is used to create a new memory entry.
 
@@ -245,7 +233,6 @@ This can be useful if you want to add some data to your memory object after `pus
 
 #### :black_circle: forward
 
-#### :black_circle: go
 
 ## 🏴 What you need to build your own **pirate-history**
 
