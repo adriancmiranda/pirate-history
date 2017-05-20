@@ -164,12 +164,12 @@ module.exports = (config) => {
 	};
 
 	if (process.env.TRAVIS || process.env.APPVEYOR || process.env.CIRCLECI) {
-		settings.browserStack.concurrency = 2;
-		settings.browserStack.browserNoActivityTimeout = 240000;
-		settings.browserStack.browserDisconnectTimeout = 10000;
-		settings.browserStack.browserDisconnectTolerance = 3;
-		settings.browserStack.captureTimeout = 240000;
-		settings.browserStack.browsers = Object.keys(customLaunchers);
+		settings.browsers = Object.keys(customLaunchers);
+		settings.reporters = ['dots'];
+		settings.singleRun = true;
+		settings.concurrency = 2;
+		settings.browserDisconnectTimeout = 10000;
+		settings.browserDisconnectTolerance = 3;
 		if (process.env.TRAVIS) {
 			settings.browserStack.build = process.env.TRAVIS_BUILD_NUMBER;
 			settings.browserStack.name = process.env.TRAVIS_JOB_NUMBER;
