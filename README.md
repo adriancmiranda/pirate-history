@@ -70,7 +70,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### Methods
 
-##### :black_circle: url(location, replace, options)
+##### :black_circle: url(location[, replace][, options])
 
 ##### :black_circle: back(n)
 
@@ -141,7 +141,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### Methods
 
-##### :black_circle: url(location, replace, options)
+##### :black_circle: url(location[, replace][, options])
 
 ##### :black_circle: back(n)
 
@@ -212,7 +212,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### Methods
 
-##### :black_circle: url(location, replace, options)
+##### :black_circle: url(location[, replace][, options])
 
 ##### :black_circle: back(n)
 
@@ -283,7 +283,11 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### Methods
 
-##### :black_circle: url(location, replace, options)
+##### :black_circle: url(location[, replace][, options])
+
+##### :black_circle: url()
+
+Without any argument, this method just returns a URL object.
 
 ##### :black_circle: back(n)
 
