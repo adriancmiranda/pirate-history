@@ -76,8 +76,6 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 - **`replace`**: 
 - **`options`**: 
 
-##### :black_circle: url()
-
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
@@ -164,8 +162,6 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 - **`replace`**: 
 - **`options`**: 
 
-##### :black_circle: url()
-
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
@@ -244,8 +240,6 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 - **`replace`**: 
 - **`options`**: 
 
-##### :black_circle: url()
-
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
@@ -323,8 +317,6 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 - **`location`**: 
 - **`replace`**: 
 - **`options`**: 
-
-##### :black_circle: url()
 
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
