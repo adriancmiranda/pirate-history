@@ -428,38 +428,13 @@ To move forward through history.
 
 ##### :white_circle: `pop`
 
-<details>
-  <summary>
-    <h4>Usage</h4>
-  </summary>
+<details><summary><h4>Usage</h4></summary>
 
   ```javascript
   'There is nothing for you here yet.
   ```
 
 </details>
-
-<details>
-  <summary>Usage *mark* **down**</summary>
-  <p>
-
-##*formatted* **heading** with [a](link)
-
-  <details>
-    <summary><small>nested</small> stuff</summary><p>
-* list
-* with
-
- 1. nested
- 1. items
-
-    ```java
-    // including code
-    ```
- 1. blocks
-
-  </p></details>
-</p></details>
 
 
 ## 🏴 What you need to build your own **pirate-history**
