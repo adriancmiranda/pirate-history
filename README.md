@@ -91,6 +91,25 @@ To move backward through history.
 
 To move forward through history.
 
+##### :black_circle: `on(types[, data], handler)`
+
+Add event handlers to the elements in collection. Multiple event types can be passed in a space-separated string, or as an object where event types are keys and handlers are values.
+Event handlers are executed in the context of the element to which the handler is attached, or the matching element in case a selector is provided.
+
+##### :black_circle: `one(types[, data], handler)`
+
+Adds an event handler that removes itself the first time it runs, ensuring that the handler only fires once.
+
+##### :black_circle: `off([types][, handler])`
+
+Detach event handlers added with `on()` or `one()`. To detach a specific event handler, the same function must be passed that was used for `on()`.
+Otherwise, just calling this method with an event type will detach all handlers of that type.
+When called without arguments, it detaches all event handlers registered on current elements.
+
+##### :black_circle: `emit(types[, data])`
+
+Emit the specified event on elements of the collection.
+
 
 #### Events
 
@@ -299,24 +318,11 @@ The `forward()` method will cause the browser to navigate one place forward in t
 pirate.history.forward();
 ```
 
-##### :black_circle: `on(types[, data], handler)`
+##### :black_circle: `addEventListener()`
 
-Add event handlers to the elements in collection. Multiple event types can be passed in a space-separated string, or as an object where event types are keys and handlers are values.
-Event handlers are executed in the context of the element to which the handler is attached, or the matching element in case a selector is provided.
+##### :black_circle: `removeEventListener()`
 
-##### :black_circle: `one(types[, data], handler)`
-
-Adds an event handler that removes itself the first time it runs, ensuring that the handler only fires once.
-
-##### :black_circle: `off([types][, handler])`
-
-Detach event handlers added with `on()` or `one()`. To detach a specific event handler, the same function must be passed that was used for `on()`.
-Otherwise, just calling this method with an event type will detach all handlers of that type.
-When called without arguments, it detaches all event handlers registered on current elements.
-
-##### :black_circle: `emit(types[, data])`
-
-Emit the specified event on elements of the collection.
+##### :black_circle: `dispatchEvent()`
 
 
 #### Events
