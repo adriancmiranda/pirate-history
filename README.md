@@ -70,7 +70,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### Methods
 
-##### :black_circle: url(location[, replace][, options])
+##### :black_circle: `url(location[, replace][, options])`
 
 - **`location`**: 
 - **`replace`**: 
@@ -79,34 +79,34 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
-##### :black_circle: go(n)
+##### :black_circle: `go(n)`
 
 - **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
 
-##### :black_circle: back()
+##### :black_circle: `back()`
 
 To move backward through history. 
 
-##### :black_circle: forward()
+##### :black_circle: `forward()`
 
 To move forward through history.
 
 
 #### Events
 
-##### :white_circle: push
+##### :white_circle: `push`
 
-##### :white_circle: replace
+##### :white_circle: `replace`
 
-##### :white_circle: forward
+##### :white_circle: `forward`
 
-##### :white_circle: back
+##### :white_circle: `back`
 
-##### :white_circle: action
+##### :white_circle: `action`
 
-##### :white_circle: change
+##### :white_circle: `change`
 
-##### :white_circle: pop
+##### :white_circle: `pop`
 
 
 #### Usage
@@ -156,7 +156,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### Methods
 
-##### :black_circle: url(location[, replace][, options])
+##### :black_circle: `url(location[, replace][, options])`
 
 - **`location`**: 
 - **`replace`**: 
@@ -165,34 +165,34 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
-##### :black_circle: go(n)
+##### :black_circle: `go(n)`
 
 - **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
 
-##### :black_circle: back()
+##### :black_circle: `back()`
 
 To move backward through history. 
 
-##### :black_circle: forward()
+##### :black_circle: `forward()`
 
 To move forward through history.
 
 
 #### Events
 
-##### :white_circle: push
+##### :white_circle: `push`
 
-##### :white_circle: replace
+##### :white_circle: `replace`
 
-##### :white_circle: forward
+##### :white_circle: `forward`
 
-##### :white_circle: back
+##### :white_circle: `back`
 
-##### :white_circle: action
+##### :white_circle: `action`
 
-##### :white_circle: change
+##### :white_circle: `change`
 
-##### :white_circle: pop
+##### :white_circle: `pop`
 
 
 #### Usage
@@ -242,26 +242,54 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### Methods
 
-##### :black_circle: url(location[, replace][, options])
+##### :black_circle: `pushState(state, title, URL)`
 
-- **`location`**: 
-- **`replace`**: 
-- **`options`**: 
+The `pushState()` method is used to create a new history entry. This method has three parameters:
+
+* `state` – _(required)_ The state object is used to store data that is associated the new history entry. This could include the page title, a URL to load via AJAX or even the page content itself.
+
+* `title` – _(required)_ The title parameter should act as a description for the history entry.
+
+* `URL` – _(optional)_ This is the URL that will be associated with the history entry. The browser won’t load this URL when pushState() is called, but will display it in the address bar. It’s worth noting that this URL may be loaded if the user decides to refresh the page or restarts the browser.
+
+```javascript
+// Creates a new history entry.
+pirate.history.pushState(state, title, URL);
+```
+
+### :black_circle: `replaceState()`
+
+The `replaceState()` method is similar to `pushState()` in that it takes the same three parameters. However, rather than creating a new history entry,  `replaceState()` updates the current history entry. This can be useful if you want to add some data to your state object after `pushState()` has been called.
+
+```javascript
+// Updates the current history entry.
+pirate.history.replaceState(state, title, URL);
+```
 
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
 Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
-##### :black_circle: go(n)
+##### :black_circle: `go(n)`
 
 - **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
 
-##### :black_circle: back()
+##### :black_circle: `back()`
 
 To move backward through history. 
 
-##### :black_circle: forward()
+##### :black_circle: `forward()`
 
 To move forward through history.
+
+##### :black_circle: `on()`
+
+##### :black_circle: `one()`
+
+##### :black_circle: `off()`
+
+##### :black_circle: `emit()`
+
+##### :black_circle: `hasEvent()`
 
 
 #### Events
