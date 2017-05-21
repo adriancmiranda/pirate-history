@@ -429,15 +429,20 @@ To move forward through history.
 ##### :white_circle: `pop`
 
 <details>
-  <summary><h4>Usage</h4></summary><p>
-```javascript
-There's nothing for you here yet.
-```
-</p></details>
+  <summary><h4>Usage</h4></summary>
+  <p>
+
+  ```javascript
+  There's nothing for you here yet.
+  ```
+
+  </p>
+</details>
 
 <details>
   <summary>Usage *mark* **down**</summary>
   <p>
+  
 ##*formatted* **heading** with [a](link)
 
   <details>
