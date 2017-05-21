@@ -128,12 +128,6 @@ Emit the specified event on elements of the collection.
 ##### :white_circle: `pop`
 
 
-#### Usage
-
-```javascript
-```
-
-
 ## 🏴 Memory (standalone)
 
 ### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
@@ -212,12 +206,6 @@ To move forward through history.
 ##### :white_circle: change
 
 ##### :white_circle: pop
-
-
-#### Usage
-
-```javascript
-```
 
 
 ## 🏴 State (standalone)
@@ -361,12 +349,6 @@ The `popstate` event is fired on `pirate` when the active history entry changes.
 The `event` passed into the listener callback contains a `state` property that is used to retrieve the `state` object that is associated with the history entry.
 
 
-#### Usage
-
-```javascript
-```
-
-
 ## 🏴 Hash (standalone)
 
 ### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
@@ -445,12 +427,6 @@ To move forward through history.
 ##### :white_circle: `change`
 
 ##### :white_circle: `pop`
-
-
-#### Usage
-
-```javascript
-```
 
 
 ## 🏴 What you need to build your own **pirate-history**
