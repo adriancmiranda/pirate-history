@@ -1,11 +1,11 @@
 /**
- * @name format
+ * @name stringify
  *
  * @description
  *
  * @api public
 `*/
-export default function format(data, sep = '&', eq = '=') {
+export default function stringify(data, sep = '&', eq = '=') {
 	const parts = [];
 	for (const prop in data) {
 		if (data.hasOwnProperty(prop)) {
