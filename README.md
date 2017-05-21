@@ -261,7 +261,7 @@ https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-histor
 
 #### Methods
 
-##### :black_circle: `pushState(state, title, URL)`
+##### :black_circle: `pushState(state[, title][, url])`
 
 The `pushState()` method is used to create a new history entry. This method has three parameters:
 
@@ -269,20 +269,20 @@ The `pushState()` method is used to create a new history entry. This method has 
 
 * `title` – _(required)_ The title parameter should act as a description for the history entry.
 
-* `URL` – _(optional)_ This is the URL that will be associated with the history entry. The browser won’t load this URL when pushState() is called, but will display it in the address bar. It’s worth noting that this URL may be loaded if the user decides to refresh the page or restarts the browser.
+* `url` – _(optional)_ This is the URL that will be associated with the history entry. The browser won’t load this URL when pushState() is called, but will display it in the address bar. It’s worth noting that this URL may be loaded if the user decides to refresh the page or restarts the browser.
 
 ```javascript
 // Creates a new history entry.
-pirate.history.pushState(state, title, URL);
+pirate.history.pushState(state, title, url);
 ```
 
-##### :black_circle: `replaceState()`
+##### :black_circle: `replaceState(state[, title][, url])`
 
 The `replaceState()` method is similar to `pushState()` in that it takes the same three parameters. However, rather than creating a new history entry,  `replaceState()` updates the current history entry. This can be useful if you want to add some data to your state object after `pushState()` has been called.
 
 ```javascript
 // Updates the current history entry.
-pirate.history.replaceState(state, title, URL);
+pirate.history.replaceState(state, title, url);
 ```
 
 Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
