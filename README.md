@@ -275,11 +275,19 @@ Except for your `searchParams` attribute that returns an object not an [URLSearc
 
 ##### :black_circle: `back()`
 
-To move backward through history. 
+Calling the `back()` method will cause the browser to navigate back to the previous entry in the session history. This mimics the behaviour of the browsers native back button.
+
+```javascript
+pirate.history.back();
+```
 
 ##### :black_circle: `forward()`
 
-To move forward through history.
+The `forward()` method will cause the browser to navigate one place forward in the browser history.
+
+```javascript
+pirate.history.forward();
+```
 
 ##### :black_circle: `on()`
 
