@@ -220,92 +220,6 @@ To move forward through history.
 ```
 
 
-## 🏴 Hash (standalone)
-
-### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
-
-#### :package: concatenated
-
-```javascript
-<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.js"></script>
-```
-
-```javascript
-<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.map"></script>
-```
-
-
-#### :fire: minified
-
-```javascript
-<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.js"></script>
-```
-
-```javascript
-<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.map"></script>
-```
-
-
-#### :rocket: gzipped
-
-```javascript
-https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.js.gz
-```
-
-```javascript
-https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.map.gz
-```
-
-
-### :beginner: Get Started
-
-#### Methods
-
-##### :black_circle: `url(location[, replace][, options])`
-
-- **`location`**: 
-- **`replace`**: 
-- **`options`**: 
-
-Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
-Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
-
-##### :black_circle: `go(n)`
-
-- **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
-
-##### :black_circle: `back()`
-
-To move backward through history. 
-
-##### :black_circle: `forward()`
-
-To move forward through history.
-
-
-#### Events
-
-##### :white_circle: `push`
-
-##### :white_circle: `replace`
-
-##### :white_circle: `forward`
-
-##### :white_circle: `back`
-
-##### :white_circle: `action`
-
-##### :white_circle: `change`
-
-##### :white_circle: `pop`
-
-
-#### Usage
-
-```javascript
-```
-
-
 ## 🏴 State (standalone)
 
 ### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
@@ -445,6 +359,92 @@ pirate.history.go(-moves);
 The `popstate` event is fired on `pirate` when the active history entry changes. Most commonly when the browsers back or forward buttons are clicked (or a call to `back()`, `forward()` or `go()` is executed).
 
 The `event` passed into the listener callback contains a `state` property that is used to retrieve the `state` object that is associated with the history entry.
+
+
+#### Usage
+
+```javascript
+```
+
+
+## 🏴 Hash (standalone)
+
+### :globe_with_meridians: **C**ontent **D**elivery **N**etwork (CDN)
+
+#### :package: concatenated
+
+```javascript
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.js"></script>
+```
+
+```javascript
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.map"></script>
+```
+
+
+#### :fire: minified
+
+```javascript
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.js"></script>
+```
+
+```javascript
+<script src="https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.map"></script>
+```
+
+
+#### :rocket: gzipped
+
+```javascript
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.js.gz
+```
+
+```javascript
+https://cdn.rawgit.com/adriancmiranda/pirate-history/fcae898e/dist/pirate-history.hash.min.map.gz
+```
+
+
+### :beginner: Get Started
+
+#### Methods
+
+##### :black_circle: `url(location[, replace][, options])`
+
+- **`location`**: 
+- **`replace`**: 
+- **`options`**: 
+
+Without any argument, this method just returns something like a [URL](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL) object.
+Except for your `searchParams` attribute that returns an object not an [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
+
+##### :black_circle: `go(n)`
+
+- **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
+
+##### :black_circle: `back()`
+
+To move backward through history. 
+
+##### :black_circle: `forward()`
+
+To move forward through history.
+
+
+#### Events
+
+##### :white_circle: `push`
+
+##### :white_circle: `replace`
+
+##### :white_circle: `forward`
+
+##### :white_circle: `back`
+
+##### :white_circle: `action`
+
+##### :white_circle: `change`
+
+##### :white_circle: `pop`
 
 
 #### Usage
