@@ -257,7 +257,7 @@ The `pushState()` method is used to create a new history entry. This method has 
 pirate.history.pushState(state, title, URL);
 ```
 
-### :black_circle: `replaceState()`
+##### :black_circle: `replaceState()`
 
 The `replaceState()` method is similar to `pushState()` in that it takes the same three parameters. However, rather than creating a new history entry,  `replaceState()` updates the current history entry. This can be useful if you want to add some data to your state object after `pushState()` has been called.
 
