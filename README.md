@@ -428,7 +428,7 @@ To move forward through history.
 
 ##### :white_circle: `pop`
 
-<details><summary>Usage<</summary><p>
+<details><summary>Usage</summary><p>
 
   ```javascript
   'There is nothing for you here yet.
