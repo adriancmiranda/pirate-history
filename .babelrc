@@ -10,11 +10,11 @@
         "browsers": [
           "> 1%",
           "last 2 versions",
-          "not ie <= 8"
+          "not ie <= 8",
         ]
       }
     }],
-    "stage-1"
+    "stage-1",
   ],
   "env": {
     "test": {
@@ -23,15 +23,15 @@
         "useInlineSourceMaps": false,
         "include": [
           "index.js",
-          "source/**/*.js"
-        ]
-      }]
-    }
+          "source/**/*.js",
+        ],
+      }],
+    },
   },
   "ignore": [
     ".github/",
     "dist/",
     "examples/",
-    "material/"
-  ]
+    "material/",
+  ],
 }
