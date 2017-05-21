@@ -96,6 +96,8 @@ module.exports = $ => commonTemplate($).cfg({
     logLevel: 'info',
   }, $('build.bundleAnalyzer.options'), {
     analyzerMode: $('argv.analyze'),
+    statsFilename: $('argv.statsFilename'),
+    reportFilename: $('argv.reportFilename'),
   }));
 })()] : [])
 ;
