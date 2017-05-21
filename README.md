@@ -318,12 +318,27 @@ The `forward()` method will cause the browser to navigate one place forward in t
 pirate.history.forward();
 ```
 
-##### :black_circle: `addEventListener()`
 
-##### :black_circle: `removeEventListener()`
+#### Properties
 
-##### :black_circle: `dispatchEvent()`
+##### :big_blue_circle: `state`
 
+To retrieve the `state` object for the current history entry you can examine the state property on the `pirate.history` object. This is useful if you need to read the state object when a popstate event has not been fired.
+
+```javascript
+pirate.history.state;
+```
+
+##### :big_blue_circle: `length`
+
+The history objects `length` property tells you how many entries are in the session history. This can be useful when used in conjunction with the `go()` method.
+
+```javascript
+// Go back to the first page.
+// (Assuming the you are starting on the last page.)
+var moves = pirate.history.length - 1;
+pirate.history.go(-moves);
+```
 
 #### Events
 
