@@ -271,7 +271,17 @@ Except for your `searchParams` attribute that returns an object not an [URLSearc
 
 ##### :black_circle: `go(n)`
 
+The `go(n)` method allows you to navigate back or forward n number of places in the session history. To navigate backwards n should be a negative number.
+
 - **`n`**: The position to the current page (with the current page being relative index 0). _**Default** 0_
+
+```javascript
+// Go back two entries.
+pirate.history.go(-2);
+
+// Go forward 3 entries.
+pirate.history.go(3);
+```
 
 ##### :black_circle: `back()`
 
