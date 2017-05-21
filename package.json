@@ -17,6 +17,7 @@
     "analyze:memory": "source-map-explorer dist/pirate-history.memory.min{.js,.map}",
     "analyze:hash": "source-map-explorer dist/pirate-history.hash.min{.js,.map}",
     "analyze:state": "source-map-explorer dist/pirate-history.state.min{.js,.map}",
+    "analyze:bundle": "run-s \"gzip -- --env.analyze=server\"",
     "upgrade": "ncu -a --loglevel verbose --packageFile package.json && npm i",
     "dev": "webpack-dev-server --config bin --env.run=dev --env.dev",
     "build:examples": "cd examples && node build-all",

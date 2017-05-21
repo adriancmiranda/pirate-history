@@ -58,7 +58,6 @@ module.exports = app.setConfig(lib => {
   lib.set('build.env.NODE_ENV', '"production"');
   lib.set('build.sourceMap', '#source-map');
   lib.set('build.assetsPublicPath', '/');
-  lib.set('build.bundleAnalyzer.report', process.env.npm_config_report);
 
   // ~ entry point ~
   lib.set(`script.entry[${pkg.name}.memory]`, './history.memory.js');

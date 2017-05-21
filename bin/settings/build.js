@@ -87,8 +87,15 @@ module.exports = $ => commonTemplate($).cfg({
 // --------------------------------------------------------------------------
 // *optional: https://www.npmjs.com/package/webpack-bundle-analyzer
 // --------------------------------------------------------------------------
-.cfg('plugins', $('build.bundleAnalyzer.report') ? [(() => {
+.cfg('plugins', $('argv.analyze') ? [(() => {
   const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-  return new BundleAnalyzerPlugin(Object.assign({}, $('build.bundleAnalyzer.options')));
+  return new BundleAnalyzerPlugin(Object.assign({
+    analyzerHost: 'localhost',
+    analyzerPort: 8888,
+    openAnalyzer: true,
+    logLevel: 'info',
+  }, $('build.bundleAnalyzer.options'), {
+    analyzerMode: $('argv.analyze'),
+  }));
 })()] : [])
 ;
