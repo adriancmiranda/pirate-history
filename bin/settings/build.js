@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const Strip = require('strip-loader');
 const Clean = require('clean-webpack-plugin');
 const pirateFlag = require('pirate-flag');
 const commonTemplate = require('../templates');
@@ -16,6 +17,13 @@ module.exports = $ => commonTemplate($).cfg({
     library: $('package.name').replace('pirate-', ''),
     libraryTarget: $('argv.target'),
     umdNamedDefine: true,
+  },
+  module: {
+    rules: [{
+      enforce: 'pre',
+      test: /\.js$/,
+      loader: Strip.loader('console.log'),
+    }],
   },
 })
 
