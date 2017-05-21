@@ -429,10 +429,31 @@ To move forward through history.
 ##### :white_circle: `pop`
 
 <details>
-<summary><h4>Usage</h4></summary><p>
+  <summary><h4>Usage</h4></summary><p>
 ```javascript
 There's nothing for you here yet.
 ```
+</p></details>
+
+<details>
+  <summary>Usage *mark* **down**</summary>
+  <p>
+##*formatted* **heading** with [a](link)
+
+  <details>
+    <summary><small>nested</small> stuff</summary><p>
+* list
+* with
+
+ 1. nested
+ 1. items
+
+    ```java
+    // including code
+    ```
+ 1. blocks
+
+  </p></details>
 </p></details>
 
 
