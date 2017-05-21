@@ -429,10 +429,10 @@ To move forward through history.
 ##### :white_circle: `pop`
 
 <details>
-  <summary>#### Usage</summary>
-  ```javascript
+  <summary><h4>Usage</h4></summary>
+  <div class="highlight highlight-source-js">
   There's nothing for you here yet.
-  ```
+  </div>
 </details>
 
 
