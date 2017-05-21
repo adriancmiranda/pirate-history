@@ -337,7 +337,7 @@ Emit the specified event on elements of the collection.
 
 The `popstate` event is fired on `pirate` when the active history entry changes. Most commonly when the browsers back or forward buttons are clicked (or a call to `back()`, `forward()` or `go()` is executed).
 
-The `event` passed into the listener callback contains a state property that is used to retrieve the state object that is associated with the history entry.
+The `event` passed into the listener callback contains a `state` property that is used to retrieve the `state` object that is associated with the history entry.
 
 
 #### Usage
