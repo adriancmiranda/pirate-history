@@ -429,11 +429,31 @@ To move forward through history.
 ##### :white_circle: `pop`
 
 <details>
-  <summary><h4>Usage</h4></summary>
-  <div class="highlight highlight-source-js">
-  There's nothing for you here yet.
-  </div>
-</details>
+  <summary>Usage *mark* **down**</summary>
+  <p>
+<!-- the above p cannot start right at the beginning of the line and is mandatory for everything else to work -->
+##*formatted* **heading** with [a](link)
+```javascript
+There's nothing for you here yet.
+```
+
+  <details>
+    <summary><small>nested</small> stuff</summary><p>
+<!-- alternative placement of p shown above -->
+
+* list
+* with
+
+ 1. nested
+ 1. items
+
+    ```java
+    // including code
+    ```
+ 1. blocks
+
+  </p></details>
+</p></details>
 
 
 ## 🏴 What you need to build your own **pirate-history**
