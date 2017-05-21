@@ -321,19 +321,19 @@ Emit the specified event on elements of the collection.
 
 #### Events
 
-##### :white_circle: push
+##### :white_circle: `push`
 
-##### :white_circle: replace
+##### :white_circle: `replace`
 
-##### :white_circle: forward
+##### :white_circle: `forward`
 
-##### :white_circle: back
+##### :white_circle: `back`
 
-##### :white_circle: action
+##### :white_circle: `action`
 
-##### :white_circle: change
+##### :white_circle: `change`
 
-##### :white_circle: pop
+##### :white_circle: `pop`
 
 
 #### Usage
