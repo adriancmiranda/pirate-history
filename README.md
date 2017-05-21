@@ -428,6 +428,11 @@ To move forward through history.
 
 ##### :white_circle: `pop`
 
+<details>
+  <summary>Usage</summary>
+  There's nothing for you here yet.
+</details>
+
 
 ## 🏴 What you need to build your own **pirate-history**
 
