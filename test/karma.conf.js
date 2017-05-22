@@ -103,7 +103,7 @@ module.exports = (config) => {
 		bs_mac_safari: {
 			base: 'BrowserStack',
 			os: 'OS X',
-			os_version: 'Sierra',
+			os_version: 'El Capitan',
 			browser: 'safari',
 			browser_version: '9.0',
 		},
