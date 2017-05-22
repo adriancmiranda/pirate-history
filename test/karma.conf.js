@@ -53,7 +53,7 @@ module.exports = (config) => {
 		bs_win_ie8: {
 			base: 'BrowserStack',
 			os: 'Windows',
-			os_version: '7',
+			os_version: 'XP',
 			browser: 'IE',
 			browser_version: '8.0',
 		},
