@@ -8,8 +8,8 @@
  *                       
  *  pirate-history v0.0.1
  * 
- * @moment Saturday, May 20, 2017 5:03 PM
- * @commit b75bbcfcbc779ac518c67fe74e913d5115f94604
+ * @moment Sunday, May 21, 2017 11:01 PM
+ * @commit 7eeefc5c7721f8d7d64ac0482471dd3451a80e21
  * @homepage https://github.com/adriancmiranda/pirate-history
  * @author Adrian C. Miranda
  * @license Unlicense

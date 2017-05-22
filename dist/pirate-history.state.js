@@ -8,8 +8,8 @@
  *                       
  *  pirate-history v0.0.1
  * 
- * @moment Saturday, May 20, 2017 5:03 PM
- * @commit b75bbcfcbc779ac518c67fe74e913d5115f94604
+ * @moment Sunday, May 21, 2017 11:01 PM
+ * @commit 7eeefc5c7721f8d7d64ac0482471dd3451a80e21
  * @homepage https://github.com/adriancmiranda/pirate-history
  * @author Adrian C. Miranda
  * @license Unlicense
@@ -875,8 +875,16 @@ function parse(href, baseUrlObject) {
 	var defaultPorts = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : DEFAULT_PORTS;
 
 	var info = {};
-	if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_source_common_is__["a" /* default */])('Function', href)) href = href(baseUrlObject, defaultPorts);
-	if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_source_common_is__["a" /* default */])('String', href)) href = window.location.href;
+	if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_source_common_is__["a" /* default */])('Function', href)) {
+		href = href(baseUrlObject, defaultPorts);
+	}
+	if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_source_common_is__["a" /* default */])('URL', href) && href.href) {
+		return parse(href.href);
+	}
+	if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_source_common_is__["a" /* default */])('String', href)) {
+		var base = document.getElementsByTagName('base')[0];
+		href = base && base.getAttribute('href') || window.location.href;
+	}
 	__WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].setAttribute('href', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__normalize__["a" /* default */])(href, baseUrlObject));
 	info.pathname = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].pathname.charAt(0) === '/' ? __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].pathname : '/' + __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].pathname;
 	info.protocol = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].protocol ? __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].protocol.replace(/:$/, '') : '';
@@ -884,8 +892,8 @@ function parse(href, baseUrlObject) {
 	info.searchParams = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_source_browser_querystring_parse__["a" /* default */])(info.search);
 	info.hash = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].hash ? __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].hash.replace(/^#!?/, '') : '';
 	info.port = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_source_common_to_int__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].port) || defaultPorts[info.protocol] || null;
-	info.password = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].password;
-	info.username = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].username;
+	info.username = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].username || undefined;
+	info.password = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].password || undefined;
 	info.hostname = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].hostname;
 	info.origin = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].origin;
 	info.host = __WEBPACK_IMPORTED_MODULE_4__anchor__["a" /* default */].host;
@@ -906,13 +914,13 @@ function parse(query) {
 	var sep = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '&';
 	var eq = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '=';
 
-	var params = {};
+	var searchParams = {};
 	var rule = '([^?' + eq + sep + ']+)(' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_source_common_escape_reg_exp__["a" /* default */])(eq) + '([^' + sep + ']*))?';
 	var pattern = new RegExp(rule, 'g');
 	String(query).replace(pattern, function ($0, $1, $2, $3) {
-		params[$1] = $3;
+		searchParams[$1] = $3;
 	});
-	return params;
+	return searchParams;
 }
 
 /***/ }),
