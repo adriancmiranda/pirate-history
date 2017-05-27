@@ -122,7 +122,7 @@ describe('browser/events', () => {
 			const args = this.listener.getCall(0).args;
 			expect(args.length).to.be.at.least(1);
 			expect(args[0]).to.be.instanceOf(Event);
-			expect(args[0].detail).to.be.a('object');
+			// expect(args[0].detail).to.be.a('object');
 			expect(args[0].detail.state).to.equal(state);
 			expect(args[0].type).to.equal(type); // <= crossbrowser
 		});
