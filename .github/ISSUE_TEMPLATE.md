@@ -1,7 +1,6 @@
 <!-- Before creating an issue please make sure you are using the latest version of pirate-history. -->
 
 **Do you want to request a *feature* or report a *bug*?**
-<!-- Please ask questions on StackOverflow or the webpack Gitter (https://gitter.im/webpack/webpack). Questions will be closed. -->
 
 **What is the current behavior?**
 
