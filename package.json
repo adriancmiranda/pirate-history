@@ -95,7 +95,7 @@
     "standard-version": "~4.0.0",
     "strip-loader": "~0.1.2",
     "validate-commit-msg": "~2.12.1",
-    "webpack": "~2.6.1",
+    "webpack": "~3.0.0-rc.1",
     "webpack-cfg": "~1.2.6",
     "webpack-dev-server": "~2.4.5"
   },
