@@ -86,7 +86,7 @@
     "moment": "~2.18.1",
     "npm-check-updates": "~2.11.2",
     "npm-run-all": "~4.0.2",
-    "pirate-flag": "~0.0.1",
+    "pirate-flag": "~0.1.0",
     "pug": "~2.0.0-rc.1",
     "pug-loader": "~2.3.0",
     "sinon": "~2.3.2",
