@@ -11,7 +11,7 @@
   "readmeFilename": "README.md",
   "license": "Unlicense",
   "scripts": {
-    "report-coverage": "codecov -f test/coverage/coverage-final.json",
+    "report:coverage": "codecov -f test/coverage/coverage-final.json",
     "doc": "documentation build index.js -f html -o docs",
     "analyze:history": "source-map-explorer dist/pirate-history.min{.js,.map}",
     "analyze:memory": "source-map-explorer dist/pirate-history.memory.min{.js,.map}",
