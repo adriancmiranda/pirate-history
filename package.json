@@ -99,6 +99,11 @@
     "webpack-cfg": "~1.2.6",
     "webpack-dev-server": "~2.4.5"
   },
+  "files": [
+    "index.js",
+    "source",
+    "dist"
+  ],
   "config": {
     "validate-commit-msg": {
       "types": "conventional-commit-types"
