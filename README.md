@@ -528,7 +528,7 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 [travis]: https://travis-ci.org/adriancmiranda/pirate-history.svg?branch=master
 [travis-url]: https://travis-ci.org/adriancmiranda/pirate-history
 
-[appveyor]: https://ci.appveyor.com/api/projects/status/hucvow1n0t3q3le3/branch/master?svg=true
+[appveyor]: https://ci.appveyor.com/api/projects/status/chcm7k6ury32m906/branch/master?svg=true
 [appveyor-url]: https://ci.appveyor.com/project/adriancmiranda/pirate-history/branch/master
 
 [codecov]: https://codecov.io/gh/adriancmiranda/pirate-history/branch/master/graph/badge.svg
