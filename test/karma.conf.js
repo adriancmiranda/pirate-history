@@ -3,13 +3,13 @@ const pkg = bin.common.res('package');
 const webpack = bin({ run: 'test' });
 
 /*!
-|* This is a karma config file. For more details
-|* @see https://www.browserstack.com/screenshots
-|* @see https://www.browserstack.com/list-of-browsers-and-platforms?product=automate
-|* @see https://github.com/karma-runner/karma-coverage/blob/master/docs/configuration.md
-|* @see http://karma-runner.github.io/0.13/config/configuration-file.html
-|* @see http://karma-runner.github.io/0.13/config/browsers.html
-|* @see https://github.com/webpack/karma-webpack
+ * This is a karma config file. For more details
+ * @see https://www.browserstack.com/screenshots
+ * @see https://www.browserstack.com/list-of-browsers-and-platforms?product=automate
+ * @see https://github.com/karma-runner/karma-coverage/blob/master/docs/configuration.md
+ * @see http://karma-runner.github.io/0.13/config/configuration-file.html
+ * @see http://karma-runner.github.io/0.13/config/browsers.html
+ * @see https://github.com/webpack/karma-webpack
 `*/
 module.exports = (config) => {
 	const customLaunchers = {
@@ -117,7 +117,7 @@ module.exports = (config) => {
 		port: 9876,
 		colors: true,
 		browsers: ['Chrome'],
-		frameworks: ['mocha', 'sinon-chai', 'fixture', 'phantomjs-shim'],
+		frameworks: ['jasmine', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
 		files: [{
 			pattern: 'test/fixtures/**/*.fixture.*',
@@ -149,11 +149,6 @@ module.exports = (config) => {
 			retryLimit: 3,
 			timeout: 300,
 		},
-		client: {
-			mocha: {
-				reporter: 'html',
-			},
-		},
 		coverageReporter: {
 			dir: 'test/coverage',
 			reporters: [
@@ -165,7 +160,6 @@ module.exports = (config) => {
 
 	if (process.env.TRAVIS || process.env.APPVEYOR || process.env.CIRCLECI) {
 		settings.browsers = Object.keys(customLaunchers);
-		settings.reporters = ['dots'];
 		settings.singleRun = true;
 		settings.concurrency = 2;
 		settings.browserDisconnectTimeout = 10000;

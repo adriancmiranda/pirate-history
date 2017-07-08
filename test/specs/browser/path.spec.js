@@ -1,26 +1,26 @@
-import { expect } from 'chai';
 import * as path from 'source/browser/path';
 
 describe('browser/path', () => {
-	describe('#is-absolute', () => {
-		expect(path.isAbsolute('./foo')).to.be.false;
-		expect(path.isAbsolute('/foo')).to.be.true;
-		expect(path.isAbsolute('foo')).to.be.false;
+	it('#is-absolute', () => {
+		expect(path.isAbsolute('./foo')).toBe(false);
+		expect(path.isAbsolute('/foo')).toBe(true);
+		expect(path.isAbsolute('foo')).toBe(false);
 	});
 
-	describe('#parse', () => {
+	it('#parse', () => {
 		const url = path.parse('http://user:pass@domain.extension:9876/foo?baz=test#bar');
-		expect(url.pathname).to.equal('/foo');
-		expect(url.protocol).to.equal('http');
-		expect(url.search).to.equal('baz=test');
-		expect(url.searchParams.baz).to.equal('test');
-		expect(url.hash).to.equal('bar');
-		expect(url.port).to.equal(9876);
-		expect(url.username).to.equal('user');
-		expect(url.password).to.equal('pass');
-		expect(url.hostname).to.equal('domain.extension');
-		expect(url.origin).to.equal('http://domain.extension:9876');
-		expect(url.host).to.equal('domain.extension:9876');
-		expect(url.href).to.equal('http://user:pass@domain.extension:9876/foo?baz=test#bar');
+		expect(url).toEqual(jasmine.any(Object));
+		expect(url.pathname).toEqual('/foo');
+		expect(url.protocol).toEqual('http');
+		expect(url.search).toEqual('baz=test');
+		expect(url.searchParams.baz).toEqual('test');
+		expect(url.hash).toEqual('bar');
+		expect(url.port).toEqual(9876);
+		expect(url.username).toEqual('user');
+		expect(url.password).toEqual('pass');
+		expect(url.hostname).toEqual('domain.extension');
+		expect(url.origin).toEqual('http://domain.extension:9876');
+		expect(url.host).toEqual('domain.extension:9876');
+		expect(url.href).toEqual('http://user:pass@domain.extension:9876/foo?baz=test#bar');
 	});
 });

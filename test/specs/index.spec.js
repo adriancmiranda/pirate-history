@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import pirate from 'index';
 
 describe('history', () => {
@@ -14,7 +13,7 @@ describe('history', () => {
 		},
 	};
 
-	before(() => {
+	beforeAll(() => {
 		fixture.setBase('test/fixtures');
 	});
 
@@ -28,7 +27,7 @@ describe('history', () => {
 	});
 
 	it('should pass', () => {
-		expect(pirate).to.be.instanceOf(Object);
-		expect(pirate.pushState).to.be.instanceOf(Function);
+		expect(pirate).toEqual(jasmine.any(Object));
+		expect(pirate.pushState).toEqual(jasmine.any(Function));
 	});
 });

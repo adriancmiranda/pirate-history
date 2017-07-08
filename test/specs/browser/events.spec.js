@@ -1,140 +1,142 @@
-import { assert, spy } from 'sinon';
-import { expect } from 'chai';
+import sinon from 'sinon';
 import * as dispatcher from 'source/browser/events';
 
 describe('browser/events', () => {
+	let listener;
+	let element;
+
 	beforeEach(() => {
-		this.listener = spy();
-		this.element = document.createElement('div');
-		document.body.appendChild(this.element);
+		listener = sinon.spy();
+		element = document.createElement('div');
+		document.body.appendChild(element);
 	});
 
 	afterEach(() => {
 		dispatcher.off();
-		this.element.parentElement.removeChild(this.element);
-		delete this.listener;
-		delete this.element;
+		element.parentElement.removeChild(element);
+		listener = undefined;
+		element = undefined;
 	});
 
 	describe('#on', () => {
 		it('should invoke the listener with a Event argument multiple times', () => {
-			dispatcher.on(this.element, 'popstate', this.listener);
-			dispatcher.emit(this.element, 'popstate popstate popstate');
-			expect(this.listener.called).to.be.true;
-			expect(this.listener.calledOnce).to.be.false;
-			expect(this.listener.callCount).to.be.equal(3);
-			for (let ix = 0; ix < this.listener.callCount; ix += 1) {
-				const args = this.listener.getCall(ix).args;
-				expect(args.length).to.be.at.least(1);
-				expect(args[0]).to.be.instanceOf(Event);
-				expect(Object.prototype.hasOwnProperty.call(args[0], 'detail')).to.be.true;
+			dispatcher.on(element, 'popstate', listener);
+			dispatcher.emit(element, 'popstate popstate popstate');
+			expect(listener.called).toBeTruthy();
+			expect(listener.calledOnce).toBeFalsy();
+			expect(listener.callCount).toEqual(3);
+			for (let ix = 0; ix < listener.callCount; ix += 1) {
+				const { args } = listener.getCall(ix);
+				expect(args.length).toBeGreaterThan(0);
+				expect(args[0] instanceof Event).toBe(true);
+				expect(Object.prototype.hasOwnProperty.call(args[0], 'detail')).toBe(true);
 			}
 		});
 	});
 
 	describe('#one', () => {
 		it('should invoke the listener with a Event argument one', () => {
-			expect(this.listener).to.be.spy;
-			dispatcher.one(this.element, 'popstate', this.listener);
-			dispatcher.emit(this.element, 'popstate popstate popstate');
-			expect(this.listener.called).to.be.true;
-			expect(this.listener.calledOnce).to.be.true;
-			const args = this.listener.getCall(0).args;
-			expect(args.length).to.be.at.least(1);
-			expect(args[0]).to.be.instanceOf(Event);
-			expect(Object.prototype.hasOwnProperty.call(args[0], 'detail')).to.be.true;
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.one(element, 'popstate', listener);
+			dispatcher.emit(element, 'popstate popstate popstate');
+			expect(listener.called).toBeTruthy();
+			expect(listener.calledOnce).toBeTruthy();
+			const { args } = listener.getCall(0);
+			expect(args.length).toBeGreaterThan(0);
+			expect(args[0] instanceof Event).toBe(true);
+			expect(Object.prototype.hasOwnProperty.call(args[0], 'detail')).toBe(true);
 		});
 	});
 
 	describe('#off', () => {
 		it('should remove an specific event handler from a specific element', () => {
-			expect(this.listener).to.be.spy;
-			dispatcher.on(this.element, 'popstate changestate pushstate', this.listener);
-			dispatcher.off(this.element, 'pushstate', this.listener); // <= specific listener
-			dispatcher.emit(this.element, 'popstate changestate pushstate');
-			expect(this.listener.callCount).to.be.equal(2);
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.on(element, 'popstate changestate pushstate', listener);
+			dispatcher.off(element, 'pushstate', listener); // <= specific listener
+			dispatcher.emit(element, 'popstate changestate pushstate');
+			expect(listener.callCount).toEqual(2);
 		});
 
 		it('should remove all event handlers from a specific element', () => {
-			expect(this.listener).to.be.spy;
-			dispatcher.on(this.element, 'pushstate popstate changestate', this.listener);
-			dispatcher.off(this.element); // <= all types
-			dispatcher.emit(this.element, 'popstate changestate pushstate');
-			expect(this.listener.callCount).to.be.equal(0);
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.on(element, 'pushstate popstate changestate', listener);
+			dispatcher.off(element); // <= all types
+			dispatcher.emit(element, 'popstate changestate pushstate');
+			expect(listener.callCount).toEqual(0);
 		});
 
 		it('should remove all event handlers from a specific element by type', () => {
-			const anotherListener = spy();
-			expect(this.listener).to.be.spy;
-			dispatcher.on(this.element, 'pushstate popstate changestate', this.listener);
-			dispatcher.on(this.element, 'pushstate', anotherListener);
-			dispatcher.off(this.element, 'pushstate'); // <= all pushstate listeners from this.element
-			dispatcher.emit(this.element, 'popstate changestate pushstate');
-			expect(this.listener.callCount).to.be.equal(2);
-			expect(anotherListener.callCount).to.be.equal(0);
+			const anotherListener = sinon.spy();
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.on(element, 'pushstate popstate changestate', listener);
+			dispatcher.on(element, 'pushstate', anotherListener);
+			dispatcher.off(element, 'pushstate'); // <= all pushstate listeners from element
+			dispatcher.emit(element, 'popstate changestate pushstate');
+			expect(listener.callCount).toEqual(2);
+			expect(anotherListener.callCount).toEqual(0);
 		});
 
 		it('should remove all event handlers', () => {
-			const anotherListener = spy();
-			expect(this.listener).to.be.spy;
-			dispatcher.on(document, 'DOMContentLoaded', this.listener);
-			dispatcher.on(window, 'changestate', this.listener);
-			dispatcher.on(this.element, 'pushstate', anotherListener);
-			dispatcher.on(this.element, 'pushstate', this.listener);
+			const anotherListener = sinon.spy();
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.on(document, 'DOMContentLoaded', listener);
+			dispatcher.on(window, 'changestate', listener);
+			dispatcher.on(element, 'pushstate', anotherListener);
+			dispatcher.on(element, 'pushstate', listener);
 			dispatcher.off(); // <= all types and elements
 			dispatcher.emit(document, 'DOMContentLoaded');
 			dispatcher.emit(window, 'changestate');
-			dispatcher.emit(this.element, 'pushstate');
-			expect(this.listener.callCount).to.be.equal(0);
+			dispatcher.emit(element, 'pushstate');
+			expect(listener.callCount).toEqual(0);
 		});
 
 		it('should remove all event handlers by type', () => {
-			const anotherListener = spy();
-			expect(this.listener).to.be.spy;
-			dispatcher.on(document, 'DOMContentLoaded', this.listener);
-			dispatcher.on(window, 'changestate', this.listener);
-			dispatcher.on(this.element, 'pushstate', anotherListener);
-			dispatcher.on(this.element, 'pushstate', this.listener);
+			const anotherListener = sinon.spy();
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.on(document, 'DOMContentLoaded', listener);
+			dispatcher.on(window, 'changestate', listener);
+			dispatcher.on(element, 'pushstate', anotherListener);
+			dispatcher.on(element, 'pushstate', listener);
 			dispatcher.off('pushstate'); // <= all listeners from 'pushstates' type from all elements
 			dispatcher.emit(document, 'DOMContentLoaded');
 			dispatcher.emit(window, 'changestate');
-			dispatcher.emit(this.element, 'pushstate');
-			expect(anotherListener.callCount).to.be.equal(0);
-			expect(this.listener.callCount).to.be.equal(2);
+			dispatcher.emit(element, 'pushstate');
+			expect(anotherListener.callCount).toEqual(0);
+			expect(listener.callCount).toEqual(2);
 		});
 	});
 
 	describe('#emit', () => {
 		it('should invoke the listener', () => {
-			expect(this.listener).to.be.spy;
-			dispatcher.on(this.element, 'popstate', this.listener);
-			dispatcher.emit(this.element, 'popstate');
-			expect(this.listener.called).to.be.true;
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.on(element, 'popstate', listener);
+			dispatcher.emit(element, 'popstate');
+			expect(listener.called).toBeTruthy();
 		});
 
 		it('should pass arguments to the listeners', () => {
 			const type = 'popstate';
 			const state = { foo: 'foo', bar: 1, baz: {} };
-			expect(this.listener).to.be.spy;
-			dispatcher.on(this.element, type, this.listener);
-			dispatcher.emit(this.element, type, { detail: { state } });
-			assert.calledOnce(this.listener);
-			const args = this.listener.getCall(0).args;
-			expect(args.length).to.be.at.least(1);
-			expect(args[0]).to.be.instanceOf(Event);
-			// expect(args[0].detail).to.be.a('object');
-			expect(args[0].detail.state).to.equal(state);
-			expect(args[0].type).to.equal(type); // <= crossbrowser
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.on(element, type, listener);
+			dispatcher.emit(element, type, { detail: { state } });
+			sinon.assert.calledOnce(listener);
+			const { args } = listener.getCall(0);
+			expect(args.length).toBeGreaterThan(0);
+			expect(args[0] instanceof Event).toBe(true);
+			expect(args[0].detail).toEqual(jasmine.any(Object));
+			expect(args[0].detail.state).toEqual(state);
+			expect(args[0].type).toEqual(type); // <= crossbrowser
 		});
 
 		it('should emit all events', () => {
 			['popstate', 'changestate', 'hashchange'].map((eventType) => {
-				const listener = spy();
-				dispatcher.on(this.element, eventType, listener);
+				const singleListener = sinon.spy();
+				dispatcher.on(element, eventType, singleListener);
 				dispatcher.emit();
-				return listener;
-			}).forEach((listener, index, spies) => {
-				expect(listener.callCount).to.be.equal(spies.length - index);
+				return singleListener;
+			}).forEach((listenerRef, index, spies) => {
+				expect(listenerRef.callCount).toEqual(spies.length - index);
 			});
 		});
 	});
@@ -144,12 +146,12 @@ describe('browser/events', () => {
 			'should check whether an event listener is registered with this `dom-event-dispatcher`',
 			'object or any of its ancestors for the specified event type',
 		].join(' '), () => {
-			expect(this.listener).to.be.spy;
-			dispatcher.on(window, 'changestate', this.listener);
-			expect(dispatcher.willEmit('changestate popstate')).to.be.true;
-			expect(dispatcher.willEmit('foo bar baz')).to.be.false;
-			expect(dispatcher.willEmit('changestate')).to.be.true;
-			expect(dispatcher.willEmit('popstate')).to.be.false;
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.on(window, 'changestate', listener);
+			expect(dispatcher.willEmit('changestate popstate')).toBe(true);
+			expect(dispatcher.willEmit('foo bar baz')).toBe(false);
+			expect(dispatcher.willEmit('changestate')).toBe(true);
+			expect(dispatcher.willEmit('popstate')).toBe(false);
 		});
 	});
 
@@ -158,13 +160,13 @@ describe('browser/events', () => {
 			'should check whether the `dom-event-dispatcher` object has any listeners',
 			'registered for a specific type of event',
 		].join(' '), () => {
-			expect(this.listener).to.be.spy;
-			dispatcher.on(window, 'changestate', this.listener);
-			expect(dispatcher.hasEvent(window, 'changestate popstate')).to.be.true;
-			expect(dispatcher.hasEvent(window, 'foo bar baz')).to.be.false;
-			expect(dispatcher.hasEvent(window, 'changestate')).to.be.true;
-			expect(dispatcher.hasEvent(window, 'popstate')).to.be.false;
-			expect(dispatcher.hasEvent(window, 'anon')).to.be.false;
+			expect(listener).toEqual(jasmine.any(Function));
+			dispatcher.on(window, 'changestate', listener);
+			expect(dispatcher.hasEvent(window, 'changestate popstate')).toBe(true);
+			expect(dispatcher.hasEvent(window, 'foo bar baz')).toBe(false);
+			expect(dispatcher.hasEvent(window, 'changestate')).toBe(true);
+			expect(dispatcher.hasEvent(window, 'popstate')).toBe(false);
+			expect(dispatcher.hasEvent(window, 'anon')).toBe(false);
 		});
 	});
 });
