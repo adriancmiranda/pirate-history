@@ -37,8 +37,8 @@
     "release": "standard-version"
   },
   "optionalDependencies": {
-    "compression-webpack-plugin": "0.4.0",
-    "webpack-bundle-analyzer": "2.8.2"
+    "compression-webpack-plugin": "~0.4.0",
+    "webpack-bundle-analyzer": "~2.8.2"
   },
   "devDependencies": {
     "babel-core": "~6.25.0",
@@ -52,7 +52,6 @@
     "child-process-promise": "~2.2.1",
     "clean-webpack-plugin": "~0.1.16",
     "codecov": "~2.2.0",
-    "compression-webpack-plugin": "~0.4.0",
     "conventional-commit-types": "~2.2.0",
     "documentation": "~4.0.0-rc.1",
     "eslint": "~4.1.1",
