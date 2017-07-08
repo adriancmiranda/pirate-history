@@ -23,8 +23,8 @@ environment:
 install:
   - ps: Install-Product node $env:nodejs_version x64
   - npm prune
+  - npm i -g npm@latest
   - npm i -g yarn
-  - yarn i -g npm@latest
   - yarn install
 
 build: off
