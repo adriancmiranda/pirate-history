@@ -537,7 +537,7 @@ Questions, proposals, bugs and issues should be reported via the [issue tracker]
 [greenkeeper]: https://badges.greenkeeper.io/adriancmiranda/pirate-history.svg
 [greenkeeper-url]: https://greenkeeper.io/
 
-[browserstack]: https://www.browserstack.com/automate/badge.svg?badge_key=QXNiZ2dxcmxFVUxQZDRHNUsrNFd3dzl2MUo4TGt1RG8zeTNhRXpXSTl6MD0tLTRpY0JkY2VGdDg0ak9ZTnBzN0tFVXc9PQ==--37f49533fa5db5c89b895d055d6f374c8c8c7346
+[browserstack]: https://www.browserstack.com/automate/badge.svg?badge_key=SWlBeVBQdGdyUlZQZ0wveGxITzhabVlteWl2ZjBZcGUwenh5V3NJSDI4TT0tLVVmMWllUy9TUU1XT05rcEtXNGdDZVE9PQ==--4ee9f7775bf699dfdfcef6376438d27b6dc03160
 [browserstack-url]: https://www.browserstack.com
 
 [license]: https://img.shields.io/badge/license-Unlicense-44cc11.svg
