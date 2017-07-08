@@ -39,4 +39,4 @@ test_script:
   - cmd: yarn run %job_part%:appveyor
 
 after_test:
-  - yarn run report-coverage
+  - yarn run report:coverage

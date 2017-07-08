@@ -38,4 +38,4 @@ script:
   - npm run $JOB_PART:travis
 
 after_sucess:
-  - npm run report-coverage
+  - npm run report:coverage
