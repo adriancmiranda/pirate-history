@@ -7,21 +7,22 @@ import gzip from 'rollup-plugin-gzip';
 import uglify from 'rollup-plugin-uglify';
 import { minify } from 'uglify-es';
 import { params } from './argv';
-import pirateFlag from './banner';
+import flag from './banner';
 
 const argv = params(process.env);
-const banner = pirateFlag({ comment: true });
-const preamble = pirateFlag({ comment: true, image: [''] });
+const banner = flag({ comment: true });
+const preamble = flag({ comment: true, image: [''] });
 const target = (name, format) => ({
 	dest: `./dist/${name}.${format}${argv.MINIFY ? '.min' : ''}.js`,
 	format,
 });
 
-export default (moduleName, entry, indent = true) => ({
+export default (moduleName, entry, sourceMap = true, indent = true) => ({
 	banner,
 	indent,
 	moduleName,
 	entry: `./${entry}.js`,
+	sourceMap,
 	targets: [
 		target(moduleName, 'iife'),
 		target(moduleName, 'umd'),
