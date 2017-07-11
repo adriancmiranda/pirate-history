@@ -115,7 +115,7 @@ module.exports = (config) => {
 		port: 9876,
 		colors: true,
 		browsers: ['Chrome'],
-		frameworks: ['jasmine', 'fixture', 'phantomjs-shim'],
+		frameworks: ['jasmine', 'sinon', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
 		exclude: [],
 		files: [{
@@ -127,9 +127,6 @@ module.exports = (config) => {
 			watched: true,
 		}, {
 			pattern: 'test/specs/**/*.spec.js',
-			watched: true,
-		}, {
-			pattern: 'test/**/*.js',
 			watched: true,
 		}],
 		preprocessors: {
