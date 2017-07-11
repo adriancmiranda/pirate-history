@@ -1,4 +1,4 @@
-import * as path from 'source/browser/path';
+import * as path from '../../../source/browser/path/index';
 
 describe('browser/path', () => {
 	it('#is-absolute', () => {

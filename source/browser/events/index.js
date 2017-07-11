@@ -5,7 +5,7 @@
  * @alias module:browser/events
  */
 
-import is from 'source/common/is';
+import is from '../../common/is';
 import * as polyfill from './polyfill';
 
 /**

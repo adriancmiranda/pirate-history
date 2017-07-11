@@ -1,4 +1,4 @@
-import * as dispatcher from './browser/events';
+import * as dispatcher from './browser/events/index';
 
 const pirate = {};
 const ua = navigator.userAgent;

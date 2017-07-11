@@ -13,11 +13,6 @@ parserOptions:
 plugins:
   - import
 
-settings:
-  import/resolver:
-    webpack:
-      config: bin/index.js
-
 rules:
   no-debugger: 2
   no-param-reassign: off

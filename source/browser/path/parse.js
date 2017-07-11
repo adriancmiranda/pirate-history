@@ -1,6 +1,6 @@
-import parseQuery from 'source/browser/querystring/parse';
-import toInt from 'source/common/to-int';
-import is from 'source/common/is';
+import parseQuery from '../querystring/parse';
+import toInt from '../../common/to-int';
+import is from '../../common/is';
 import normalize from './normalize';
 import $a from './anchor';
 

@@ -1,4 +1,4 @@
-import escapeRegExp from 'source/common/escape-reg-exp';
+import escapeRegExp from '../../common/escape-reg-exp';
 
 /**
  * @name parse

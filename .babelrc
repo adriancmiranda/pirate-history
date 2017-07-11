@@ -1,37 +1,11 @@
 {
   "comments": false,
-  "plugins": ["transform-runtime"],
   "presets": [
-    ["env", {
-      "modules": false,
-      "useBuiltIns": true,
-      "debug": true,
-      "targets": {
-        "browsers": [
-          "> 1%",
-          "last 4 versions",
-          "not ie < 8",
-        ]
-      }
-    }],
-    "stage-1",
+    ["env", { "modules": false }],
+    "stage-1"
   ],
-  "env": {
-    "test": {
-      "presets": ["env", "stage-1"],
-      "plugins": ["istanbul", {
-        "useInlineSourceMaps": false,
-        "include": [
-          "index.js",
-          "source/**/*.js",
-        ],
-      }],
-    },
-  },
-  "ignore": [
-    ".github/",
-    "dist/",
-    "examples/",
-    "material/",
-  ],
+  "plugins": [
+    "external-helpers",
+    "transform-class-properties"
+  ]
 }
