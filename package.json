@@ -19,7 +19,7 @@
     "analyze:state": "source-map-explorer dist/pirate-history.state.min{.js,.map}",
     "analyze:bundle": "run-s \"gzip -- --env.analyze=server\"",
     "upgrade": "ncu -a --loglevel verbose --packageFile package.json && npm i",
-    "dev": "npm run test:watch",
+    "dev": "npm run watch:test",
     "build:examples": "cd examples && node build-all",
     "build": "run-p concat minify gzip",
     "watch:test": "karma start test/karma.conf.js",
