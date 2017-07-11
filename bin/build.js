@@ -10,8 +10,8 @@ import { params } from './argv';
 import flag from './banner';
 
 const argv = params(process.env);
-const banner = flag({ comment: true });
-const preamble = flag({ comment: true, image: [''] });
+const banner = argv.SIGN ? flag({ comment: true }) : '';
+const preamble = argv.SIGN ? flag({ comment: true, image: [''] }) : '';
 const target = (name, format) => ({
 	dest: `./dist/${name}.${format}${argv.MINIFY ? '.min' : ''}.js`,
 	format,
