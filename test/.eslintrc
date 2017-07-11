@@ -10,5 +10,7 @@ globals:
 rules:
   func-names: off
   no-console: off
+  global-require: off
   no-unused-expressions: off
   no-use-before-define: off
+  import/no-extraneous-dependencies: off

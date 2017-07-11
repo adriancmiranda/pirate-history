@@ -1,7 +1,7 @@
-import * as dispatcher from 'source/browser/events/polyfill';
-import parsePath from 'source/browser/path/parse';
-import toInt from 'source/common/to-int';
-import is from 'source/common/is';
+import * as dispatcher from '../events/polyfill';
+import parsePath from '../path/parse';
+import toInt from '../../common/to-int';
+import is from '../../common/is';
 
 export const HashChangeEvent = 'hashchange';
 export const HashChangeHook = `on${HashChangeEvent}`;
