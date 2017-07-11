@@ -1,6 +1,6 @@
-const bin = require('../bin');
-const pkg = bin.common.res('package');
-const webpack = bin({ run: 'test' });
+const nodeResolve = require('rollup-plugin-node-resolve');
+const babel = require('rollup-plugin-babel');
+const pkg = require('../package.json');
 
 /*!
  * This is a karma config file. For more details
@@ -9,7 +9,6 @@ const webpack = bin({ run: 'test' });
  * @see https://github.com/karma-runner/karma-coverage/blob/master/docs/configuration.md
  * @see http://karma-runner.github.io/0.13/config/configuration-file.html
  * @see http://karma-runner.github.io/0.13/config/browsers.html
- * @see https://github.com/webpack/karma-webpack
 `*/
 module.exports = (config) => {
 	const customLaunchers = {
@@ -110,7 +109,6 @@ module.exports = (config) => {
 	};
 
 	const settings = {
-		webpack,
 		customLaunchers,
 		logLevel: config.LOG_INFO,
 		basePath: '../',
@@ -119,27 +117,29 @@ module.exports = (config) => {
 		browsers: ['Chrome'],
 		frameworks: ['jasmine', 'fixture', 'phantomjs-shim'],
 		reporters: ['spec', 'coverage'],
+		exclude: [],
 		files: [{
+			pattern: 'source/**/*.js',
+			included: false,
+			watched: true,
+		}, {
 			pattern: 'test/fixtures/**/*.fixture.*',
 			watched: true,
 		}, {
 			pattern: 'test/specs/**/*.spec.js',
 			watched: true,
 		}, {
-			pattern: 'source/**/*.js',
+			pattern: 'test/**/*.js',
 			watched: true,
 		}],
 		preprocessors: {
-			'source/**/*.js': ['webpack', 'sourcemap', 'coverage'],
-			'test/specs/**/*.spec.js': ['webpack', 'sourcemap'],
+			'source/**/*.js': ['rollupBabel'],
+			'test/specs/**/*.spec.js': ['rollupBabel'],
 			'test/fixtures/**/*.html': ['html2js'],
 			'test/fixtures/**/*.json': ['json_fixtures'],
 		},
 		jsonFixturesPreprocessor: {
 			variableName: '__json__',
-		},
-		webpackServer: {
-			noInfo: true,
 		},
 		browserStack: {
 			project: pkg.name,
@@ -155,6 +155,17 @@ module.exports = (config) => {
 				{ type: 'lcovonly', subdir: '.' },
 				{ type: 'json', subdir: '.' },
 			],
+		},
+		customPreprocessors: {
+			rollupBabel: {
+				base: 'rollup',
+				options: {
+					plugins: [
+						nodeResolve(),
+						babel(),
+					],
+				},
+			},
 		},
 	};
 
