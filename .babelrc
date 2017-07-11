@@ -1,6 +1,5 @@
 {
   "comments": false,
-  "plugins": ["transform-runtime"],
   "presets": [
     ["env", {
       "modules": false,
@@ -10,11 +9,11 @@
         "browsers": [
           "> 1%",
           "last 4 versions",
-          "not ie < 8",
+          "not ie < 8"
         ]
       }
     }],
-    "stage-1",
+    "stage-1"
   ],
   "env": {
     "test": {
@@ -23,15 +22,14 @@
         "useInlineSourceMaps": false,
         "include": [
           "index.js",
-          "source/**/*.js",
-        ],
-      }],
-    },
+          "source/**/*.js"
+        ]
+      }]
+    }
   },
-  "ignore": [
-    ".github/",
-    "dist/",
-    "examples/",
-    "material/",
-  ],
+  "plugins": [
+    "transform-runtime",
+    "external-helpers",
+    "transform-class-properties"
+  ]
 }
