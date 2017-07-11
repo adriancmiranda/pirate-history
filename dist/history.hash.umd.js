@@ -8,8 +8,8 @@
  *                       
  *  pirate-history v0.0.1
  * 
- * @moment Tuesday, July 11, 2017 12:44 AM
- * @commit f9130cfbdf21a74d0b1ace84d64494397afce0de
+ * @moment Tuesday, July 11, 2017 1:46 AM
+ * @commit 05127b26388a9df84066ca775e5841842d258ea9
  * @homepage https://github.com/adriancmiranda/pirate-history
  * @author Adrian C. Miranda */
 (function (global, factory) {
@@ -34,4 +34,3 @@ var hash = Object.freeze({
 	Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=history.hash.umd.js.map
