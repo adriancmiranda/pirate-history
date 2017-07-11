@@ -17,12 +17,12 @@ const target = (name, format) => ({
 	format,
 });
 
-export default (moduleName, entry, sourceMap = true, indent = true) => ({
+export default (moduleName, entry, indent = true) => ({
 	banner,
 	indent,
 	moduleName,
 	entry: `./${entry}.js`,
-	sourceMap,
+	sourceMap: argv.MINIFY,
 	targets: [
 		target(moduleName, 'iife'),
 		target(moduleName, 'umd'),
