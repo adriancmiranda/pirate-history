@@ -1,34 +1,37 @@
-// import pirate from '../../source/index';
+import pirate from '../../source/index';
 
 describe('history', () => {
-	// const UI = {
-	// 	render(html) {
-	// 		document.body.insertAdjacentHTML('afterbegin', html);
-	// 	},
-	// 	get root() {
-	// 		return document.querySelector('#history');
-	// 	},
-	// 	get links() {
-	// 		return this.root.querySelectorAll('button');
-	// 	},
-	// };
+	let ui;
 
-	// beforeAll(() => {
-	// 	fixture.setBase('test/fixtures');
-	// });
+	const UI = {
+		render(html) {
+			document.body.insertAdjacentHTML('afterbegin', html);
+		},
+		get root() {
+			return document.querySelector('#history');
+		},
+		get links() {
+			return this.root.querySelectorAll('button');
+		},
+	};
 
-	// beforeEach(() => {
-	// 	this.ui = fixture.load('history.fixture.html');
-	// 	UI.render(fixture.el.innerHTML);
-	// });
+	beforeAll(() => {
+		fixture.setBase('test/fixtures');
+	});
 
-	// afterEach(() => {
-	// 	fixture.cleanup();
-	// 	delete this.ui;
-	// });
+	beforeEach(() => {
+		ui = fixture.load('history.fixture.html');
+		UI.render(fixture.el.innerHTML);
+	});
+
+	afterEach(() => {
+		fixture.cleanup();
+		ui = undefined;
+	});
 
 	it('should pass', () => {
-	// 	expect(pirate).toEqual(jasmine.any(Object));
-	// 	expect(pirate.pushState).toEqual(jasmine.any(Function));
+		expect(pirate).toEqual(jasmine.any(Object));
+		expect(pirate.pushState).toEqual(jasmine.any(Function));
+		expect(ui[0].innerHTML).toEqual(jasmine.any(String));
 	});
 });
