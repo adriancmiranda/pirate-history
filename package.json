@@ -84,7 +84,7 @@
     "source-map-explorer": "~1.4.0",
     "standard-version": "~4.2.0",
     "uglify-es": "~3.0.24",
-    "validate-commit-msg": "~2.12.2"
+    "validate-commit-msg": "~2.13.0"
   },
   "files": [
     "index.js",
