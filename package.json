@@ -42,7 +42,7 @@
     "babel-preset-env": "~1.6.0",
     "babel-preset-stage-1": "~6.24.1",
     "child-process-promise": "~2.2.1",
-    "codecov": "~2.2.0",
+    "codecov": "~3.0.0",
     "conventional-commit-types": "~2.2.0",
     "documentation": "~4.0.0-rc.1",
     "eslint": "~4.2.0",
