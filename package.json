@@ -83,7 +83,7 @@
     "sinon": "~2.3.7",
     "source-map-explorer": "~1.4.0",
     "standard-version": "~4.2.0",
-    "uglify-es": "~3.0.24",
+    "uglify-es": "~3.1.6",
     "validate-commit-msg": "~2.12.2"
   },
   "files": [
