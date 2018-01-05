@@ -63,7 +63,7 @@
     "karma-json-fixtures-preprocessor": "~0.0.6",
     "karma-phantomjs-launcher": "~1.0.4",
     "karma-phantomjs-shim": "~1.4.0",
-    "karma-rollup-preprocessor": "~4.0.0",
+    "karma-rollup-preprocessor": "~5.0.3",
     "karma-safari-launcher": "~1.0.0",
     "karma-sinon": "~1.0.5",
     "karma-sourcemap-loader": "~0.3.7",
