@@ -47,7 +47,7 @@
     "documentation": "~4.0.0-rc.1",
     "eslint": "~4.2.0",
     "eslint-config-airbnb-base": "~11.2.0",
-    "eslint-friendly-formatter": "~3.0.0",
+    "eslint-friendly-formatter": "~4.0.0",
     "eslint-plugin-import": "~2.7.0",
     "git-revision-webpack-plugin": "~2.5.1",
     "husky": "~0.14.3",
