@@ -78,7 +78,7 @@
     "rollup-plugin-gzip": "~1.2.0",
     "rollup-plugin-node-resolve": "~3.0.0",
     "rollup-plugin-optimize-js": "~0.0.4",
-    "rollup-plugin-uglify": "~2.0.1",
+    "rollup-plugin-uglify": "~6.0.0",
     "rollup-watch": "~4.0.0",
     "sinon": "~2.3.7",
     "source-map-explorer": "~1.4.0",
